@@ -65,7 +65,9 @@ python collector/collect.py     # collect current observations
 python -m pytest tests/ -q      # 28 tests
 ```
 
-The collector imports only the standard library. `requirements-dev.txt` covers tests.
+The collector imports only the standard library, so it runs on a bare runner.
+`rainsignal/features.py` needs numpy and is used by the prediction layer, not the
+collector. `requirements-dev.txt` covers tests.
 
 ## Data source
 

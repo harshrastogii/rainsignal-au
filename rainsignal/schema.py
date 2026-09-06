@@ -4,7 +4,8 @@ Every constant here must match the notebook exactly. If one changes, the exporte
 artefacts are invalid and must be rebuilt and re-verified.
 """
 from __future__ import annotations
-import numpy as np
+
+import math
 
 RANDOM_STATE = 42
 TARGET = "RainTomorrow"
@@ -35,20 +36,9 @@ RAIN_THRESHOLD_MM = 1.0   # weatherAUS defines a rain day as > 1 mm
 
 def degrees_to_compass(deg: float | None) -> str | None:
     """Convert a bearing in degrees to the nearest 16-point compass label."""
-    if deg is None or (isinstance(deg, float) and np.isnan(deg)):
+    if deg is None or (isinstance(deg, float) and math.isnan(deg)):
         return None
     return COMPASS_16[int((float(deg) % 360) / 22.5 + 0.5) % 16]
-
-
-def add_engineered(frame):
-    """Derive the five Stage 2 features. `frame` needs a `Date` column."""
-    month = frame["Date"].dt.month
-    frame["Month_sin"] = np.sin(2 * np.pi * month / 12)
-    frame["Month_cos"] = np.cos(2 * np.pi * month / 12)
-    frame["TempRange"] = frame["MaxTemp"] - frame["MinTemp"]
-    frame["PressureChange"] = frame["Pressure3pm"] - frame["Pressure9am"]
-    frame["HumidityChange"] = frame["Humidity3pm"] - frame["Humidity9am"]
-    return frame
 
 
 # Reference test-set metrics from the Stage 3 notebook run. export_artifacts.py asserts
