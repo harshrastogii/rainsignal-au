@@ -46,6 +46,9 @@ COLUMNS = [
     ("gust_kmh", "REAL"), ("gust_dir", "TEXT"),
     ("rainfall", "REAL"), ("rainfall_24hr", "REAL"),
     ("n_present", "INTEGER"), ("n_rejected", "INTEGER"),
+    # JSON: {element: {start, end, instance}} -- the accumulation window BoM
+    # declares for each aggregate. The assembler needs it to date them correctly.
+    ("windows_json", "TEXT"),
 ]
 
 
@@ -57,6 +60,12 @@ def setup_db(path: Path) -> sqlite3.Connection:
                f"PRIMARY KEY (location, observed_utc))")
     db.execute("CREATE INDEX IF NOT EXISTS idx_loc_time "
                "ON observations(location, observed_utc DESC)")
+    # Migrate a table created before a column existed, rather than dropping rows.
+    have = {r[1] for r in db.execute("PRAGMA table_info(observations)")}
+    for name, decl in COLUMNS:
+        if name not in have:
+            db.execute(f"ALTER TABLE observations ADD COLUMN {name} {decl}")
+            log(f"migrated: added column {name}")
     db.commit()
     return db
 
@@ -77,7 +86,8 @@ def store(db: sqlite3.Connection, reading) -> int:
          v.get("wind_dir"), v.get("wind_spd_kmh"),
          v.get("maximum_gust_kmh"), v.get("maximum_gust_dir"),
          v.get("rainfall"), v.get("rainfall_24hr"),
-         reading.n_present, len(reading.rejected)),
+         reading.n_present, len(reading.rejected),
+         json.dumps(reading.windows) if reading.windows else None),
     )
     return db.total_changes - before
 

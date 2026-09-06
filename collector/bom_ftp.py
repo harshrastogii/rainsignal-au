@@ -50,6 +50,14 @@ class Observation:
     lat: float | None = None
     lon: float | None = None
     elements: dict[str, str] = field(default_factory=dict)
+    # Accumulation window per aggregate element, straight off the XML attributes:
+    # {element: {"start": local ISO, "end": local ISO, "instance": "running"|None}}.
+    #
+    # These are not decoration. BoM's daily aggregates do not share weatherAUS's
+    # windows -- the overnight minimum ending at 09:00 on day D+1 is MinTemp for
+    # D+1, not D -- so an assembler that ignored them would shift a whole feature
+    # by a day and never notice.
+    windows: dict[str, dict] = field(default_factory=dict)
 
 
 def fetch_product(product: str) -> bytes:
@@ -82,11 +90,16 @@ def parse_product(xml_bytes: bytes, product: str) -> list[Observation]:
         if not periods:
             continue
         period = periods[0]                       # the feed carries only the latest
-        elements = {
-            e.get("type"): (e.text or "").strip()
-            for e in period.findall(".//element")
-            if e.get("type") in ELEMENTS and e.text
-        }
+        elements, windows = {}, {}
+        for e in period.findall(".//element"):
+            etype = e.get("type")
+            if etype not in ELEMENTS or not e.text:
+                continue
+            elements[etype] = (e.text or "").strip()
+            start, end = e.get("start-time-local"), e.get("end-time-local")
+            if start or end:
+                windows[etype] = {"start": start, "end": end,
+                                  "instance": e.get("instance")}
         out.append(Observation(
             bom_id=station.get("bom-id"),
             bom_name=station.get("stn-name"),
@@ -96,6 +109,7 @@ def parse_product(xml_bytes: bytes, product: str) -> list[Observation]:
             lat=_maybe_float(station.get("lat")),
             lon=_maybe_float(station.get("lon")),
             elements=elements,
+            windows=windows,
         ))
     return out
 

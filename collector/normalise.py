@@ -53,6 +53,7 @@ class Reading:
     collected_utc: str
     values: dict = field(default_factory=dict)
     rejected: dict = field(default_factory=dict)
+    windows: dict = field(default_factory=dict)
 
     @property
     def n_present(self) -> int:
@@ -115,6 +116,7 @@ def validate(observation) -> Reading | None:
         collected_utc=datetime.now(timezone.utc).isoformat(timespec="seconds"),
         values=values,
         rejected=rejected,
+        windows=getattr(observation, "windows", {}) or {},
     )
 
 
