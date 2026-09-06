@@ -53,6 +53,11 @@ jobs:
           # is nothing to install and nothing to cache.
 
       - name: Collect observations
+        env:
+          # The scheduled Action is the ONLY writer of data/live. A local run
+          # defaults to data/local (git-ignored), so a laptop can never produce a
+          # commit that collides with this one.
+          RAINSIGNAL_STORE: data/live
         run: python collector/collect.py
 
       - name: Upload health report
@@ -70,4 +75,10 @@ jobs:
           git config user.email "S386401@students.cdu.edu.au"
           git add data/live/
           git diff --staged --quiet || git commit -m "data: collector run $(date -u +%FT%TZ)"
-          git push
+          # Another scheduled run may have landed while this one was fetching.
+          # Rebase onto it and retry rather than failing: the JSONL store is
+          # append-only, so the two runs' records merge cleanly.
+          for attempt in 1 2 3; do
+            git push && break
+            git pull --rebase --autostash origin main || true
+          done

@@ -24,35 +24,32 @@ from pathlib import Path
 
 sys.path.insert(0, str(Path(__file__).resolve().parent.parent))
 
+from collector import store                                       # noqa: E402
 from collector.bom_ftp import fetch_all, log                      # noqa: E402
 from collector.normalise import to_weatherAUS_partial, validate   # noqa: E402
 from rainsignal.stations import COLLECTABLE, PRODUCTS, UNCOLLECTABLE  # noqa: E402
 
-DATA_DIR = Path(os.environ.get("RAINSIGNAL_DATA_DIR", "data/live"))
-DB_PATH = Path(os.environ.get("RAINSIGNAL_DB", DATA_DIR / "observations.db"))
-HEALTH_PATH = Path(os.environ.get("RAINSIGNAL_HEALTH", DATA_DIR / "health.json"))
-LATEST_PATH = Path(os.environ.get("RAINSIGNAL_LATEST", DATA_DIR / "latest.json"))
+# Where this run writes. `data/live` is TRACKED and belongs to the scheduled Action
+# alone; the workflow sets RAINSIGNAL_STORE explicitly. A local run defaults to
+# `data/local`, which is git-ignored, so running the collector on a laptop can never
+# collide with the Action's commits.
+STORE = Path(os.environ.get("RAINSIGNAL_STORE", "data/local"))
+# Derived, never tracked. Rebuilt from the JSONL store on demand.
+CACHE = Path(os.environ.get("RAINSIGNAL_CACHE", STORE / "cache.db"))
+HEALTH_PATH = STORE / "health.json"
+LATEST_PATH = STORE / "latest.json"
 
 # A station whose newest reading is older than this is stale. BoM publishes most
 # stations every 30 minutes; some remote sites report hourly or less often.
 STALE_MINUTES = int(os.environ.get("RAINSIGNAL_STALE_MINUTES", "180"))
 
-COLUMNS = [
-    ("location", "TEXT"), ("bom_id", "TEXT"),
-    ("observed_utc", "TEXT"), ("observed_local", "TEXT"), ("collected_utc", "TEXT"),
-    ("air_temp", "REAL"), ("max_temp", "REAL"), ("min_temp", "REAL"),
-    ("humidity", "REAL"), ("pressure_msl", "REAL"),
-    ("wind_dir", "TEXT"), ("wind_spd_kmh", "REAL"),
-    ("gust_kmh", "REAL"), ("gust_dir", "TEXT"),
-    ("rainfall", "REAL"), ("rainfall_24hr", "REAL"),
-    ("n_present", "INTEGER"), ("n_rejected", "INTEGER"),
-    # JSON: {element: {start, end, instance}} -- the accumulation window BoM
-    # declares for each aggregate. The assembler needs it to date them correctly.
-    ("windows_json", "TEXT"),
-]
+# Kept for the tests and for anything still holding a cache connection; the column
+# set is defined once in store.FIELDS so the two cannot drift apart.
+COLUMNS = [(f, store.TYPES.get(f, "TEXT")) for f in store.FIELDS]
 
 
 def setup_db(path: Path) -> sqlite3.Connection:
+    """Create or open the derived cache. Retained for the assembler and the tests."""
     path.parent.mkdir(parents=True, exist_ok=True)
     db = sqlite3.connect(path)
     cols = ", ".join(f"{n} {t}" for n, t in COLUMNS)
@@ -60,35 +57,44 @@ def setup_db(path: Path) -> sqlite3.Connection:
                f"PRIMARY KEY (location, observed_utc))")
     db.execute("CREATE INDEX IF NOT EXISTS idx_loc_time "
                "ON observations(location, observed_utc DESC)")
-    # Migrate a table created before a column existed, rather than dropping rows.
     have = {r[1] for r in db.execute("PRAGMA table_info(observations)")}
     for name, decl in COLUMNS:
         if name not in have:
             db.execute(f"ALTER TABLE observations ADD COLUMN {name} {decl}")
-            log(f"migrated: added column {name}")
     db.commit()
     return db
 
 
-def store(db: sqlite3.Connection, reading) -> int:
-    """Insert one reading, ignoring a duplicate. Returns rows actually written."""
+def to_record(reading) -> dict:
+    """Flatten a validated Reading into the stored record shape."""
+    v = reading.values
+    return {
+        "location": reading.location, "bom_id": reading.bom_id,
+        "observed_utc": reading.observed_utc, "observed_local": reading.observed_local,
+        "collected_utc": reading.collected_utc,
+        "air_temp": v.get("air_temperature"),
+        "max_temp": v.get("maximum_air_temperature"),
+        "min_temp": v.get("minimum_air_temperature"),
+        "humidity": v.get("rel-humidity"),
+        "pressure_msl": (v.get("msl_pres") if v.get("msl_pres") is not None
+                         else v.get("pres")),
+        "wind_dir": v.get("wind_dir"), "wind_spd_kmh": v.get("wind_spd_kmh"),
+        "gust_kmh": v.get("maximum_gust_kmh"), "gust_dir": v.get("maximum_gust_dir"),
+        "rainfall": v.get("rainfall"), "rainfall_24hr": v.get("rainfall_24hr"),
+        "n_present": reading.n_present, "n_rejected": len(reading.rejected),
+        "windows_json": json.dumps(reading.windows) if reading.windows else None,
+    }
+
+
+def store_reading(db: sqlite3.Connection, reading) -> int:
+    """Insert one reading into the cache, ignoring a duplicate."""
     if not reading.observed_utc:
         return 0                       # without a timestamp there is no primary key
-    v = reading.values
+    rec = to_record(reading)
     before = db.total_changes
     db.execute(
         f"INSERT OR IGNORE INTO observations VALUES ({','.join('?' * len(COLUMNS))})",
-        (reading.location, reading.bom_id,
-         reading.observed_utc, reading.observed_local, reading.collected_utc,
-         v.get("air_temperature"), v.get("maximum_air_temperature"),
-         v.get("minimum_air_temperature"), v.get("rel-humidity"),
-         v.get("msl_pres") if v.get("msl_pres") is not None else v.get("pres"),
-         v.get("wind_dir"), v.get("wind_spd_kmh"),
-         v.get("maximum_gust_kmh"), v.get("maximum_gust_dir"),
-         v.get("rainfall"), v.get("rainfall_24hr"),
-         reading.n_present, len(reading.rejected),
-         json.dumps(reading.windows) if reading.windows else None),
-    )
+        tuple(rec[n] for n, _ in COLUMNS))
     return db.total_changes - before
 
 
@@ -104,22 +110,24 @@ def age_minutes(observed_utc: str) -> int | None:
 
 def run_once() -> int:
     started = datetime.now(timezone.utc)
-    db = setup_db(DB_PATH)
 
     # ---- phase 1: network only ----
     by_product, fetch_errors = fetch_all(PRODUCTS)
 
     # ---- phase 2: validate and store, serially on this thread ----
-    readings, unmapped, inserted_total = {}, 0, 0
+    readings, unmapped = {}, 0
     for observations in by_product.values():
         for observation in observations:
             reading = validate(observation)
             if reading is None:
                 unmapped += 1
                 continue
-            inserted_total += store(db, reading)
             readings[reading.location] = reading
-    db.commit()
+
+    # JSONL is the durable store; the cache is rebuilt from it afterwards.
+    inserted_total = store.append(
+        STORE, [to_record(r) for r in readings.values() if r.observed_utc])
+    cached = store.rebuild_cache(STORE, CACHE)
 
     # ---- health ----
     per_station, stale, missing_fields = [], [], {}
@@ -163,6 +171,8 @@ def run_once() -> int:
         "fields_absent_by_field": {k: len(v) for k, v in sorted(missing_fields.items())},
         "detail": per_station,
     }
+    health["store"] = str(STORE)
+    health["rows_in_store"] = cached
     HEALTH_PATH.parent.mkdir(parents=True, exist_ok=True)
     HEALTH_PATH.write_text(json.dumps(health, indent=1))
 
@@ -184,12 +194,11 @@ def run_once() -> int:
 
     log("-" * 62)
     log(f"reporting {len(ok)}/{len(COLLECTABLE)}  stale {len(stale)}  "
-        f"new rows {inserted_total}  unmapped BoM stations ignored {unmapped}")
+        f"new rows {inserted_total}  store total {cached}  "
+        f"unmapped BoM stations ignored {unmapped}")
     if missing_fields:
         for field_name, locs in sorted(missing_fields.items()):
             log(f"  absent: {field_name:14s} at {len(locs)} station(s)")
-    db.close()
-
     # Fail loudly only when the run produced nothing usable, so a partial BoM
     # outage degrades the product instead of breaking the schedule.
     if not ok:

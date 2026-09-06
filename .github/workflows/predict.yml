@@ -1,0 +1,52 @@
+name: RainSignal Prediction
+
+# Runs the frozen Stage 3 model over the assembled observations and commits the
+# result. Separate from the collector because it needs scikit-learn and TensorFlow,
+# while the collector deliberately imports only the standard library.
+#
+# Nothing here trains. The artefacts in models/ are loaded exactly as exported.
+
+on:
+  schedule:
+    # After the late-local sweep, so a day's aggregate windows have closed before
+    # anything tries to predict from them.
+    - cron: "30 13 * * *"
+  workflow_dispatch: {}
+
+concurrency:
+  group: rainsignal-predict
+  cancel-in-progress: false
+
+permissions:
+  contents: write
+
+jobs:
+  predict:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Install the pinned inference stack
+        run: pip install -q "scikit-learn==1.7.2" "tensorflow==2.21.0" "pandas==2.3.3" joblib
+
+      - name: Predict
+        env:
+          RAINSIGNAL_STORE: data/live
+        run: python -m rainsignal.predict --store data/live
+
+      - name: Commit predictions
+        if: success()
+        run: |
+          git config user.name  "Harsh Rastogi"
+          git config user.email "S386401@students.cdu.edu.au"
+          git add data/live/predictions.json
+          git diff --staged --quiet || git commit -m "predict: run $(date -u +%FT%TZ)"
+          for attempt in 1 2 3; do
+            git push && break
+            git pull --rebase --autostash origin main || true
+          done

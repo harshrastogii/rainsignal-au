@@ -6,3 +6,7 @@ __pycache__/
 
 # Verified on export but too large for git (10,029,776 nodes; 130 MB compressed)
 models/random_forest.joblib
+
+# SQLite is a derived cache rebuilt from the JSONL store; never tracked
+*.db
+data/local/

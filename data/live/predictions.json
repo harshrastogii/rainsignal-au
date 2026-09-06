@@ -1,0 +1,1345 @@
+{
+ "generated_utc": "2026-09-06T21:58:55+00:00",
+ "observation_date": "2026-09-05",
+ "target_date": "2026-09-06",
+ "what_this_is": "A machine-learning estimate of the chance of more than 1 mm of rain on the target date, computed from completed observations recorded on the observation date.",
+ "not_a_bureau_forecast": true,
+ "disclaimer": "This is a model estimate produced by a student project, not a forecast issued by the Bureau of Meteorology. For official forecasts see bom.gov.au.",
+ "observation_source": "Bureau of Meteorology, \u00a9 Commonwealth of Australia",
+ "model": {
+  "name": "Neural Network",
+  "trained_on": "weatherAUS historical record, frozen after Stage 3",
+  "test_metrics": {
+   "accuracy": 0.8666,
+   "f1": 0.6444,
+   "roc_auc": 0.8994
+  },
+  "reports": "probability, not a yes/no label",
+  "note": "Stage 3 measured the best decision threshold near 0.31 rather than 0.5, so no label is imposed here."
+ },
+ "stations_predicted": 0,
+ "stations_withheld": 44,
+ "predictions": {},
+ "withheld": {
+  "Adelaide": {
+   "reason": "required observations incomplete",
+   "missing": [
+    "MinTemp",
+    "MaxTemp",
+    "Rainfall",
+    "WindGustSpeed",
+    "WindDir9am",
+    "WindDir3pm",
+    "WindSpeed9am",
+    "WindSpeed3pm",
+    "Humidity9am",
+    "Humidity3pm",
+    "Pressure9am",
+    "Pressure3pm",
+    "Temp9am",
+    "Temp3pm",
+    "RainToday",
+    "TempRange",
+    "PressureChange",
+    "HumidityChange"
+   ],
+   "notes": [
+    "no reading within 45 min of 9am",
+    "no reading within 45 min of 3pm",
+    "no rainfall_24hr window ending 09:00 on this date",
+    "no overnight minimum window ending 09:00 on this date",
+    "no closed daytime maximum window on this date"
+   ]
+  },
+  "Albany": {
+   "reason": "required observations incomplete",
+   "missing": [
+    "MinTemp",
+    "MaxTemp",
+    "Rainfall",
+    "WindGustSpeed",
+    "WindDir9am",
+    "WindDir3pm",
+    "WindSpeed9am",
+    "WindSpeed3pm",
+    "Humidity9am",
+    "Humidity3pm",
+    "Pressure9am",
+    "Pressure3pm",
+    "Temp9am",
+    "Temp3pm",
+    "RainToday",
+    "TempRange",
+    "PressureChange",
+    "HumidityChange"
+   ],
+   "notes": [
+    "no reading within 45 min of 9am",
+    "no reading within 45 min of 3pm",
+    "no rainfall_24hr window ending 09:00 on this date",
+    "no overnight minimum window ending 09:00 on this date",
+    "no closed daytime maximum window on this date"
+   ]
+  },
+  "Albury": {
+   "reason": "required observations incomplete",
+   "missing": [
+    "MinTemp",
+    "MaxTemp",
+    "Rainfall",
+    "WindGustSpeed",
+    "WindDir9am",
+    "WindDir3pm",
+    "WindSpeed9am",
+    "WindSpeed3pm",
+    "Humidity9am",
+    "Humidity3pm",
+    "Pressure9am",
+    "Pressure3pm",
+    "Temp9am",
+    "Temp3pm",
+    "RainToday",
+    "TempRange",
+    "PressureChange",
+    "HumidityChange"
+   ],
+   "notes": [
+    "no reading within 45 min of 9am",
+    "no reading within 45 min of 3pm",
+    "no rainfall_24hr window ending 09:00 on this date",
+    "no overnight minimum window ending 09:00 on this date",
+    "no closed daytime maximum window on this date"
+   ]
+  },
+  "AliceSprings": {
+   "reason": "required observations incomplete",
+   "missing": [
+    "MinTemp",
+    "MaxTemp",
+    "Rainfall",
+    "WindGustSpeed",
+    "WindDir9am",
+    "WindDir3pm",
+    "WindSpeed9am",
+    "WindSpeed3pm",
+    "Humidity9am",
+    "Humidity3pm",
+    "Pressure9am",
+    "Pressure3pm",
+    "Temp9am",
+    "Temp3pm",
+    "RainToday",
+    "TempRange",
+    "PressureChange",
+    "HumidityChange"
+   ],
+   "notes": [
+    "no reading within 45 min of 9am",
+    "no reading within 45 min of 3pm",
+    "no rainfall_24hr window ending 09:00 on this date",
+    "no overnight minimum window ending 09:00 on this date",
+    "no closed daytime maximum window on this date"
+   ]
+  },
+  "BadgerysCreek": {
+   "reason": "required observations incomplete",
+   "missing": [
+    "MinTemp",
+    "MaxTemp",
+    "Rainfall",
+    "WindGustSpeed",
+    "WindDir9am",
+    "WindDir3pm",
+    "WindSpeed9am",
+    "WindSpeed3pm",
+    "Humidity9am",
+    "Humidity3pm",
+    "Pressure9am",
+    "Pressure3pm",
+    "Temp9am",
+    "Temp3pm",
+    "RainToday",
+    "TempRange",
+    "PressureChange",
+    "HumidityChange"
+   ],
+   "notes": [
+    "no reading within 45 min of 9am",
+    "no reading within 45 min of 3pm",
+    "no rainfall_24hr window ending 09:00 on this date",
+    "no overnight minimum window ending 09:00 on this date",
+    "no closed daytime maximum window on this date"
+   ]
+  },
+  "Ballarat": {
+   "reason": "required observations incomplete",
+   "missing": [
+    "MinTemp",
+    "MaxTemp",
+    "Rainfall",
+    "WindGustSpeed",
+    "WindDir9am",
+    "WindDir3pm",
+    "WindSpeed9am",
+    "WindSpeed3pm",
+    "Humidity9am",
+    "Humidity3pm",
+    "Pressure9am",
+    "Pressure3pm",
+    "Temp9am",
+    "Temp3pm",
+    "RainToday",
+    "TempRange",
+    "PressureChange",
+    "HumidityChange"
+   ],
+   "notes": [
+    "no reading within 45 min of 9am",
+    "no reading within 45 min of 3pm",
+    "no rainfall_24hr window ending 09:00 on this date",
+    "no overnight minimum window ending 09:00 on this date",
+    "no closed daytime maximum window on this date"
+   ]
+  },
+  "Bendigo": {
+   "reason": "required observations incomplete",
+   "missing": [
+    "MinTemp",
+    "MaxTemp",
+    "Rainfall",
+    "WindGustSpeed",
+    "WindDir9am",
+    "WindDir3pm",
+    "WindSpeed9am",
+    "WindSpeed3pm",
+    "Humidity9am",
+    "Humidity3pm",
+    "Pressure9am",
+    "Pressure3pm",
+    "Temp9am",
+    "Temp3pm",
+    "RainToday",
+    "TempRange",
+    "PressureChange",
+    "HumidityChange"
+   ],
+   "notes": [
+    "no reading within 45 min of 9am",
+    "no reading within 45 min of 3pm",
+    "no rainfall_24hr window ending 09:00 on this date",
+    "no overnight minimum window ending 09:00 on this date",
+    "no closed daytime maximum window on this date"
+   ]
+  },
+  "Brisbane": {
+   "reason": "required observations incomplete",
+   "missing": [
+    "MinTemp",
+    "MaxTemp",
+    "Rainfall",
+    "WindGustSpeed",
+    "WindDir9am",
+    "WindDir3pm",
+    "WindSpeed9am",
+    "WindSpeed3pm",
+    "Humidity9am",
+    "Humidity3pm",
+    "Pressure9am",
+    "Pressure3pm",
+    "Temp9am",
+    "Temp3pm",
+    "RainToday",
+    "TempRange",
+    "PressureChange",
+    "HumidityChange"
+   ],
+   "notes": [
+    "no reading within 45 min of 9am",
+    "no reading within 45 min of 3pm",
+    "no rainfall_24hr window ending 09:00 on this date",
+    "no overnight minimum window ending 09:00 on this date",
+    "no closed daytime maximum window on this date"
+   ]
+  },
+  "Cairns": {
+   "reason": "required observations incomplete",
+   "missing": [
+    "MinTemp",
+    "MaxTemp",
+    "Rainfall",
+    "WindGustSpeed",
+    "WindDir9am",
+    "WindDir3pm",
+    "WindSpeed9am",
+    "WindSpeed3pm",
+    "Humidity9am",
+    "Humidity3pm",
+    "Pressure9am",
+    "Pressure3pm",
+    "Temp9am",
+    "Temp3pm",
+    "RainToday",
+    "TempRange",
+    "PressureChange",
+    "HumidityChange"
+   ],
+   "notes": [
+    "no reading within 45 min of 9am",
+    "no reading within 45 min of 3pm",
+    "no rainfall_24hr window ending 09:00 on this date",
+    "no overnight minimum window ending 09:00 on this date",
+    "no closed daytime maximum window on this date"
+   ]
+  },
+  "Canberra": {
+   "reason": "required observations incomplete",
+   "missing": [
+    "MinTemp",
+    "MaxTemp",
+    "Rainfall",
+    "WindGustSpeed",
+    "WindDir9am",
+    "WindDir3pm",
+    "WindSpeed9am",
+    "WindSpeed3pm",
+    "Humidity9am",
+    "Humidity3pm",
+    "Pressure9am",
+    "Pressure3pm",
+    "Temp9am",
+    "Temp3pm",
+    "RainToday",
+    "TempRange",
+    "PressureChange",
+    "HumidityChange"
+   ],
+   "notes": [
+    "no reading within 45 min of 9am",
+    "no reading within 45 min of 3pm",
+    "no rainfall_24hr window ending 09:00 on this date",
+    "no overnight minimum window ending 09:00 on this date",
+    "no closed daytime maximum window on this date"
+   ]
+  },
+  "Cobar": {
+   "reason": "required observations incomplete",
+   "missing": [
+    "MinTemp",
+    "MaxTemp",
+    "Rainfall",
+    "WindGustSpeed",
+    "WindDir9am",
+    "WindDir3pm",
+    "WindSpeed9am",
+    "WindSpeed3pm",
+    "Humidity9am",
+    "Humidity3pm",
+    "Pressure9am",
+    "Pressure3pm",
+    "Temp9am",
+    "Temp3pm",
+    "RainToday",
+    "TempRange",
+    "PressureChange",
+    "HumidityChange"
+   ],
+   "notes": [
+    "no reading within 45 min of 9am",
+    "no reading within 45 min of 3pm",
+    "no rainfall_24hr window ending 09:00 on this date",
+    "no overnight minimum window ending 09:00 on this date",
+    "no closed daytime maximum window on this date"
+   ]
+  },
+  "CoffsHarbour": {
+   "reason": "required observations incomplete",
+   "missing": [
+    "MinTemp",
+    "MaxTemp",
+    "Rainfall",
+    "WindGustSpeed",
+    "WindDir9am",
+    "WindDir3pm",
+    "WindSpeed9am",
+    "WindSpeed3pm",
+    "Humidity9am",
+    "Humidity3pm",
+    "Pressure9am",
+    "Pressure3pm",
+    "Temp9am",
+    "Temp3pm",
+    "RainToday",
+    "TempRange",
+    "PressureChange",
+    "HumidityChange"
+   ],
+   "notes": [
+    "no reading within 45 min of 9am",
+    "no reading within 45 min of 3pm",
+    "no rainfall_24hr window ending 09:00 on this date",
+    "no overnight minimum window ending 09:00 on this date",
+    "no closed daytime maximum window on this date"
+   ]
+  },
+  "Dartmoor": {
+   "reason": "required observations incomplete",
+   "missing": [
+    "MinTemp",
+    "MaxTemp",
+    "Rainfall",
+    "WindGustSpeed",
+    "WindDir9am",
+    "WindDir3pm",
+    "WindSpeed9am",
+    "WindSpeed3pm",
+    "Humidity9am",
+    "Humidity3pm",
+    "Pressure9am",
+    "Pressure3pm",
+    "Temp9am",
+    "Temp3pm",
+    "RainToday",
+    "TempRange",
+    "PressureChange",
+    "HumidityChange"
+   ],
+   "notes": [
+    "no reading within 45 min of 9am",
+    "no reading within 45 min of 3pm",
+    "no rainfall_24hr window ending 09:00 on this date",
+    "no overnight minimum window ending 09:00 on this date",
+    "no closed daytime maximum window on this date"
+   ]
+  },
+  "Darwin": {
+   "reason": "required observations incomplete",
+   "missing": [
+    "MinTemp",
+    "MaxTemp",
+    "Rainfall",
+    "WindGustSpeed",
+    "WindDir9am",
+    "WindDir3pm",
+    "WindSpeed9am",
+    "WindSpeed3pm",
+    "Humidity9am",
+    "Humidity3pm",
+    "Pressure9am",
+    "Pressure3pm",
+    "Temp9am",
+    "Temp3pm",
+    "RainToday",
+    "TempRange",
+    "PressureChange",
+    "HumidityChange"
+   ],
+   "notes": [
+    "no reading within 45 min of 9am",
+    "no reading within 45 min of 3pm",
+    "no rainfall_24hr window ending 09:00 on this date",
+    "no overnight minimum window ending 09:00 on this date",
+    "no closed daytime maximum window on this date"
+   ]
+  },
+  "GoldCoast": {
+   "reason": "required observations incomplete",
+   "missing": [
+    "MinTemp",
+    "MaxTemp",
+    "Rainfall",
+    "WindGustSpeed",
+    "WindDir9am",
+    "WindDir3pm",
+    "WindSpeed9am",
+    "WindSpeed3pm",
+    "Humidity9am",
+    "Humidity3pm",
+    "Pressure9am",
+    "Pressure3pm",
+    "Temp9am",
+    "Temp3pm",
+    "RainToday",
+    "TempRange",
+    "PressureChange",
+    "HumidityChange"
+   ],
+   "notes": [
+    "no reading within 45 min of 9am",
+    "no reading within 45 min of 3pm",
+    "no rainfall_24hr window ending 09:00 on this date",
+    "no overnight minimum window ending 09:00 on this date",
+    "no closed daytime maximum window on this date"
+   ]
+  },
+  "Hobart": {
+   "reason": "required observations incomplete",
+   "missing": [
+    "MinTemp",
+    "MaxTemp",
+    "Rainfall",
+    "WindGustSpeed",
+    "WindDir9am",
+    "WindDir3pm",
+    "WindSpeed9am",
+    "WindSpeed3pm",
+    "Humidity9am",
+    "Humidity3pm",
+    "Pressure9am",
+    "Pressure3pm",
+    "Temp9am",
+    "Temp3pm",
+    "RainToday",
+    "TempRange",
+    "PressureChange",
+    "HumidityChange"
+   ],
+   "notes": [
+    "no reading within 45 min of 9am",
+    "no reading within 45 min of 3pm",
+    "no rainfall_24hr window ending 09:00 on this date",
+    "no overnight minimum window ending 09:00 on this date",
+    "no closed daytime maximum window on this date"
+   ]
+  },
+  "Launceston": {
+   "reason": "required observations incomplete",
+   "missing": [
+    "MinTemp",
+    "MaxTemp",
+    "Rainfall",
+    "WindGustSpeed",
+    "WindDir9am",
+    "WindDir3pm",
+    "WindSpeed9am",
+    "WindSpeed3pm",
+    "Humidity9am",
+    "Humidity3pm",
+    "Pressure9am",
+    "Pressure3pm",
+    "Temp9am",
+    "Temp3pm",
+    "RainToday",
+    "TempRange",
+    "PressureChange",
+    "HumidityChange"
+   ],
+   "notes": [
+    "no reading within 45 min of 9am",
+    "no reading within 45 min of 3pm",
+    "no rainfall_24hr window ending 09:00 on this date",
+    "no overnight minimum window ending 09:00 on this date",
+    "no closed daytime maximum window on this date"
+   ]
+  },
+  "Melbourne": {
+   "reason": "required observations incomplete",
+   "missing": [
+    "MinTemp",
+    "MaxTemp",
+    "Rainfall",
+    "WindGustSpeed",
+    "WindDir9am",
+    "WindDir3pm",
+    "WindSpeed9am",
+    "WindSpeed3pm",
+    "Humidity9am",
+    "Humidity3pm",
+    "Pressure9am",
+    "Pressure3pm",
+    "Temp9am",
+    "Temp3pm",
+    "RainToday",
+    "TempRange",
+    "PressureChange",
+    "HumidityChange"
+   ],
+   "notes": [
+    "no reading within 45 min of 9am",
+    "no reading within 45 min of 3pm",
+    "no rainfall_24hr window ending 09:00 on this date",
+    "no overnight minimum window ending 09:00 on this date",
+    "no closed daytime maximum window on this date"
+   ]
+  },
+  "MelbourneAirport": {
+   "reason": "required observations incomplete",
+   "missing": [
+    "MinTemp",
+    "MaxTemp",
+    "Rainfall",
+    "WindGustSpeed",
+    "WindDir9am",
+    "WindDir3pm",
+    "WindSpeed9am",
+    "WindSpeed3pm",
+    "Humidity9am",
+    "Humidity3pm",
+    "Pressure9am",
+    "Pressure3pm",
+    "Temp9am",
+    "Temp3pm",
+    "RainToday",
+    "TempRange",
+    "PressureChange",
+    "HumidityChange"
+   ],
+   "notes": [
+    "no reading within 45 min of 9am",
+    "no reading within 45 min of 3pm",
+    "no rainfall_24hr window ending 09:00 on this date",
+    "no overnight minimum window ending 09:00 on this date",
+    "no closed daytime maximum window on this date"
+   ]
+  },
+  "Mildura": {
+   "reason": "required observations incomplete",
+   "missing": [
+    "MinTemp",
+    "MaxTemp",
+    "Rainfall",
+    "WindGustSpeed",
+    "WindDir9am",
+    "WindDir3pm",
+    "WindSpeed9am",
+    "WindSpeed3pm",
+    "Humidity9am",
+    "Humidity3pm",
+    "Pressure9am",
+    "Pressure3pm",
+    "Temp9am",
+    "Temp3pm",
+    "RainToday",
+    "TempRange",
+    "PressureChange",
+    "HumidityChange"
+   ],
+   "notes": [
+    "no reading within 45 min of 9am",
+    "no reading within 45 min of 3pm",
+    "no rainfall_24hr window ending 09:00 on this date",
+    "no overnight minimum window ending 09:00 on this date",
+    "no closed daytime maximum window on this date"
+   ]
+  },
+  "Moree": {
+   "reason": "required observations incomplete",
+   "missing": [
+    "MinTemp",
+    "MaxTemp",
+    "Rainfall",
+    "WindGustSpeed",
+    "WindDir9am",
+    "WindDir3pm",
+    "WindSpeed9am",
+    "WindSpeed3pm",
+    "Humidity9am",
+    "Humidity3pm",
+    "Pressure9am",
+    "Pressure3pm",
+    "Temp9am",
+    "Temp3pm",
+    "RainToday",
+    "TempRange",
+    "PressureChange",
+    "HumidityChange"
+   ],
+   "notes": [
+    "no reading within 45 min of 9am",
+    "no reading within 45 min of 3pm",
+    "no rainfall_24hr window ending 09:00 on this date",
+    "no overnight minimum window ending 09:00 on this date",
+    "no closed daytime maximum window on this date"
+   ]
+  },
+  "MountGambier": {
+   "reason": "required observations incomplete",
+   "missing": [
+    "MinTemp",
+    "MaxTemp",
+    "Rainfall",
+    "WindGustSpeed",
+    "WindDir9am",
+    "WindDir3pm",
+    "WindSpeed9am",
+    "WindSpeed3pm",
+    "Humidity9am",
+    "Humidity3pm",
+    "Pressure9am",
+    "Pressure3pm",
+    "Temp9am",
+    "Temp3pm",
+    "RainToday",
+    "TempRange",
+    "PressureChange",
+    "HumidityChange"
+   ],
+   "notes": [
+    "no reading within 45 min of 9am",
+    "no reading within 45 min of 3pm",
+    "no rainfall_24hr window ending 09:00 on this date",
+    "no overnight minimum window ending 09:00 on this date",
+    "no closed daytime maximum window on this date"
+   ]
+  },
+  "MountGinini": {
+   "reason": "required observations incomplete",
+   "missing": [
+    "MinTemp",
+    "MaxTemp",
+    "Rainfall",
+    "WindGustSpeed",
+    "WindDir9am",
+    "WindDir3pm",
+    "WindSpeed9am",
+    "WindSpeed3pm",
+    "Humidity9am",
+    "Humidity3pm",
+    "Pressure9am",
+    "Pressure3pm",
+    "Temp9am",
+    "Temp3pm",
+    "RainToday",
+    "TempRange",
+    "PressureChange",
+    "HumidityChange"
+   ],
+   "notes": [
+    "no reading within 45 min of 9am",
+    "no reading within 45 min of 3pm",
+    "no rainfall_24hr window ending 09:00 on this date",
+    "no overnight minimum window ending 09:00 on this date",
+    "no closed daytime maximum window on this date"
+   ]
+  },
+  "Newcastle": {
+   "reason": "required observations incomplete",
+   "missing": [
+    "MinTemp",
+    "MaxTemp",
+    "Rainfall",
+    "WindGustSpeed",
+    "WindDir9am",
+    "WindDir3pm",
+    "WindSpeed9am",
+    "WindSpeed3pm",
+    "Humidity9am",
+    "Humidity3pm",
+    "Pressure9am",
+    "Pressure3pm",
+    "Temp9am",
+    "Temp3pm",
+    "RainToday",
+    "TempRange",
+    "PressureChange",
+    "HumidityChange"
+   ],
+   "notes": [
+    "no reading within 45 min of 9am",
+    "no reading within 45 min of 3pm",
+    "no rainfall_24hr window ending 09:00 on this date",
+    "no overnight minimum window ending 09:00 on this date",
+    "no closed daytime maximum window on this date"
+   ]
+  },
+  "NorahHead": {
+   "reason": "required observations incomplete",
+   "missing": [
+    "MinTemp",
+    "MaxTemp",
+    "Rainfall",
+    "WindGustSpeed",
+    "WindDir9am",
+    "WindDir3pm",
+    "WindSpeed9am",
+    "WindSpeed3pm",
+    "Humidity9am",
+    "Humidity3pm",
+    "Pressure9am",
+    "Pressure3pm",
+    "Temp9am",
+    "Temp3pm",
+    "RainToday",
+    "TempRange",
+    "PressureChange",
+    "HumidityChange"
+   ],
+   "notes": [
+    "no reading within 45 min of 9am",
+    "no reading within 45 min of 3pm",
+    "no rainfall_24hr window ending 09:00 on this date",
+    "no overnight minimum window ending 09:00 on this date",
+    "no closed daytime maximum window on this date"
+   ]
+  },
+  "NorfolkIsland": {
+   "reason": "required observations incomplete",
+   "missing": [
+    "MinTemp",
+    "MaxTemp",
+    "Rainfall",
+    "WindGustSpeed",
+    "WindDir9am",
+    "WindDir3pm",
+    "WindSpeed9am",
+    "WindSpeed3pm",
+    "Humidity9am",
+    "Humidity3pm",
+    "Pressure9am",
+    "Pressure3pm",
+    "Temp9am",
+    "Temp3pm",
+    "RainToday",
+    "TempRange",
+    "PressureChange",
+    "HumidityChange"
+   ],
+   "notes": [
+    "no reading within 45 min of 9am",
+    "no reading within 45 min of 3pm",
+    "no rainfall_24hr window ending 09:00 on this date",
+    "no overnight minimum window ending 09:00 on this date",
+    "no closed daytime maximum window on this date"
+   ]
+  },
+  "Nuriootpa": {
+   "reason": "required observations incomplete",
+   "missing": [
+    "MinTemp",
+    "MaxTemp",
+    "Rainfall",
+    "WindGustSpeed",
+    "WindDir9am",
+    "WindDir3pm",
+    "WindSpeed9am",
+    "WindSpeed3pm",
+    "Humidity9am",
+    "Humidity3pm",
+    "Pressure9am",
+    "Pressure3pm",
+    "Temp9am",
+    "Temp3pm",
+    "RainToday",
+    "TempRange",
+    "PressureChange",
+    "HumidityChange"
+   ],
+   "notes": [
+    "no reading within 45 min of 9am",
+    "no reading within 45 min of 3pm",
+    "no rainfall_24hr window ending 09:00 on this date",
+    "no overnight minimum window ending 09:00 on this date",
+    "no closed daytime maximum window on this date"
+   ]
+  },
+  "PearceRAAF": {
+   "reason": "required observations incomplete",
+   "missing": [
+    "MinTemp",
+    "MaxTemp",
+    "Rainfall",
+    "WindGustSpeed",
+    "WindDir9am",
+    "WindDir3pm",
+    "WindSpeed9am",
+    "WindSpeed3pm",
+    "Humidity9am",
+    "Humidity3pm",
+    "Pressure9am",
+    "Pressure3pm",
+    "Temp9am",
+    "Temp3pm",
+    "RainToday",
+    "TempRange",
+    "PressureChange",
+    "HumidityChange"
+   ],
+   "notes": [
+    "no reading within 45 min of 9am",
+    "no reading within 45 min of 3pm",
+    "no rainfall_24hr window ending 09:00 on this date",
+    "no overnight minimum window ending 09:00 on this date",
+    "no closed daytime maximum window on this date"
+   ]
+  },
+  "Penrith": {
+   "reason": "required observations incomplete",
+   "missing": [
+    "MinTemp",
+    "MaxTemp",
+    "Rainfall",
+    "WindGustSpeed",
+    "WindDir9am",
+    "WindDir3pm",
+    "WindSpeed9am",
+    "WindSpeed3pm",
+    "Humidity9am",
+    "Humidity3pm",
+    "Pressure9am",
+    "Pressure3pm",
+    "Temp9am",
+    "Temp3pm",
+    "RainToday",
+    "TempRange",
+    "PressureChange",
+    "HumidityChange"
+   ],
+   "notes": [
+    "no reading within 45 min of 9am",
+    "no reading within 45 min of 3pm",
+    "no rainfall_24hr window ending 09:00 on this date",
+    "no overnight minimum window ending 09:00 on this date",
+    "no closed daytime maximum window on this date"
+   ]
+  },
+  "Perth": {
+   "reason": "required observations incomplete",
+   "missing": [
+    "MinTemp",
+    "MaxTemp",
+    "Rainfall",
+    "WindGustSpeed",
+    "WindDir9am",
+    "WindDir3pm",
+    "WindSpeed9am",
+    "WindSpeed3pm",
+    "Humidity9am",
+    "Humidity3pm",
+    "Pressure9am",
+    "Pressure3pm",
+    "Temp9am",
+    "Temp3pm",
+    "RainToday",
+    "TempRange",
+    "PressureChange",
+    "HumidityChange"
+   ],
+   "notes": [
+    "no reading within 45 min of 9am",
+    "no reading within 45 min of 3pm",
+    "no rainfall_24hr window ending 09:00 on this date",
+    "no overnight minimum window ending 09:00 on this date",
+    "no closed daytime maximum window on this date"
+   ]
+  },
+  "PerthAirport": {
+   "reason": "required observations incomplete",
+   "missing": [
+    "MinTemp",
+    "MaxTemp",
+    "Rainfall",
+    "WindGustSpeed",
+    "WindDir9am",
+    "WindDir3pm",
+    "WindSpeed9am",
+    "WindSpeed3pm",
+    "Humidity9am",
+    "Humidity3pm",
+    "Pressure9am",
+    "Pressure3pm",
+    "Temp9am",
+    "Temp3pm",
+    "RainToday",
+    "TempRange",
+    "PressureChange",
+    "HumidityChange"
+   ],
+   "notes": [
+    "no reading within 45 min of 9am",
+    "no reading within 45 min of 3pm",
+    "no rainfall_24hr window ending 09:00 on this date",
+    "no overnight minimum window ending 09:00 on this date",
+    "no closed daytime maximum window on this date"
+   ]
+  },
+  "Portland": {
+   "reason": "required observations incomplete",
+   "missing": [
+    "MinTemp",
+    "MaxTemp",
+    "Rainfall",
+    "WindGustSpeed",
+    "WindDir9am",
+    "WindDir3pm",
+    "WindSpeed9am",
+    "WindSpeed3pm",
+    "Humidity9am",
+    "Humidity3pm",
+    "Pressure9am",
+    "Pressure3pm",
+    "Temp9am",
+    "Temp3pm",
+    "RainToday",
+    "TempRange",
+    "PressureChange",
+    "HumidityChange"
+   ],
+   "notes": [
+    "no reading within 45 min of 9am",
+    "no reading within 45 min of 3pm",
+    "no rainfall_24hr window ending 09:00 on this date",
+    "no overnight minimum window ending 09:00 on this date",
+    "no closed daytime maximum window on this date"
+   ]
+  },
+  "Richmond": {
+   "reason": "required observations incomplete",
+   "missing": [
+    "MinTemp",
+    "MaxTemp",
+    "Rainfall",
+    "WindGustSpeed",
+    "WindDir9am",
+    "WindDir3pm",
+    "WindSpeed9am",
+    "WindSpeed3pm",
+    "Humidity9am",
+    "Humidity3pm",
+    "Pressure9am",
+    "Pressure3pm",
+    "Temp9am",
+    "Temp3pm",
+    "RainToday",
+    "TempRange",
+    "PressureChange",
+    "HumidityChange"
+   ],
+   "notes": [
+    "no reading within 45 min of 9am",
+    "no reading within 45 min of 3pm",
+    "no rainfall_24hr window ending 09:00 on this date",
+    "no overnight minimum window ending 09:00 on this date",
+    "no closed daytime maximum window on this date"
+   ]
+  },
+  "Sale": {
+   "reason": "required observations incomplete",
+   "missing": [
+    "MinTemp",
+    "MaxTemp",
+    "Rainfall",
+    "WindGustSpeed",
+    "WindDir9am",
+    "WindDir3pm",
+    "WindSpeed9am",
+    "WindSpeed3pm",
+    "Humidity9am",
+    "Humidity3pm",
+    "Pressure9am",
+    "Pressure3pm",
+    "Temp9am",
+    "Temp3pm",
+    "RainToday",
+    "TempRange",
+    "PressureChange",
+    "HumidityChange"
+   ],
+   "notes": [
+    "no reading within 45 min of 9am",
+    "no reading within 45 min of 3pm",
+    "no rainfall_24hr window ending 09:00 on this date",
+    "no overnight minimum window ending 09:00 on this date",
+    "no closed daytime maximum window on this date"
+   ]
+  },
+  "SalmonGums": {
+   "reason": "required observations incomplete",
+   "missing": [
+    "MinTemp",
+    "MaxTemp",
+    "Rainfall",
+    "WindGustSpeed",
+    "WindDir9am",
+    "WindDir3pm",
+    "WindSpeed9am",
+    "WindSpeed3pm",
+    "Humidity9am",
+    "Humidity3pm",
+    "Pressure9am",
+    "Pressure3pm",
+    "Temp9am",
+    "Temp3pm",
+    "RainToday",
+    "TempRange",
+    "PressureChange",
+    "HumidityChange"
+   ],
+   "notes": [
+    "no reading within 45 min of 9am",
+    "no reading within 45 min of 3pm",
+    "no rainfall_24hr window ending 09:00 on this date",
+    "no overnight minimum window ending 09:00 on this date",
+    "no closed daytime maximum window on this date"
+   ]
+  },
+  "Sydney": {
+   "reason": "required observations incomplete",
+   "missing": [
+    "MinTemp",
+    "MaxTemp",
+    "Rainfall",
+    "WindGustSpeed",
+    "WindDir9am",
+    "WindDir3pm",
+    "WindSpeed9am",
+    "WindSpeed3pm",
+    "Humidity9am",
+    "Humidity3pm",
+    "Pressure9am",
+    "Pressure3pm",
+    "Temp9am",
+    "Temp3pm",
+    "RainToday",
+    "TempRange",
+    "PressureChange",
+    "HumidityChange"
+   ],
+   "notes": [
+    "no reading within 45 min of 9am",
+    "no reading within 45 min of 3pm",
+    "no rainfall_24hr window ending 09:00 on this date",
+    "no overnight minimum window ending 09:00 on this date",
+    "no closed daytime maximum window on this date"
+   ]
+  },
+  "SydneyAirport": {
+   "reason": "required observations incomplete",
+   "missing": [
+    "MinTemp",
+    "MaxTemp",
+    "Rainfall",
+    "WindGustSpeed",
+    "WindDir9am",
+    "WindDir3pm",
+    "WindSpeed9am",
+    "WindSpeed3pm",
+    "Humidity9am",
+    "Humidity3pm",
+    "Pressure9am",
+    "Pressure3pm",
+    "Temp9am",
+    "Temp3pm",
+    "RainToday",
+    "TempRange",
+    "PressureChange",
+    "HumidityChange"
+   ],
+   "notes": [
+    "no reading within 45 min of 9am",
+    "no reading within 45 min of 3pm",
+    "no rainfall_24hr window ending 09:00 on this date",
+    "no overnight minimum window ending 09:00 on this date",
+    "no closed daytime maximum window on this date"
+   ]
+  },
+  "Townsville": {
+   "reason": "required observations incomplete",
+   "missing": [
+    "MinTemp",
+    "MaxTemp",
+    "Rainfall",
+    "WindGustSpeed",
+    "WindDir9am",
+    "WindDir3pm",
+    "WindSpeed9am",
+    "WindSpeed3pm",
+    "Humidity9am",
+    "Humidity3pm",
+    "Pressure9am",
+    "Pressure3pm",
+    "Temp9am",
+    "Temp3pm",
+    "RainToday",
+    "TempRange",
+    "PressureChange",
+    "HumidityChange"
+   ],
+   "notes": [
+    "no reading within 45 min of 9am",
+    "no reading within 45 min of 3pm",
+    "no rainfall_24hr window ending 09:00 on this date",
+    "no overnight minimum window ending 09:00 on this date",
+    "no closed daytime maximum window on this date"
+   ]
+  },
+  "Tuggeranong": {
+   "reason": "required observations incomplete",
+   "missing": [
+    "MinTemp",
+    "MaxTemp",
+    "Rainfall",
+    "WindGustSpeed",
+    "WindDir9am",
+    "WindDir3pm",
+    "WindSpeed9am",
+    "WindSpeed3pm",
+    "Humidity9am",
+    "Humidity3pm",
+    "Pressure9am",
+    "Pressure3pm",
+    "Temp9am",
+    "Temp3pm",
+    "RainToday",
+    "TempRange",
+    "PressureChange",
+    "HumidityChange"
+   ],
+   "notes": [
+    "no reading within 45 min of 9am",
+    "no reading within 45 min of 3pm",
+    "no rainfall_24hr window ending 09:00 on this date",
+    "no overnight minimum window ending 09:00 on this date",
+    "no closed daytime maximum window on this date"
+   ]
+  },
+  "WaggaWagga": {
+   "reason": "required observations incomplete",
+   "missing": [
+    "MinTemp",
+    "MaxTemp",
+    "Rainfall",
+    "WindGustSpeed",
+    "WindDir9am",
+    "WindDir3pm",
+    "WindSpeed9am",
+    "WindSpeed3pm",
+    "Humidity9am",
+    "Humidity3pm",
+    "Pressure9am",
+    "Pressure3pm",
+    "Temp9am",
+    "Temp3pm",
+    "RainToday",
+    "TempRange",
+    "PressureChange",
+    "HumidityChange"
+   ],
+   "notes": [
+    "no reading within 45 min of 9am",
+    "no reading within 45 min of 3pm",
+    "no rainfall_24hr window ending 09:00 on this date",
+    "no overnight minimum window ending 09:00 on this date",
+    "no closed daytime maximum window on this date"
+   ]
+  },
+  "Walpole": {
+   "reason": "required observations incomplete",
+   "missing": [
+    "MinTemp",
+    "MaxTemp",
+    "Rainfall",
+    "WindGustSpeed",
+    "WindDir9am",
+    "WindDir3pm",
+    "WindSpeed9am",
+    "WindSpeed3pm",
+    "Humidity9am",
+    "Humidity3pm",
+    "Pressure9am",
+    "Pressure3pm",
+    "Temp9am",
+    "Temp3pm",
+    "RainToday",
+    "TempRange",
+    "PressureChange",
+    "HumidityChange"
+   ],
+   "notes": [
+    "no reading within 45 min of 9am",
+    "no reading within 45 min of 3pm",
+    "no rainfall_24hr window ending 09:00 on this date",
+    "no overnight minimum window ending 09:00 on this date",
+    "no closed daytime maximum window on this date"
+   ]
+  },
+  "Williamtown": {
+   "reason": "required observations incomplete",
+   "missing": [
+    "MinTemp",
+    "MaxTemp",
+    "Rainfall",
+    "WindGustSpeed",
+    "WindDir9am",
+    "WindDir3pm",
+    "WindSpeed9am",
+    "WindSpeed3pm",
+    "Humidity9am",
+    "Humidity3pm",
+    "Pressure9am",
+    "Pressure3pm",
+    "Temp9am",
+    "Temp3pm",
+    "RainToday",
+    "TempRange",
+    "PressureChange",
+    "HumidityChange"
+   ],
+   "notes": [
+    "no reading within 45 min of 9am",
+    "no reading within 45 min of 3pm",
+    "no rainfall_24hr window ending 09:00 on this date",
+    "no overnight minimum window ending 09:00 on this date",
+    "no closed daytime maximum window on this date"
+   ]
+  },
+  "Witchcliffe": {
+   "reason": "required observations incomplete",
+   "missing": [
+    "MinTemp",
+    "MaxTemp",
+    "Rainfall",
+    "WindGustSpeed",
+    "WindDir9am",
+    "WindDir3pm",
+    "WindSpeed9am",
+    "WindSpeed3pm",
+    "Humidity9am",
+    "Humidity3pm",
+    "Pressure9am",
+    "Pressure3pm",
+    "Temp9am",
+    "Temp3pm",
+    "RainToday",
+    "TempRange",
+    "PressureChange",
+    "HumidityChange"
+   ],
+   "notes": [
+    "no reading within 45 min of 9am",
+    "no reading within 45 min of 3pm",
+    "no rainfall_24hr window ending 09:00 on this date",
+    "no overnight minimum window ending 09:00 on this date",
+    "no closed daytime maximum window on this date"
+   ]
+  },
+  "Woomera": {
+   "reason": "required observations incomplete",
+   "missing": [
+    "MinTemp",
+    "MaxTemp",
+    "Rainfall",
+    "WindGustSpeed",
+    "WindDir9am",
+    "WindDir3pm",
+    "WindSpeed9am",
+    "WindSpeed3pm",
+    "Humidity9am",
+    "Humidity3pm",
+    "Pressure9am",
+    "Pressure3pm",
+    "Temp9am",
+    "Temp3pm",
+    "RainToday",
+    "TempRange",
+    "PressureChange",
+    "HumidityChange"
+   ],
+   "notes": [
+    "no reading within 45 min of 9am",
+    "no reading within 45 min of 3pm",
+    "no rainfall_24hr window ending 09:00 on this date",
+    "no overnight minimum window ending 09:00 on this date",
+    "no closed daytime maximum window on this date"
+   ]
+  }
+ }
+}

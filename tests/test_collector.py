@@ -131,7 +131,7 @@ def test_parse_product_tolerates_a_station_with_no_period():
 
 # ---------------------------------------------------------------- storage
 def test_storage_is_idempotent(tmp_path):
-    from collector.collect import setup_db, store
+    from collector.collect import setup_db, store_reading as store
     db = setup_db(tmp_path / "t.db")
     r = validate(obs(air_temperature="26.1"))
     assert store(db, r) == 1
@@ -139,7 +139,7 @@ def test_storage_is_idempotent(tmp_path):
     assert db.execute("select count(*) from observations").fetchone()[0] == 1
 
 def test_reading_without_a_timestamp_is_not_stored(tmp_path):
-    from collector.collect import setup_db, store
+    from collector.collect import setup_db, store_reading as store
     db = setup_db(tmp_path / "t.db")
     r = validate(obs(air_temperature="26.1"))
     r.observed_utc = ""
