@@ -1,0 +1,58 @@
+name: RainSignal Collector
+
+# Polls the Bureau of Meteorology observation products and commits new readings.
+#
+# GitHub cron is UTC and may be delayed when the service is busy. That is tolerable
+# here: storage is keyed on (location, observed_utc) and inserts ignore duplicates,
+# so a late or skipped run costs freshness but never completeness.
+
+on:
+  schedule:
+    # Every three hours. BoM refreshes most stations every 30 minutes, so this
+    # samples often enough to build a day's readings without hammering a public
+    # service we are a guest on.
+    - cron: "20 */3 * * *"
+  workflow_dispatch: {}
+
+concurrency:
+  group: rainsignal-collector
+  cancel-in-progress: false
+
+permissions:
+  contents: write
+
+jobs:
+  collect:
+    runs-on: ubuntu-latest
+    # A BoM outage costs 7 products x (2 retries + 1) x 45s plus backoff. Without
+    # this cap the job would inherit the 360-minute default and one bad night could
+    # burn the monthly quota. A healthy run takes about 15 seconds.
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+          # No pip cache: the collector imports only the standard library, so there
+          # is nothing to install and nothing to cache.
+
+      - name: Collect observations
+        run: python collector/collect.py
+
+      - name: Upload health report
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: health-${{ github.run_id }}
+          path: data/live/health.json
+          retention-days: 14
+
+      - name: Commit new observations
+        if: success()
+        run: |
+          git config user.name  "rainsignal-collector"
+          git config user.email "actions@github.com"
+          git add data/live/
+          git diff --staged --quiet || git commit -m "data: collector run $(date -u +%FT%TZ)"
+          git push
