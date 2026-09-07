@@ -1,7 +1,7 @@
 {
- "generated_utc": "2026-09-06T21:58:55+00:00",
- "observation_date": "2026-09-05",
- "target_date": "2026-09-06",
+ "generated_utc": "2026-09-07T18:18:47+00:00",
+ "observation_date": "2026-09-06",
+ "target_date": "2026-09-07",
  "what_this_is": "A machine-learning estimate of the chance of more than 1 mm of rain on the target date, computed from completed observations recorded on the observation date.",
  "not_a_bureau_forecast": true,
  "disclaimer": "This is a model estimate produced by a student project, not a forecast issued by the Bureau of Meteorology. For official forecasts see bom.gov.au.",
@@ -26,7 +26,6 @@
    "missing": [
     "MinTemp",
     "MaxTemp",
-    "Rainfall",
     "WindGustSpeed",
     "WindDir9am",
     "WindDir3pm",
@@ -38,7 +37,6 @@
     "Pressure3pm",
     "Temp9am",
     "Temp3pm",
-    "RainToday",
     "TempRange",
     "PressureChange",
     "HumidityChange"
@@ -46,7 +44,6 @@
    "notes": [
     "no reading within 45 min of 9am",
     "no reading within 45 min of 3pm",
-    "no rainfall_24hr window ending 09:00 on this date",
     "no overnight minimum window ending 09:00 on this date",
     "no closed daytime maximum window on this date"
    ]
@@ -58,15 +55,11 @@
     "MaxTemp",
     "Rainfall",
     "WindGustSpeed",
-    "WindDir9am",
     "WindDir3pm",
-    "WindSpeed9am",
     "WindSpeed3pm",
-    "Humidity9am",
     "Humidity3pm",
     "Pressure9am",
     "Pressure3pm",
-    "Temp9am",
     "Temp3pm",
     "RainToday",
     "TempRange",
@@ -74,7 +67,6 @@
     "HumidityChange"
    ],
    "notes": [
-    "no reading within 45 min of 9am",
     "no reading within 45 min of 3pm",
     "no rainfall_24hr window ending 09:00 on this date",
     "no overnight minimum window ending 09:00 on this date",
@@ -86,7 +78,6 @@
    "missing": [
     "MinTemp",
     "MaxTemp",
-    "Rainfall",
     "WindGustSpeed",
     "WindDir9am",
     "WindDir3pm",
@@ -98,7 +89,6 @@
     "Pressure3pm",
     "Temp9am",
     "Temp3pm",
-    "RainToday",
     "TempRange",
     "PressureChange",
     "HumidityChange"
@@ -106,7 +96,6 @@
    "notes": [
     "no reading within 45 min of 9am",
     "no reading within 45 min of 3pm",
-    "no rainfall_24hr window ending 09:00 on this date",
     "no overnight minimum window ending 09:00 on this date",
     "no closed daytime maximum window on this date"
    ]
@@ -116,7 +105,6 @@
    "missing": [
     "MinTemp",
     "MaxTemp",
-    "Rainfall",
     "WindGustSpeed",
     "WindDir9am",
     "WindDir3pm",
@@ -128,7 +116,6 @@
     "Pressure3pm",
     "Temp9am",
     "Temp3pm",
-    "RainToday",
     "TempRange",
     "PressureChange",
     "HumidityChange"
@@ -136,7 +123,6 @@
    "notes": [
     "no reading within 45 min of 9am",
     "no reading within 45 min of 3pm",
-    "no rainfall_24hr window ending 09:00 on this date",
     "no overnight minimum window ending 09:00 on this date",
     "no closed daytime maximum window on this date"
    ]
@@ -146,7 +132,6 @@
    "missing": [
     "MinTemp",
     "MaxTemp",
-    "Rainfall",
     "WindGustSpeed",
     "WindDir9am",
     "WindDir3pm",
@@ -158,7 +143,6 @@
     "Pressure3pm",
     "Temp9am",
     "Temp3pm",
-    "RainToday",
     "TempRange",
     "PressureChange",
     "HumidityChange"
@@ -166,7 +150,6 @@
    "notes": [
     "no reading within 45 min of 9am",
     "no reading within 45 min of 3pm",
-    "no rainfall_24hr window ending 09:00 on this date",
     "no overnight minimum window ending 09:00 on this date",
     "no closed daytime maximum window on this date"
    ]
@@ -176,7 +159,6 @@
    "missing": [
     "MinTemp",
     "MaxTemp",
-    "Rainfall",
     "WindGustSpeed",
     "WindDir9am",
     "WindDir3pm",
@@ -188,7 +170,6 @@
     "Pressure3pm",
     "Temp9am",
     "Temp3pm",
-    "RainToday",
     "TempRange",
     "PressureChange",
     "HumidityChange"
@@ -196,7 +177,6 @@
    "notes": [
     "no reading within 45 min of 9am",
     "no reading within 45 min of 3pm",
-    "no rainfall_24hr window ending 09:00 on this date",
     "no overnight minimum window ending 09:00 on this date",
     "no closed daytime maximum window on this date"
    ]
@@ -206,7 +186,6 @@
    "missing": [
     "MinTemp",
     "MaxTemp",
-    "Rainfall",
     "WindGustSpeed",
     "WindDir9am",
     "WindDir3pm",
@@ -218,7 +197,6 @@
     "Pressure3pm",
     "Temp9am",
     "Temp3pm",
-    "RainToday",
     "TempRange",
     "PressureChange",
     "HumidityChange"
@@ -226,7 +204,6 @@
    "notes": [
     "no reading within 45 min of 9am",
     "no reading within 45 min of 3pm",
-    "no rainfall_24hr window ending 09:00 on this date",
     "no overnight minimum window ending 09:00 on this date",
     "no closed daytime maximum window on this date"
    ]
@@ -236,7 +213,6 @@
    "missing": [
     "MinTemp",
     "MaxTemp",
-    "Rainfall",
     "WindGustSpeed",
     "WindDir9am",
     "WindDir3pm",
@@ -248,7 +224,6 @@
     "Pressure3pm",
     "Temp9am",
     "Temp3pm",
-    "RainToday",
     "TempRange",
     "PressureChange",
     "HumidityChange"
@@ -256,7 +231,6 @@
    "notes": [
     "no reading within 45 min of 9am",
     "no reading within 45 min of 3pm",
-    "no rainfall_24hr window ending 09:00 on this date",
     "no overnight minimum window ending 09:00 on this date",
     "no closed daytime maximum window on this date"
    ]
@@ -266,7 +240,6 @@
    "missing": [
     "MinTemp",
     "MaxTemp",
-    "Rainfall",
     "WindGustSpeed",
     "WindDir9am",
     "WindDir3pm",
@@ -278,7 +251,6 @@
     "Pressure3pm",
     "Temp9am",
     "Temp3pm",
-    "RainToday",
     "TempRange",
     "PressureChange",
     "HumidityChange"
@@ -286,7 +258,6 @@
    "notes": [
     "no reading within 45 min of 9am",
     "no reading within 45 min of 3pm",
-    "no rainfall_24hr window ending 09:00 on this date",
     "no overnight minimum window ending 09:00 on this date",
     "no closed daytime maximum window on this date"
    ]
@@ -296,7 +267,6 @@
    "missing": [
     "MinTemp",
     "MaxTemp",
-    "Rainfall",
     "WindGustSpeed",
     "WindDir9am",
     "WindDir3pm",
@@ -308,7 +278,6 @@
     "Pressure3pm",
     "Temp9am",
     "Temp3pm",
-    "RainToday",
     "TempRange",
     "PressureChange",
     "HumidityChange"
@@ -316,7 +285,6 @@
    "notes": [
     "no reading within 45 min of 9am",
     "no reading within 45 min of 3pm",
-    "no rainfall_24hr window ending 09:00 on this date",
     "no overnight minimum window ending 09:00 on this date",
     "no closed daytime maximum window on this date"
    ]
@@ -326,7 +294,6 @@
    "missing": [
     "MinTemp",
     "MaxTemp",
-    "Rainfall",
     "WindGustSpeed",
     "WindDir9am",
     "WindDir3pm",
@@ -338,7 +305,6 @@
     "Pressure3pm",
     "Temp9am",
     "Temp3pm",
-    "RainToday",
     "TempRange",
     "PressureChange",
     "HumidityChange"
@@ -346,7 +312,6 @@
    "notes": [
     "no reading within 45 min of 9am",
     "no reading within 45 min of 3pm",
-    "no rainfall_24hr window ending 09:00 on this date",
     "no overnight minimum window ending 09:00 on this date",
     "no closed daytime maximum window on this date"
    ]
@@ -356,7 +321,6 @@
    "missing": [
     "MinTemp",
     "MaxTemp",
-    "Rainfall",
     "WindGustSpeed",
     "WindDir9am",
     "WindDir3pm",
@@ -368,7 +332,6 @@
     "Pressure3pm",
     "Temp9am",
     "Temp3pm",
-    "RainToday",
     "TempRange",
     "PressureChange",
     "HumidityChange"
@@ -376,7 +339,6 @@
    "notes": [
     "no reading within 45 min of 9am",
     "no reading within 45 min of 3pm",
-    "no rainfall_24hr window ending 09:00 on this date",
     "no overnight minimum window ending 09:00 on this date",
     "no closed daytime maximum window on this date"
    ]
@@ -386,7 +348,6 @@
    "missing": [
     "MinTemp",
     "MaxTemp",
-    "Rainfall",
     "WindGustSpeed",
     "WindDir9am",
     "WindDir3pm",
@@ -398,7 +359,6 @@
     "Pressure3pm",
     "Temp9am",
     "Temp3pm",
-    "RainToday",
     "TempRange",
     "PressureChange",
     "HumidityChange"
@@ -406,7 +366,6 @@
    "notes": [
     "no reading within 45 min of 9am",
     "no reading within 45 min of 3pm",
-    "no rainfall_24hr window ending 09:00 on this date",
     "no overnight minimum window ending 09:00 on this date",
     "no closed daytime maximum window on this date"
    ]
@@ -416,7 +375,6 @@
    "missing": [
     "MinTemp",
     "MaxTemp",
-    "Rainfall",
     "WindGustSpeed",
     "WindDir9am",
     "WindDir3pm",
@@ -428,7 +386,6 @@
     "Pressure3pm",
     "Temp9am",
     "Temp3pm",
-    "RainToday",
     "TempRange",
     "PressureChange",
     "HumidityChange"
@@ -436,7 +393,6 @@
    "notes": [
     "no reading within 45 min of 9am",
     "no reading within 45 min of 3pm",
-    "no rainfall_24hr window ending 09:00 on this date",
     "no overnight minimum window ending 09:00 on this date",
     "no closed daytime maximum window on this date"
    ]
@@ -446,7 +402,6 @@
    "missing": [
     "MinTemp",
     "MaxTemp",
-    "Rainfall",
     "WindGustSpeed",
     "WindDir9am",
     "WindDir3pm",
@@ -458,7 +413,6 @@
     "Pressure3pm",
     "Temp9am",
     "Temp3pm",
-    "RainToday",
     "TempRange",
     "PressureChange",
     "HumidityChange"
@@ -466,7 +420,6 @@
    "notes": [
     "no reading within 45 min of 9am",
     "no reading within 45 min of 3pm",
-    "no rainfall_24hr window ending 09:00 on this date",
     "no overnight minimum window ending 09:00 on this date",
     "no closed daytime maximum window on this date"
    ]
@@ -476,7 +429,6 @@
    "missing": [
     "MinTemp",
     "MaxTemp",
-    "Rainfall",
     "WindGustSpeed",
     "WindDir9am",
     "WindDir3pm",
@@ -488,7 +440,6 @@
     "Pressure3pm",
     "Temp9am",
     "Temp3pm",
-    "RainToday",
     "TempRange",
     "PressureChange",
     "HumidityChange"
@@ -496,7 +447,6 @@
    "notes": [
     "no reading within 45 min of 9am",
     "no reading within 45 min of 3pm",
-    "no rainfall_24hr window ending 09:00 on this date",
     "no overnight minimum window ending 09:00 on this date",
     "no closed daytime maximum window on this date"
    ]
@@ -506,7 +456,6 @@
    "missing": [
     "MinTemp",
     "MaxTemp",
-    "Rainfall",
     "WindGustSpeed",
     "WindDir9am",
     "WindDir3pm",
@@ -518,7 +467,6 @@
     "Pressure3pm",
     "Temp9am",
     "Temp3pm",
-    "RainToday",
     "TempRange",
     "PressureChange",
     "HumidityChange"
@@ -526,7 +474,6 @@
    "notes": [
     "no reading within 45 min of 9am",
     "no reading within 45 min of 3pm",
-    "no rainfall_24hr window ending 09:00 on this date",
     "no overnight minimum window ending 09:00 on this date",
     "no closed daytime maximum window on this date"
    ]
@@ -536,7 +483,6 @@
    "missing": [
     "MinTemp",
     "MaxTemp",
-    "Rainfall",
     "WindGustSpeed",
     "WindDir9am",
     "WindDir3pm",
@@ -548,7 +494,6 @@
     "Pressure3pm",
     "Temp9am",
     "Temp3pm",
-    "RainToday",
     "TempRange",
     "PressureChange",
     "HumidityChange"
@@ -556,7 +501,6 @@
    "notes": [
     "no reading within 45 min of 9am",
     "no reading within 45 min of 3pm",
-    "no rainfall_24hr window ending 09:00 on this date",
     "no overnight minimum window ending 09:00 on this date",
     "no closed daytime maximum window on this date"
    ]
@@ -566,7 +510,6 @@
    "missing": [
     "MinTemp",
     "MaxTemp",
-    "Rainfall",
     "WindGustSpeed",
     "WindDir9am",
     "WindDir3pm",
@@ -578,7 +521,6 @@
     "Pressure3pm",
     "Temp9am",
     "Temp3pm",
-    "RainToday",
     "TempRange",
     "PressureChange",
     "HumidityChange"
@@ -586,7 +528,6 @@
    "notes": [
     "no reading within 45 min of 9am",
     "no reading within 45 min of 3pm",
-    "no rainfall_24hr window ending 09:00 on this date",
     "no overnight minimum window ending 09:00 on this date",
     "no closed daytime maximum window on this date"
    ]
@@ -596,7 +537,6 @@
    "missing": [
     "MinTemp",
     "MaxTemp",
-    "Rainfall",
     "WindGustSpeed",
     "WindDir9am",
     "WindDir3pm",
@@ -608,7 +548,6 @@
     "Pressure3pm",
     "Temp9am",
     "Temp3pm",
-    "RainToday",
     "TempRange",
     "PressureChange",
     "HumidityChange"
@@ -616,7 +555,6 @@
    "notes": [
     "no reading within 45 min of 9am",
     "no reading within 45 min of 3pm",
-    "no rainfall_24hr window ending 09:00 on this date",
     "no overnight minimum window ending 09:00 on this date",
     "no closed daytime maximum window on this date"
    ]
@@ -626,7 +564,6 @@
    "missing": [
     "MinTemp",
     "MaxTemp",
-    "Rainfall",
     "WindGustSpeed",
     "WindDir9am",
     "WindDir3pm",
@@ -638,7 +575,6 @@
     "Pressure3pm",
     "Temp9am",
     "Temp3pm",
-    "RainToday",
     "TempRange",
     "PressureChange",
     "HumidityChange"
@@ -646,7 +582,6 @@
    "notes": [
     "no reading within 45 min of 9am",
     "no reading within 45 min of 3pm",
-    "no rainfall_24hr window ending 09:00 on this date",
     "no overnight minimum window ending 09:00 on this date",
     "no closed daytime maximum window on this date"
    ]
@@ -656,7 +591,6 @@
    "missing": [
     "MinTemp",
     "MaxTemp",
-    "Rainfall",
     "WindGustSpeed",
     "WindDir9am",
     "WindDir3pm",
@@ -668,7 +602,6 @@
     "Pressure3pm",
     "Temp9am",
     "Temp3pm",
-    "RainToday",
     "TempRange",
     "PressureChange",
     "HumidityChange"
@@ -676,7 +609,6 @@
    "notes": [
     "no reading within 45 min of 9am",
     "no reading within 45 min of 3pm",
-    "no rainfall_24hr window ending 09:00 on this date",
     "no overnight minimum window ending 09:00 on this date",
     "no closed daytime maximum window on this date"
    ]
@@ -686,7 +618,6 @@
    "missing": [
     "MinTemp",
     "MaxTemp",
-    "Rainfall",
     "WindGustSpeed",
     "WindDir9am",
     "WindDir3pm",
@@ -698,7 +629,6 @@
     "Pressure3pm",
     "Temp9am",
     "Temp3pm",
-    "RainToday",
     "TempRange",
     "PressureChange",
     "HumidityChange"
@@ -706,7 +636,6 @@
    "notes": [
     "no reading within 45 min of 9am",
     "no reading within 45 min of 3pm",
-    "no rainfall_24hr window ending 09:00 on this date",
     "no overnight minimum window ending 09:00 on this date",
     "no closed daytime maximum window on this date"
    ]
@@ -716,7 +645,6 @@
    "missing": [
     "MinTemp",
     "MaxTemp",
-    "Rainfall",
     "WindGustSpeed",
     "WindDir9am",
     "WindDir3pm",
@@ -728,7 +656,6 @@
     "Pressure3pm",
     "Temp9am",
     "Temp3pm",
-    "RainToday",
     "TempRange",
     "PressureChange",
     "HumidityChange"
@@ -736,7 +663,6 @@
    "notes": [
     "no reading within 45 min of 9am",
     "no reading within 45 min of 3pm",
-    "no rainfall_24hr window ending 09:00 on this date",
     "no overnight minimum window ending 09:00 on this date",
     "no closed daytime maximum window on this date"
    ]
@@ -746,7 +672,6 @@
    "missing": [
     "MinTemp",
     "MaxTemp",
-    "Rainfall",
     "WindGustSpeed",
     "WindDir9am",
     "WindDir3pm",
@@ -758,7 +683,6 @@
     "Pressure3pm",
     "Temp9am",
     "Temp3pm",
-    "RainToday",
     "TempRange",
     "PressureChange",
     "HumidityChange"
@@ -766,7 +690,6 @@
    "notes": [
     "no reading within 45 min of 9am",
     "no reading within 45 min of 3pm",
-    "no rainfall_24hr window ending 09:00 on this date",
     "no overnight minimum window ending 09:00 on this date",
     "no closed daytime maximum window on this date"
    ]
@@ -776,7 +699,6 @@
    "missing": [
     "MinTemp",
     "MaxTemp",
-    "Rainfall",
     "WindGustSpeed",
     "WindDir9am",
     "WindDir3pm",
@@ -788,7 +710,6 @@
     "Pressure3pm",
     "Temp9am",
     "Temp3pm",
-    "RainToday",
     "TempRange",
     "PressureChange",
     "HumidityChange"
@@ -796,7 +717,6 @@
    "notes": [
     "no reading within 45 min of 9am",
     "no reading within 45 min of 3pm",
-    "no rainfall_24hr window ending 09:00 on this date",
     "no overnight minimum window ending 09:00 on this date",
     "no closed daytime maximum window on this date"
    ]
@@ -806,7 +726,6 @@
    "missing": [
     "MinTemp",
     "MaxTemp",
-    "Rainfall",
     "WindGustSpeed",
     "WindDir9am",
     "WindDir3pm",
@@ -818,7 +737,6 @@
     "Pressure3pm",
     "Temp9am",
     "Temp3pm",
-    "RainToday",
     "TempRange",
     "PressureChange",
     "HumidityChange"
@@ -826,7 +744,6 @@
    "notes": [
     "no reading within 45 min of 9am",
     "no reading within 45 min of 3pm",
-    "no rainfall_24hr window ending 09:00 on this date",
     "no overnight minimum window ending 09:00 on this date",
     "no closed daytime maximum window on this date"
    ]
@@ -835,8 +752,6 @@
    "reason": "required observations incomplete",
    "missing": [
     "MinTemp",
-    "MaxTemp",
-    "Rainfall",
     "WindGustSpeed",
     "WindDir9am",
     "WindDir3pm",
@@ -848,7 +763,6 @@
     "Pressure3pm",
     "Temp9am",
     "Temp3pm",
-    "RainToday",
     "TempRange",
     "PressureChange",
     "HumidityChange"
@@ -856,9 +770,8 @@
    "notes": [
     "no reading within 45 min of 9am",
     "no reading within 45 min of 3pm",
-    "no rainfall_24hr window ending 09:00 on this date",
     "no overnight minimum window ending 09:00 on this date",
-    "no closed daytime maximum window on this date"
+    "MaxTemp/MinTemp use BoM's 06:00-21:00 and 18:00-09:00 windows; weatherAUS uses 9am-to-9am"
    ]
   },
   "Penrith": {
@@ -866,7 +779,6 @@
    "missing": [
     "MinTemp",
     "MaxTemp",
-    "Rainfall",
     "WindGustSpeed",
     "WindDir9am",
     "WindDir3pm",
@@ -878,7 +790,6 @@
     "Pressure3pm",
     "Temp9am",
     "Temp3pm",
-    "RainToday",
     "TempRange",
     "PressureChange",
     "HumidityChange"
@@ -886,7 +797,6 @@
    "notes": [
     "no reading within 45 min of 9am",
     "no reading within 45 min of 3pm",
-    "no rainfall_24hr window ending 09:00 on this date",
     "no overnight minimum window ending 09:00 on this date",
     "no closed daytime maximum window on this date"
    ]
@@ -895,8 +805,6 @@
    "reason": "required observations incomplete",
    "missing": [
     "MinTemp",
-    "MaxTemp",
-    "Rainfall",
     "WindGustSpeed",
     "WindDir9am",
     "WindDir3pm",
@@ -908,7 +816,6 @@
     "Pressure3pm",
     "Temp9am",
     "Temp3pm",
-    "RainToday",
     "TempRange",
     "PressureChange",
     "HumidityChange"
@@ -916,17 +823,14 @@
    "notes": [
     "no reading within 45 min of 9am",
     "no reading within 45 min of 3pm",
-    "no rainfall_24hr window ending 09:00 on this date",
     "no overnight minimum window ending 09:00 on this date",
-    "no closed daytime maximum window on this date"
+    "MaxTemp/MinTemp use BoM's 06:00-21:00 and 18:00-09:00 windows; weatherAUS uses 9am-to-9am"
    ]
   },
   "PerthAirport": {
    "reason": "required observations incomplete",
    "missing": [
     "MinTemp",
-    "MaxTemp",
-    "Rainfall",
     "WindGustSpeed",
     "WindDir9am",
     "WindDir3pm",
@@ -938,7 +842,6 @@
     "Pressure3pm",
     "Temp9am",
     "Temp3pm",
-    "RainToday",
     "TempRange",
     "PressureChange",
     "HumidityChange"
@@ -946,9 +849,8 @@
    "notes": [
     "no reading within 45 min of 9am",
     "no reading within 45 min of 3pm",
-    "no rainfall_24hr window ending 09:00 on this date",
     "no overnight minimum window ending 09:00 on this date",
-    "no closed daytime maximum window on this date"
+    "MaxTemp/MinTemp use BoM's 06:00-21:00 and 18:00-09:00 windows; weatherAUS uses 9am-to-9am"
    ]
   },
   "Portland": {
@@ -956,7 +858,6 @@
    "missing": [
     "MinTemp",
     "MaxTemp",
-    "Rainfall",
     "WindGustSpeed",
     "WindDir9am",
     "WindDir3pm",
@@ -968,7 +869,6 @@
     "Pressure3pm",
     "Temp9am",
     "Temp3pm",
-    "RainToday",
     "TempRange",
     "PressureChange",
     "HumidityChange"
@@ -976,7 +876,6 @@
    "notes": [
     "no reading within 45 min of 9am",
     "no reading within 45 min of 3pm",
-    "no rainfall_24hr window ending 09:00 on this date",
     "no overnight minimum window ending 09:00 on this date",
     "no closed daytime maximum window on this date"
    ]
@@ -986,7 +885,6 @@
    "missing": [
     "MinTemp",
     "MaxTemp",
-    "Rainfall",
     "WindGustSpeed",
     "WindDir9am",
     "WindDir3pm",
@@ -998,7 +896,6 @@
     "Pressure3pm",
     "Temp9am",
     "Temp3pm",
-    "RainToday",
     "TempRange",
     "PressureChange",
     "HumidityChange"
@@ -1006,7 +903,6 @@
    "notes": [
     "no reading within 45 min of 9am",
     "no reading within 45 min of 3pm",
-    "no rainfall_24hr window ending 09:00 on this date",
     "no overnight minimum window ending 09:00 on this date",
     "no closed daytime maximum window on this date"
    ]
@@ -1016,7 +912,6 @@
    "missing": [
     "MinTemp",
     "MaxTemp",
-    "Rainfall",
     "WindGustSpeed",
     "WindDir9am",
     "WindDir3pm",
@@ -1028,7 +923,6 @@
     "Pressure3pm",
     "Temp9am",
     "Temp3pm",
-    "RainToday",
     "TempRange",
     "PressureChange",
     "HumidityChange"
@@ -1036,7 +930,6 @@
    "notes": [
     "no reading within 45 min of 9am",
     "no reading within 45 min of 3pm",
-    "no rainfall_24hr window ending 09:00 on this date",
     "no overnight minimum window ending 09:00 on this date",
     "no closed daytime maximum window on this date"
    ]
@@ -1045,8 +938,6 @@
    "reason": "required observations incomplete",
    "missing": [
     "MinTemp",
-    "MaxTemp",
-    "Rainfall",
     "WindGustSpeed",
     "WindDir9am",
     "WindDir3pm",
@@ -1058,7 +949,6 @@
     "Pressure3pm",
     "Temp9am",
     "Temp3pm",
-    "RainToday",
     "TempRange",
     "PressureChange",
     "HumidityChange"
@@ -1066,9 +956,8 @@
    "notes": [
     "no reading within 45 min of 9am",
     "no reading within 45 min of 3pm",
-    "no rainfall_24hr window ending 09:00 on this date",
     "no overnight minimum window ending 09:00 on this date",
-    "no closed daytime maximum window on this date"
+    "MaxTemp/MinTemp use BoM's 06:00-21:00 and 18:00-09:00 windows; weatherAUS uses 9am-to-9am"
    ]
   },
   "Sydney": {
@@ -1076,7 +965,6 @@
    "missing": [
     "MinTemp",
     "MaxTemp",
-    "Rainfall",
     "WindGustSpeed",
     "WindDir9am",
     "WindDir3pm",
@@ -1088,7 +976,6 @@
     "Pressure3pm",
     "Temp9am",
     "Temp3pm",
-    "RainToday",
     "TempRange",
     "PressureChange",
     "HumidityChange"
@@ -1096,7 +983,6 @@
    "notes": [
     "no reading within 45 min of 9am",
     "no reading within 45 min of 3pm",
-    "no rainfall_24hr window ending 09:00 on this date",
     "no overnight minimum window ending 09:00 on this date",
     "no closed daytime maximum window on this date"
    ]
@@ -1106,7 +992,6 @@
    "missing": [
     "MinTemp",
     "MaxTemp",
-    "Rainfall",
     "WindGustSpeed",
     "WindDir9am",
     "WindDir3pm",
@@ -1118,7 +1003,6 @@
     "Pressure3pm",
     "Temp9am",
     "Temp3pm",
-    "RainToday",
     "TempRange",
     "PressureChange",
     "HumidityChange"
@@ -1126,7 +1010,6 @@
    "notes": [
     "no reading within 45 min of 9am",
     "no reading within 45 min of 3pm",
-    "no rainfall_24hr window ending 09:00 on this date",
     "no overnight minimum window ending 09:00 on this date",
     "no closed daytime maximum window on this date"
    ]
@@ -1136,7 +1019,6 @@
    "missing": [
     "MinTemp",
     "MaxTemp",
-    "Rainfall",
     "WindGustSpeed",
     "WindDir9am",
     "WindDir3pm",
@@ -1148,7 +1030,6 @@
     "Pressure3pm",
     "Temp9am",
     "Temp3pm",
-    "RainToday",
     "TempRange",
     "PressureChange",
     "HumidityChange"
@@ -1156,7 +1037,6 @@
    "notes": [
     "no reading within 45 min of 9am",
     "no reading within 45 min of 3pm",
-    "no rainfall_24hr window ending 09:00 on this date",
     "no overnight minimum window ending 09:00 on this date",
     "no closed daytime maximum window on this date"
    ]
@@ -1166,7 +1046,6 @@
    "missing": [
     "MinTemp",
     "MaxTemp",
-    "Rainfall",
     "WindGustSpeed",
     "WindDir9am",
     "WindDir3pm",
@@ -1178,7 +1057,6 @@
     "Pressure3pm",
     "Temp9am",
     "Temp3pm",
-    "RainToday",
     "TempRange",
     "PressureChange",
     "HumidityChange"
@@ -1186,7 +1064,6 @@
    "notes": [
     "no reading within 45 min of 9am",
     "no reading within 45 min of 3pm",
-    "no rainfall_24hr window ending 09:00 on this date",
     "no overnight minimum window ending 09:00 on this date",
     "no closed daytime maximum window on this date"
    ]
@@ -1196,7 +1073,6 @@
    "missing": [
     "MinTemp",
     "MaxTemp",
-    "Rainfall",
     "WindGustSpeed",
     "WindDir9am",
     "WindDir3pm",
@@ -1208,7 +1084,6 @@
     "Pressure3pm",
     "Temp9am",
     "Temp3pm",
-    "RainToday",
     "TempRange",
     "PressureChange",
     "HumidityChange"
@@ -1216,7 +1091,6 @@
    "notes": [
     "no reading within 45 min of 9am",
     "no reading within 45 min of 3pm",
-    "no rainfall_24hr window ending 09:00 on this date",
     "no overnight minimum window ending 09:00 on this date",
     "no closed daytime maximum window on this date"
    ]
@@ -1225,8 +1099,6 @@
    "reason": "required observations incomplete",
    "missing": [
     "MinTemp",
-    "MaxTemp",
-    "Rainfall",
     "WindGustSpeed",
     "WindDir9am",
     "WindDir3pm",
@@ -1238,7 +1110,6 @@
     "Pressure3pm",
     "Temp9am",
     "Temp3pm",
-    "RainToday",
     "TempRange",
     "PressureChange",
     "HumidityChange"
@@ -1246,9 +1117,8 @@
    "notes": [
     "no reading within 45 min of 9am",
     "no reading within 45 min of 3pm",
-    "no rainfall_24hr window ending 09:00 on this date",
     "no overnight minimum window ending 09:00 on this date",
-    "no closed daytime maximum window on this date"
+    "MaxTemp/MinTemp use BoM's 06:00-21:00 and 18:00-09:00 windows; weatherAUS uses 9am-to-9am"
    ]
   },
   "Williamtown": {
@@ -1256,7 +1126,6 @@
    "missing": [
     "MinTemp",
     "MaxTemp",
-    "Rainfall",
     "WindGustSpeed",
     "WindDir9am",
     "WindDir3pm",
@@ -1268,7 +1137,6 @@
     "Pressure3pm",
     "Temp9am",
     "Temp3pm",
-    "RainToday",
     "TempRange",
     "PressureChange",
     "HumidityChange"
@@ -1276,7 +1144,6 @@
    "notes": [
     "no reading within 45 min of 9am",
     "no reading within 45 min of 3pm",
-    "no rainfall_24hr window ending 09:00 on this date",
     "no overnight minimum window ending 09:00 on this date",
     "no closed daytime maximum window on this date"
    ]
@@ -1285,8 +1152,6 @@
    "reason": "required observations incomplete",
    "missing": [
     "MinTemp",
-    "MaxTemp",
-    "Rainfall",
     "WindGustSpeed",
     "WindDir9am",
     "WindDir3pm",
@@ -1298,7 +1163,6 @@
     "Pressure3pm",
     "Temp9am",
     "Temp3pm",
-    "RainToday",
     "TempRange",
     "PressureChange",
     "HumidityChange"
@@ -1306,9 +1170,8 @@
    "notes": [
     "no reading within 45 min of 9am",
     "no reading within 45 min of 3pm",
-    "no rainfall_24hr window ending 09:00 on this date",
     "no overnight minimum window ending 09:00 on this date",
-    "no closed daytime maximum window on this date"
+    "MaxTemp/MinTemp use BoM's 06:00-21:00 and 18:00-09:00 windows; weatherAUS uses 9am-to-9am"
    ]
   },
   "Woomera": {
@@ -1316,7 +1179,6 @@
    "missing": [
     "MinTemp",
     "MaxTemp",
-    "Rainfall",
     "WindGustSpeed",
     "WindDir9am",
     "WindDir3pm",
@@ -1328,7 +1190,6 @@
     "Pressure3pm",
     "Temp9am",
     "Temp3pm",
-    "RainToday",
     "TempRange",
     "PressureChange",
     "HumidityChange"
@@ -1336,7 +1197,6 @@
    "notes": [
     "no reading within 45 min of 9am",
     "no reading within 45 min of 3pm",
-    "no rainfall_24hr window ending 09:00 on this date",
     "no overnight minimum window ending 09:00 on this date",
     "no closed daytime maximum window on this date"
    ]
