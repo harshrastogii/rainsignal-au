@@ -1,5 +1,5 @@
 {
- "generated_utc": "2026-09-06T23:42:43+00:00",
+ "generated_utc": "2026-09-07T00:10:24+00:00",
  "source": "Bureau of Meteorology, anonymous FTP observation products",
  "attribution": "Bureau of Meteorology, \u00a9 Commonwealth of Australia.",
  "stale_after_minutes": 180,
@@ -7,14 +7,14 @@
   "Adelaide": {
    "Location": "Adelaide",
    "MinTemp": 7.3,
-   "MaxTemp": 14.5,
+   "MaxTemp": 15.1,
    "Rainfall": 0.8,
    "WindGustSpeed": 20.0,
    "WindGustDir": "SE",
    "RainToday": "No",
-   "observed_utc": "2026-09-06T23:40:00+00:00",
-   "observed_local": "2026-09-07T09:10:00+09:30",
-   "age_min": 3
+   "observed_utc": "2026-09-07T00:00:00+00:00",
+   "observed_local": "2026-09-07T09:30:00+09:30",
+   "age_min": 11
   },
   "Albany": {
    "Location": "Albany",
@@ -26,43 +26,43 @@
    "RainToday": "Yes",
    "observed_utc": "2026-09-06T01:00:00+00:00",
    "observed_local": "2026-09-06T09:00:00+08:00",
-   "age_min": 1363
+   "age_min": 1391
   },
   "Albury": {
    "Location": "Albury",
    "MinTemp": 7.2,
-   "MaxTemp": 13.1,
+   "MaxTemp": 14.4,
    "Rainfall": 0.2,
-   "WindGustSpeed": 20.0,
-   "WindGustDir": "W",
+   "WindGustSpeed": 22.0,
+   "WindGustDir": "WSW",
    "RainToday": "No",
-   "observed_utc": "2026-09-06T23:30:00+00:00",
-   "observed_local": "2026-09-07T09:30:00+10:00",
-   "age_min": 13
+   "observed_utc": "2026-09-07T00:00:00+00:00",
+   "observed_local": "2026-09-07T10:00:00+10:00",
+   "age_min": 11
   },
   "AliceSprings": {
    "Location": "AliceSprings",
    "MinTemp": 14.3,
-   "MaxTemp": 22.5,
+   "MaxTemp": 23.6,
    "Rainfall": 0.0,
    "WindGustSpeed": 37.0,
    "WindGustDir": "E",
    "RainToday": "No",
-   "observed_utc": "2026-09-06T23:40:00+00:00",
-   "observed_local": "2026-09-07T09:10:00+09:30",
-   "age_min": 3
+   "observed_utc": "2026-09-07T00:00:00+00:00",
+   "observed_local": "2026-09-07T09:30:00+09:30",
+   "age_min": 11
   },
   "BadgerysCreek": {
    "Location": "BadgerysCreek",
    "MinTemp": 8.2,
-   "MaxTemp": 18.7,
+   "MaxTemp": 19.7,
    "Rainfall": 0.0,
-   "WindGustSpeed": 13.0,
+   "WindGustSpeed": 17.0,
    "WindGustDir": "NNE",
    "RainToday": "No",
-   "observed_utc": "2026-09-06T23:30:00+00:00",
-   "observed_local": "2026-09-07T09:30:00+10:00",
-   "age_min": 13
+   "observed_utc": "2026-09-07T00:00:00+00:00",
+   "observed_local": "2026-09-07T10:00:00+10:00",
+   "age_min": 11
   },
   "Ballarat": {
    "Location": "Ballarat",
@@ -72,105 +72,105 @@
    "WindGustSpeed": 37.0,
    "WindGustDir": "SW",
    "RainToday": "No",
-   "observed_utc": "2026-09-06T23:30:00+00:00",
-   "observed_local": "2026-09-07T09:30:00+10:00",
-   "age_min": 13
+   "observed_utc": "2026-09-07T00:00:00+00:00",
+   "observed_local": "2026-09-07T10:00:00+10:00",
+   "age_min": 11
   },
   "Bendigo": {
    "Location": "Bendigo",
    "MinTemp": 6.4,
-   "MaxTemp": 12.7,
+   "MaxTemp": 13.1,
    "Rainfall": 0.0,
    "WindGustSpeed": 33.0,
    "WindGustDir": "SSW",
    "RainToday": "No",
-   "observed_utc": "2026-09-06T23:30:00+00:00",
-   "observed_local": "2026-09-07T09:30:00+10:00",
-   "age_min": 13
+   "observed_utc": "2026-09-07T00:00:00+00:00",
+   "observed_local": "2026-09-07T10:00:00+10:00",
+   "age_min": 11
   },
   "Brisbane": {
    "Location": "Brisbane",
    "MinTemp": 14.2,
-   "MaxTemp": 23.3,
+   "MaxTemp": 23.4,
    "Rainfall": 0.0,
    "WindGustSpeed": 32.0,
    "WindGustDir": "SSE",
    "RainToday": "No",
-   "observed_utc": "2026-09-06T23:30:00+00:00",
-   "observed_local": "2026-09-07T09:30:00+10:00",
-   "age_min": 13
+   "observed_utc": "2026-09-07T00:00:00+00:00",
+   "observed_local": "2026-09-07T10:00:00+10:00",
+   "age_min": 11
   },
   "Cairns": {
    "Location": "Cairns",
    "MinTemp": 16.4,
-   "MaxTemp": 25.3,
+   "MaxTemp": 25.9,
    "Rainfall": 0.0,
    "WindGustSpeed": 28.0,
-   "WindGustDir": "SSW",
+   "WindGustDir": "SSE",
    "RainToday": "No",
-   "observed_utc": "2026-09-06T23:30:00+00:00",
-   "observed_local": "2026-09-07T09:30:00+10:00",
-   "age_min": 13
+   "observed_utc": "2026-09-07T00:00:00+00:00",
+   "observed_local": "2026-09-07T10:00:00+10:00",
+   "age_min": 11
   },
   "Canberra": {
    "Location": "Canberra",
    "MinTemp": 4.5,
-   "MaxTemp": 13.5,
+   "MaxTemp": 14.1,
    "Rainfall": 0.2,
    "WindGustSpeed": 30.0,
-   "WindGustDir": "NW",
+   "WindGustDir": "NNW",
    "RainToday": "No",
-   "observed_utc": "2026-09-06T23:30:00+00:00",
-   "observed_local": "2026-09-07T09:30:00+10:00",
-   "age_min": 13
+   "observed_utc": "2026-09-07T00:00:00+00:00",
+   "observed_local": "2026-09-07T10:00:00+10:00",
+   "age_min": 11
   },
   "Cobar": {
    "Location": "Cobar",
    "MinTemp": 7.0,
-   "MaxTemp": 16.1,
+   "MaxTemp": 17.5,
    "Rainfall": 0.0,
-   "WindGustSpeed": 19.0,
+   "WindGustSpeed": 26.0,
    "WindGustDir": "SW",
    "RainToday": "No",
-   "observed_utc": "2026-09-06T23:30:00+00:00",
-   "observed_local": "2026-09-07T09:30:00+10:00",
-   "age_min": 13
+   "observed_utc": "2026-09-07T00:00:00+00:00",
+   "observed_local": "2026-09-07T10:00:00+10:00",
+   "age_min": 11
   },
   "CoffsHarbour": {
    "Location": "CoffsHarbour",
    "MinTemp": 10.7,
-   "MaxTemp": 21.0,
+   "MaxTemp": 22.0,
    "Rainfall": 0.0,
    "WindGustSpeed": 24.0,
-   "WindGustDir": "SSW",
+   "WindGustDir": "SSE",
    "RainToday": "No",
-   "observed_utc": "2026-09-06T23:30:00+00:00",
-   "observed_local": "2026-09-07T09:30:00+10:00",
-   "age_min": 13
+   "observed_utc": "2026-09-07T00:00:00+00:00",
+   "observed_local": "2026-09-07T10:00:00+10:00",
+   "age_min": 11
   },
   "Dartmoor": {
    "Location": "Dartmoor",
    "MinTemp": 8.0,
-   "MaxTemp": 11.6,
+   "MaxTemp": 11.9,
    "Rainfall": 2.2,
    "WindGustSpeed": 26.0,
    "WindGustDir": "SSW",
    "RainToday": "Yes",
-   "observed_utc": "2026-09-06T23:30:00+00:00",
-   "observed_local": "2026-09-07T09:30:00+10:00",
-   "age_min": 13
+   "observed_utc": "2026-09-07T00:00:00+00:00",
+   "observed_local": "2026-09-07T10:00:00+10:00",
+   "age_min": 11
   },
   "Darwin": {
    "Location": "Darwin",
    "MinTemp": 23.1,
-   "MaxTemp": 28.5,
+   "MaxTemp": 28.7,
    "Rainfall": 1.8,
    "WindGustSpeed": 26.0,
    "WindGustDir": "E",
    "RainToday": "Yes",
-   "observed_utc": "2026-09-06T23:40:00+00:00",
-   "observed_local": "2026-09-07T09:10:00+09:30",
-   "age_min": 3
+   "observed_utc": "2026-09-07T00:00:00+00:00",
+   "observed_local": "2026-09-07T09:30:00+09:30",
+   "age_min": 11
   },
   "GoldCoast": {
    "Location": "GoldCoast",
@@ -180,153 +180,153 @@
    "WindGustSpeed": 32.0,
    "WindGustDir": "S",
    "RainToday": "No",
-   "observed_utc": "2026-09-06T23:30:00+00:00",
-   "observed_local": "2026-09-07T09:30:00+10:00",
-   "age_min": 13
+   "observed_utc": "2026-09-07T00:00:00+00:00",
+   "observed_local": "2026-09-07T10:00:00+10:00",
+   "age_min": 11
   },
   "Hobart": {
    "Location": "Hobart",
    "MinTemp": 7.8,
-   "MaxTemp": 11.6,
+   "MaxTemp": 11.9,
    "Rainfall": 1.4,
    "WindGustSpeed": 56.0,
    "WindGustDir": "SW",
    "RainToday": "Yes",
-   "observed_utc": "2026-09-06T23:40:00+00:00",
-   "observed_local": "2026-09-07T09:40:00+10:00",
-   "age_min": 3
+   "observed_utc": "2026-09-07T00:00:00+00:00",
+   "observed_local": "2026-09-07T10:00:00+10:00",
+   "age_min": 11
   },
   "Launceston": {
    "Location": "Launceston",
    "MinTemp": 6.2,
-   "MaxTemp": 12.8,
+   "MaxTemp": 13.2,
    "Rainfall": 0.0,
    "WindGustSpeed": 50.0,
    "WindGustDir": "S",
    "RainToday": "No",
-   "observed_utc": "2026-09-06T23:40:00+00:00",
-   "observed_local": "2026-09-07T09:40:00+10:00",
-   "age_min": 3
+   "observed_utc": "2026-09-07T00:00:00+00:00",
+   "observed_local": "2026-09-07T10:00:00+10:00",
+   "age_min": 11
   },
   "Melbourne": {
    "Location": "Melbourne",
    "MinTemp": 10.9,
    "MaxTemp": 12.9,
    "Rainfall": 0.0,
-   "WindGustSpeed": 28.0,
-   "WindGustDir": "SW",
+   "WindGustSpeed": 33.0,
+   "WindGustDir": "SSW",
    "RainToday": "No",
-   "observed_utc": "2026-09-06T23:30:00+00:00",
-   "observed_local": "2026-09-07T09:30:00+10:00",
-   "age_min": 13
+   "observed_utc": "2026-09-07T00:00:00+00:00",
+   "observed_local": "2026-09-07T10:00:00+10:00",
+   "age_min": 11
   },
   "MelbourneAirport": {
    "Location": "MelbourneAirport",
    "MinTemp": 9.5,
-   "MaxTemp": 12.7,
+   "MaxTemp": 13.2,
    "Rainfall": 0.0,
    "WindGustSpeed": 41.0,
-   "WindGustDir": "WSW",
+   "WindGustDir": "SW",
    "RainToday": "No",
-   "observed_utc": "2026-09-06T23:30:00+00:00",
-   "observed_local": "2026-09-07T09:30:00+10:00",
-   "age_min": 13
+   "observed_utc": "2026-09-07T00:00:00+00:00",
+   "observed_local": "2026-09-07T10:00:00+10:00",
+   "age_min": 11
   },
   "Mildura": {
    "Location": "Mildura",
    "MinTemp": 5.1,
-   "MaxTemp": 13.1,
+   "MaxTemp": 13.9,
    "Rainfall": 0.2,
-   "WindGustSpeed": 24.0,
+   "WindGustSpeed": 28.0,
    "WindGustDir": "SSW",
    "RainToday": "No",
-   "observed_utc": "2026-09-06T23:30:00+00:00",
-   "observed_local": "2026-09-07T09:30:00+10:00",
-   "age_min": 13
+   "observed_utc": "2026-09-07T00:00:00+00:00",
+   "observed_local": "2026-09-07T10:00:00+10:00",
+   "age_min": 11
   },
   "Moree": {
    "Location": "Moree",
    "MinTemp": 4.2,
-   "MaxTemp": 19.0,
+   "MaxTemp": 19.7,
    "Rainfall": 0.0,
    "WindGustSpeed": 26.0,
-   "WindGustDir": "NNE",
+   "WindGustDir": "N",
    "RainToday": "No",
-   "observed_utc": "2026-09-06T23:30:00+00:00",
-   "observed_local": "2026-09-07T09:30:00+10:00",
-   "age_min": 13
+   "observed_utc": "2026-09-07T00:00:00+00:00",
+   "observed_local": "2026-09-07T10:00:00+10:00",
+   "age_min": 11
   },
   "MountGambier": {
    "Location": "MountGambier",
    "MinTemp": 7.5,
-   "MaxTemp": 12.7,
+   "MaxTemp": 13.3,
    "Rainfall": 2.4,
    "WindGustSpeed": 37.0,
    "WindGustDir": "SSW",
    "RainToday": "Yes",
-   "observed_utc": "2026-09-06T23:40:00+00:00",
-   "observed_local": "2026-09-07T09:10:00+09:30",
-   "age_min": 3
+   "observed_utc": "2026-09-07T00:00:00+00:00",
+   "observed_local": "2026-09-07T09:30:00+09:30",
+   "age_min": 11
   },
   "MountGinini": {
    "Location": "MountGinini",
    "MinTemp": 1.0,
-   "MaxTemp": 3.0,
+   "MaxTemp": 4.0,
    "Rainfall": 0.0,
-   "WindGustSpeed": 32.0,
+   "WindGustSpeed": 33.0,
    "WindGustDir": "WSW",
    "RainToday": "No",
-   "observed_utc": "2026-09-06T23:30:00+00:00",
-   "observed_local": "2026-09-07T09:30:00+10:00",
-   "age_min": 13
+   "observed_utc": "2026-09-07T00:00:00+00:00",
+   "observed_local": "2026-09-07T10:00:00+10:00",
+   "age_min": 11
   },
   "Newcastle": {
    "Location": "Newcastle",
    "MinTemp": 12.6,
-   "MaxTemp": 18.7,
+   "MaxTemp": 18.8,
    "Rainfall": 0.0,
    "WindGustSpeed": 19.0,
    "WindGustDir": "WSW",
    "RainToday": "No",
-   "observed_utc": "2026-09-06T23:30:00+00:00",
-   "observed_local": "2026-09-07T09:30:00+10:00",
-   "age_min": 13
+   "observed_utc": "2026-09-07T00:00:00+00:00",
+   "observed_local": "2026-09-07T10:00:00+10:00",
+   "age_min": 11
   },
   "NorahHead": {
    "Location": "NorahHead",
    "MinTemp": 13.7,
-   "MaxTemp": 19.8,
+   "MaxTemp": 20.2,
    "Rainfall": 0.0,
    "WindGustSpeed": 22.0,
    "WindGustDir": "S",
    "RainToday": "No",
-   "observed_utc": "2026-09-06T23:30:00+00:00",
-   "observed_local": "2026-09-07T09:30:00+10:00",
-   "age_min": 13
+   "observed_utc": "2026-09-07T00:00:00+00:00",
+   "observed_local": "2026-09-07T10:00:00+10:00",
+   "age_min": 11
   },
   "NorfolkIsland": {
    "Location": "NorfolkIsland",
    "MinTemp": 15.5,
-   "MaxTemp": 20.1,
+   "MaxTemp": 20.3,
    "Rainfall": 5.2,
    "WindGustSpeed": 57.0,
    "WindGustDir": "NW",
    "RainToday": "Yes",
-   "observed_utc": "2026-09-06T23:30:00+00:00",
-   "observed_local": "2026-09-07T11:00:00+11:30",
-   "age_min": 13
+   "observed_utc": "2026-09-07T00:00:00+00:00",
+   "observed_local": "2026-09-07T11:30:00+11:30",
+   "age_min": 11
   },
   "Nuriootpa": {
    "Location": "Nuriootpa",
    "MinTemp": 4.8,
-   "MaxTemp": 12.7,
+   "MaxTemp": 12.9,
    "Rainfall": 0.2,
    "WindGustSpeed": 26.0,
    "WindGustDir": "ESE",
    "RainToday": "No",
-   "observed_utc": "2026-09-06T23:40:00+00:00",
-   "observed_local": "2026-09-07T09:10:00+09:30",
-   "age_min": 3
+   "observed_utc": "2026-09-07T00:00:00+00:00",
+   "observed_local": "2026-09-07T09:30:00+09:30",
+   "age_min": 11
   },
   "PearceRAAF": {
    "Location": "PearceRAAF",
@@ -336,165 +336,165 @@
    "WindGustSpeed": 39.0,
    "WindGustDir": "SE",
    "RainToday": "Yes",
-   "observed_utc": "2026-09-06T23:30:00+00:00",
-   "observed_local": "2026-09-07T07:30:00+08:00",
-   "age_min": 13
+   "observed_utc": "2026-09-07T00:00:00+00:00",
+   "observed_local": "2026-09-07T08:00:00+08:00",
+   "age_min": 11
   },
   "Penrith": {
    "Location": "Penrith",
    "MinTemp": 11.5,
-   "MaxTemp": 19.7,
+   "MaxTemp": 20.9,
    "Rainfall": 0.0,
-   "WindGustSpeed": 15.0,
-   "WindGustDir": "N",
+   "WindGustSpeed": 17.0,
+   "WindGustDir": "NNE",
    "RainToday": "No",
-   "observed_utc": "2026-09-06T23:30:00+00:00",
-   "observed_local": "2026-09-07T09:30:00+10:00",
-   "age_min": 13
+   "observed_utc": "2026-09-07T00:00:00+00:00",
+   "observed_local": "2026-09-07T10:00:00+10:00",
+   "age_min": 11
   },
   "Perth": {
    "Location": "Perth",
    "MinTemp": 10.8,
-   "MaxTemp": 13.3,
+   "MaxTemp": 14.9,
    "Rainfall": 10.0,
    "WindGustSpeed": 19.0,
    "WindGustDir": "ESE",
    "RainToday": "Yes",
-   "observed_utc": "2026-09-06T23:30:00+00:00",
-   "observed_local": "2026-09-07T07:30:00+08:00",
-   "age_min": 13
+   "observed_utc": "2026-09-07T00:00:00+00:00",
+   "observed_local": "2026-09-07T08:00:00+08:00",
+   "age_min": 11
   },
   "PerthAirport": {
    "Location": "PerthAirport",
    "MinTemp": 12.4,
-   "MaxTemp": 14.4,
+   "MaxTemp": 15.3,
    "Rainfall": 6.6,
    "WindGustSpeed": 37.0,
    "WindGustDir": "ESE",
    "RainToday": "Yes",
-   "observed_utc": "2026-09-06T23:30:00+00:00",
-   "observed_local": "2026-09-07T07:30:00+08:00",
-   "age_min": 13
+   "observed_utc": "2026-09-07T00:00:00+00:00",
+   "observed_local": "2026-09-07T08:00:00+08:00",
+   "age_min": 11
   },
   "Portland": {
    "Location": "Portland",
    "MinTemp": 9.5,
-   "MaxTemp": 12.4,
+   "MaxTemp": 13.4,
    "Rainfall": 2.8,
    "WindGustSpeed": 43.0,
    "WindGustDir": "SW",
    "RainToday": "Yes",
-   "observed_utc": "2026-09-06T23:30:00+00:00",
-   "observed_local": "2026-09-07T09:30:00+10:00",
-   "age_min": 13
+   "observed_utc": "2026-09-07T00:00:00+00:00",
+   "observed_local": "2026-09-07T10:00:00+10:00",
+   "age_min": 11
   },
   "Richmond": {
    "Location": "Richmond",
    "MinTemp": 10.5,
-   "MaxTemp": 19.3,
+   "MaxTemp": 20.5,
    "Rainfall": 0.0,
-   "WindGustSpeed": 15.0,
+   "WindGustSpeed": 17.0,
    "WindGustDir": "NNE",
    "RainToday": "No",
-   "observed_utc": "2026-09-06T23:30:00+00:00",
-   "observed_local": "2026-09-07T09:30:00+10:00",
-   "age_min": 13
+   "observed_utc": "2026-09-07T00:00:00+00:00",
+   "observed_local": "2026-09-07T10:00:00+10:00",
+   "age_min": 11
   },
   "Sale": {
    "Location": "Sale",
    "MinTemp": 9.8,
-   "MaxTemp": 13.5,
+   "MaxTemp": 14.2,
    "Rainfall": 0.2,
    "WindGustSpeed": 43.0,
    "WindGustDir": "W",
    "RainToday": "No",
-   "observed_utc": "2026-09-06T23:30:00+00:00",
-   "observed_local": "2026-09-07T09:30:00+10:00",
-   "age_min": 13
+   "observed_utc": "2026-09-07T00:00:00+00:00",
+   "observed_local": "2026-09-07T10:00:00+10:00",
+   "age_min": 11
   },
   "SalmonGums": {
    "Location": "SalmonGums",
    "MinTemp": 10.7,
-   "MaxTemp": 12.5,
+   "MaxTemp": 12.9,
    "Rainfall": 0.0,
    "WindGustSpeed": 24.0,
    "WindGustDir": "ESE",
    "RainToday": "No",
-   "observed_utc": "2026-09-06T23:30:00+00:00",
-   "observed_local": "2026-09-07T07:30:00+08:00",
-   "age_min": 13
+   "observed_utc": "2026-09-07T00:00:00+00:00",
+   "observed_local": "2026-09-07T08:00:00+08:00",
+   "age_min": 11
   },
   "Sydney": {
    "Location": "Sydney",
    "MinTemp": 13.2,
-   "MaxTemp": 19.0,
+   "MaxTemp": 20.2,
    "Rainfall": 0.0,
    "WindGustSpeed": null,
    "WindGustDir": null,
    "RainToday": "No",
-   "observed_utc": "2026-09-06T23:30:00+00:00",
-   "observed_local": "2026-09-07T09:30:00+10:00",
-   "age_min": 13
+   "observed_utc": "2026-09-07T00:00:00+00:00",
+   "observed_local": "2026-09-07T10:00:00+10:00",
+   "age_min": 11
   },
   "SydneyAirport": {
    "Location": "SydneyAirport",
    "MinTemp": 13.8,
-   "MaxTemp": 20.1,
+   "MaxTemp": 20.4,
    "Rainfall": 0.0,
-   "WindGustSpeed": 19.0,
-   "WindGustDir": "WSW",
+   "WindGustSpeed": 22.0,
+   "WindGustDir": "NW",
    "RainToday": "No",
-   "observed_utc": "2026-09-06T23:30:00+00:00",
-   "observed_local": "2026-09-07T09:30:00+10:00",
-   "age_min": 13
+   "observed_utc": "2026-09-07T00:00:00+00:00",
+   "observed_local": "2026-09-07T10:00:00+10:00",
+   "age_min": 11
   },
   "Townsville": {
    "Location": "Townsville",
    "MinTemp": 13.8,
-   "MaxTemp": 24.8,
+   "MaxTemp": 25.7,
    "Rainfall": 0.0,
    "WindGustSpeed": 19.0,
-   "WindGustDir": "ESE",
+   "WindGustDir": "SE",
    "RainToday": "No",
-   "observed_utc": "2026-09-06T23:30:00+00:00",
-   "observed_local": "2026-09-07T09:30:00+10:00",
-   "age_min": 13
+   "observed_utc": "2026-09-07T00:00:00+00:00",
+   "observed_local": "2026-09-07T10:00:00+10:00",
+   "age_min": 11
   },
   "Tuggeranong": {
    "Location": "Tuggeranong",
    "MinTemp": 6.7,
-   "MaxTemp": 13.8,
+   "MaxTemp": 15.4,
    "Rainfall": 0.0,
    "WindGustSpeed": 19.0,
    "WindGustDir": "WNW",
    "RainToday": "No",
-   "observed_utc": "2026-09-06T23:30:00+00:00",
-   "observed_local": "2026-09-07T09:30:00+10:00",
-   "age_min": 13
+   "observed_utc": "2026-09-07T00:00:00+00:00",
+   "observed_local": "2026-09-07T10:00:00+10:00",
+   "age_min": 11
   },
   "WaggaWagga": {
    "Location": "WaggaWagga",
    "MinTemp": 7.9,
-   "MaxTemp": 13.7,
+   "MaxTemp": 15.0,
    "Rainfall": 0.2,
-   "WindGustSpeed": 17.0,
+   "WindGustSpeed": 24.0,
    "WindGustDir": "WNW",
    "RainToday": "No",
-   "observed_utc": "2026-09-06T23:30:00+00:00",
-   "observed_local": "2026-09-07T09:30:00+10:00",
-   "age_min": 13
+   "observed_utc": "2026-09-07T00:00:00+00:00",
+   "observed_local": "2026-09-07T10:00:00+10:00",
+   "age_min": 11
   },
   "Walpole": {
    "Location": "Walpole",
    "MinTemp": 8.3,
-   "MaxTemp": 9.8,
+   "MaxTemp": 10.9,
    "Rainfall": 0.0,
    "WindGustSpeed": 13.0,
    "WindGustDir": "ENE",
    "RainToday": "No",
-   "observed_utc": "2026-09-06T23:30:00+00:00",
-   "observed_local": "2026-09-07T07:30:00+08:00",
-   "age_min": 13
+   "observed_utc": "2026-09-07T00:00:00+00:00",
+   "observed_local": "2026-09-07T08:00:00+08:00",
+   "age_min": 11
   },
   "Williamtown": {
    "Location": "Williamtown",
@@ -504,33 +504,33 @@
    "WindGustSpeed": 15.0,
    "WindGustDir": "WNW",
    "RainToday": "No",
-   "observed_utc": "2026-09-06T23:30:00+00:00",
-   "observed_local": "2026-09-07T09:30:00+10:00",
-   "age_min": 13
+   "observed_utc": "2026-09-07T00:00:00+00:00",
+   "observed_local": "2026-09-07T10:00:00+10:00",
+   "age_min": 11
   },
   "Witchcliffe": {
    "Location": "Witchcliffe",
    "MinTemp": 7.4,
-   "MaxTemp": 9.9,
+   "MaxTemp": 11.1,
    "Rainfall": 6.6,
-   "WindGustSpeed": 22.0,
+   "WindGustSpeed": 26.0,
    "WindGustDir": "ESE",
    "RainToday": "Yes",
-   "observed_utc": "2026-09-06T23:30:00+00:00",
-   "observed_local": "2026-09-07T07:30:00+08:00",
-   "age_min": 13
+   "observed_utc": "2026-09-07T00:00:00+00:00",
+   "observed_local": "2026-09-07T08:00:00+08:00",
+   "age_min": 11
   },
   "Woomera": {
    "Location": "Woomera",
    "MinTemp": 9.7,
-   "MaxTemp": 15.4,
+   "MaxTemp": 16.1,
    "Rainfall": 0.0,
    "WindGustSpeed": 33.0,
    "WindGustDir": "ESE",
    "RainToday": "No",
-   "observed_utc": "2026-09-06T23:40:00+00:00",
-   "observed_local": "2026-09-07T09:10:00+09:30",
-   "age_min": 3
+   "observed_utc": "2026-09-07T00:00:00+00:00",
+   "observed_local": "2026-09-07T09:30:00+09:30",
+   "age_min": 11
   }
  }
 }
