@@ -155,29 +155,63 @@ def main() -> int:
 
     ap = argparse.ArgumentParser()
     ap.add_argument("--store", default=os.environ.get("RAINSIGNAL_STORE", "data/live"))
-    ap.add_argument("--date", help="observation date (station-local); "
-                                   "default is the most recent completed day")
+    ap.add_argument("--date", help="observation date (station-local). Default walks "
+                                   "back from today to the newest day that assembles.")
+    ap.add_argument("--lookback", type=int, default=3,
+                    help="how many days back to search for a complete day")
     ap.add_argument("--out", default=None)
     args = ap.parse_args()
 
     store_dir = Path(args.store)
     cache = store_dir / "cache.db"
     n = store.rebuild_cache(store_dir, cache)
-    obs_date = (date.fromisoformat(args.date) if args.date
-                else datetime.now(timezone.utc).date() - timedelta(days=1))
     print(f"store {store_dir}  ({n} readings)")
-    print(f"observation date {obs_date}  ->  target date {obs_date + timedelta(days=1)}")
-
     pre, ann, meta = load_frozen()
     print(f"frozen model: {meta['primary_model']}  "
           f"(sklearn {meta['versions']['scikit-learn']}, tf {meta['versions']['tensorflow']})")
 
-    rows = assemble_all(cache, obs_date)
-    probs, ready = predict_rows(rows, pre, ann, meta)
+    # Pick the newest observation day that actually assembles, rather than assuming
+    # "UTC yesterday". By the time this runs, the same-dated local day has usually
+    # closed everywhere in Australia, and defaulting to yesterday threw that day away
+    # and left the published estimate permanently 24 hours behind.
+    #
+    # This is safe by construction: the assembler refuses any day whose aggregate
+    # windows have not closed, so a day still in progress yields nothing and the
+    # search simply falls back. Nothing about how a prediction is made changes.
+    if args.date:
+        candidates = [date.fromisoformat(args.date)]
+    else:
+        today = datetime.now(timezone.utc).date()
+        candidates = [today - timedelta(days=i) for i in range(args.lookback)]
+
+    obs_date, rows, probs, ready = None, {}, {}, {}
+    for cand in candidates:
+        cand_rows = assemble_all(cache, cand)
+        cand_probs, cand_ready = predict_rows(cand_rows, pre, ann, meta)
+        print(f"  {cand}: {len(cand_probs)} station(s) complete")
+        if cand_probs:
+            obs_date, rows, probs, ready = cand, cand_rows, cand_probs, cand_ready
+            break
+    if obs_date is None:
+        obs_date = candidates[-1]
+        rows = assemble_all(cache, obs_date)
+    print(f"observation date {obs_date}  ->  target date {obs_date + timedelta(days=1)}")
     out = build_output(probs, ready, rows, meta, obs_date)
 
     dest = Path(args.out) if args.out else store_dir / "predictions.json"
     dest.parent.mkdir(parents=True, exist_ok=True)
+
+    # Running more often must not produce a commit per run. Compare everything except
+    # the generated timestamp; identical predictions leave the file untouched.
+    def substance(d):
+        return {k: v for k, v in d.items() if k != "generated_utc"}
+    if dest.exists():
+        try:
+            if substance(json.loads(dest.read_text())) == substance(out):
+                print(f"unchanged since the last run; {dest} left as is")
+                return 0
+        except json.JSONDecodeError:
+            pass
     dest.write_text(json.dumps(out, indent=1))
     print(f"predicted {out['stations_predicted']} station(s), "
           f"withheld {out['stations_withheld']}")

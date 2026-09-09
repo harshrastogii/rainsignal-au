@@ -8,7 +8,7 @@
 
   /* Glass. Translucent enough that the map reads through, opaque enough to hold text. */
   --glass:rgba(255,255,255,.72);
-  --glass-solid:rgba(255,255,255,.86);
+  --glass-solid:rgba(255,255,255,.78);
   --glass-hi:rgba(255,255,255,.9);      /* top highlight edge */
   --glass-line:rgba(16,28,40,.09);
   --glass-line-2:rgba(16,28,40,.055);
@@ -165,7 +165,7 @@ a:hover{color:#0a5d65}
   position:fixed;top:14px;right:14px;bottom:14px;width:var(--panel-w);z-index:7;
   display:flex;flex-direction:column;border-radius:var(--r-lg);overflow:hidden;
   background:var(--glass-solid);
-  backdrop-filter:blur(28px) saturate(180%);-webkit-backdrop-filter:blur(28px) saturate(180%);
+  backdrop-filter:blur(30px) saturate(190%);-webkit-backdrop-filter:blur(30px) saturate(190%);
   border:1px solid var(--glass-line);
   box-shadow:var(--lift-lg),inset 0 1px 0 var(--glass-hi);
 }

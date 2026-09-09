@@ -8,9 +8,14 @@ name: RainSignal Prediction
 
 on:
   schedule:
-    # After the late-local sweep, so a day's aggregate windows have closed before
-    # anything tries to predict from them.
-    - cron: "30 13 * * *"
+    # Four times a day. 13:30 UTC is just after the last Australian timezone's
+    # observation day closes at 21:00 local, so it is when the freshest day first
+    # becomes usable; the other three catch up if that run fails and keep the site
+    # current after a collector outage.
+    #
+    # Running often is safe: the predictor writes nothing when the result is
+    # unchanged, so extra runs cost seconds and produce no commits.
+    - cron: "30 13,19,1,7 * * *"
   workflow_dispatch: {}
 
 concurrency:

@@ -12,40 +12,52 @@ of the task.
 **Mode: Operate.** The visitor completes something. Scanability, state, and familiar
 affordances outrank expression.
 
-## Use scene, which decided dark
+## Use scene
 
 Someone checking before bed or at dawn, deciding whether to water the garden, hang
-washing, or bring the tools in. Often on a phone, often in a dim room. Dark is the
-right ground for that, and it lets a data map carry colour without fighting the page.
+washing, or bring the tools in. Often on a phone. The surface is light, because the
+product is a map first and cartography reads best on a pale ground.
+
+## The map
+
+MapLibre GL over MapTiler's Dataviz Light. The basemap renders sea and land within a
+few percent of each other, which is correct for a neutral data overlay and wrong for a
+weather product, so the water and its shadow are re-tinted at runtime to give the
+coastline back without competing with the station colours.
+
+Zoom is the primary answer to station density. Labels use MapLibre's native collision
+handling with `symbol-sort-key`, so capitals place before neighbouring airports.
 
 ## Colour
 
-Restrained: a deep slate-blue ground with one accent, plus a single sequential ramp
+Restrained: a near-white cartographic ground, one accent, and a single sequential ramp
 that does real work.
 
 | Token | Value | Job |
 |---|---|---|
-| `--ground` | `#0d1520` | Page ground. Deliberately not near-black. |
-| `--glass` | `rgba(23,35,50,.72)` | The one glass material |
-| `--accent` | `#4fd1c5` | Selection, focus, live state |
-| `--r0…--r5` | `#33465e → #9fe6d4` | Rain probability |
-| `--warn` `--bad` | `#e0a458` `#e07a5f` | Stale data, weak reliability |
+| `--ground` | `#eef2f6` | Page ground behind the map |
+| `--glass` | `rgba(255,255,255,.72)` | Floating instruments |
+| `--glass-solid` | `rgba(255,255,255,.78)` | The readout panel |
+| `--accent` | `#0e7c86` | Selection, focus, live state |
+| `--r0…--r5` | `#93aec1 → #0d425f` | Rain probability |
+| `--warn` `--bad` | `#9a5a15` `#a8382a` | Stale data, weak reliability |
 
-The rain ramp climbs monotonically in lightness, so it survives greyscale and
-colour-vision deficiency and reads as one scale rather than a rainbow. Its floor was
-lifted from `#243244` to `#33465e` after the first render, where low-probability towns
-disappeared into the ground.
+Lightness falls monotonically across the ramp, so it survives greyscale and
+colour-vision deficiency and reads as one scale rather than a rainbow. The floor was
+darkened from `#b9cbd8` to `#93aec1` after validation: at 1.56 contrast against the
+basemap the palest towns were invisible.
 
-Near-black with a single neon accent and glowing edges is the shape this brief could
-easily have collapsed into. The ground is slate rather than black, the accent is a
-desaturated teal rather than a signal colour, and nothing glows.
+Stations with no estimate render hollow rather than grey-filled, so "no number" is a
+different kind of mark rather than a low value.
 
-## Glass, used once
+## Glass, earned
 
-Glass appears on the instrument panel, the map's mode switch, and the legend. All three
-genuinely float above a live surface, which is the only thing that earns the material.
-It is not applied to list rows, readout sections, or the rail. Blur and translucency
-are the effect, not the decoration.
+Every glass surface floats above a live map that reads through it: the readout panel,
+the brand and freshness pills, the mode switch, the legend, the zoom cluster. Depth is
+carried by two shadows, a close contact one and a wide ambient one, plus a one-pixel
+inset highlight along the top edge where the light would catch.
+
+Glass is not applied to list rows, readout sections, or table cells. Nothing is a card.
 
 ## Type
 
@@ -68,37 +80,46 @@ finding lives.
 
 ## Motion
 
-One authored moment: the readout settling when a town is chosen, opacity and blur and a
-10px rise on an exponential ease-out, with the probability bar sweeping from the left in
-the same beat. Everything else is already visible at rest. Hover and focus changes are
-160ms. `prefers-reduced-motion` reduces all of it to nothing.
+One authored moment: the readout settling when a town is chosen, opacity and blur and an
+8px rise, with the probability bar sweeping from the left in the same beat and the map
+easing toward the town. It is a transition rather than a keyframe, so choosing a second
+town retargets from the current position instead of restarting.
+
+Curves are `cubic-bezier(.23,1,.32,1)` for entrances and `cubic-bezier(.77,0,.175,1)`
+for on-screen movement; the built-in easings are too weak to read as intentional.
+Everything sits under 300ms. Presses scale to 0.97. Hover states are gated behind
+`(hover: hover) and (pointer: fine)` so a tap does not leave one stuck on.
+`prefers-reduced-motion` removes movement and blur while keeping opacity.
 
 ## Browser surfaces
 
 Selection colour, caret, scrollbars, focus rings and underline offset are themed from
 the palette. Every figure that shares a column uses tabular numerals.
 
-## Labels on the map
+## Station density
 
-29 station pairs sit within one degree, and Sydney and Sydney Airport are 0.09° apart.
-Three mechanisms keep the map readable:
+29 station pairs sit within one degree; Sydney and Sydney Airport are 0.09° apart, and
+Melbourne, Melbourne Airport and Watsonia are tighter still.
 
-1. Discs repel each other to a minimum 11px gap. The offset is display only; the
-   readout always names the town and the list is the precise selector.
-2. Each label tries four positions (right, left, above, below) against every already
-   placed label **and every station disc**. Checking labels against labels alone had
-   let a neighbouring dot sit on a word, so Perth rendered as "erth".
-3. Capitals claim their position first, so a suburb cannot crowd out a capital.
+Hand-rolled label placement on the old SVG map could not resolve this. It dropped
+Melbourne entirely at desktop sizes, and an earlier revision printed Perth as "erth"
+because labels were tested against other labels but not against station discs.
 
-Labels that still cannot be placed are dropped rather than overlapped. 31 of 44 place
-at 1440px; below 760px none do, and the list carries the job.
+MapLibre resolves collisions natively. `symbol-sort-key` ranks capitals ahead of their
+neighbouring airports and suburbs, `text-optional` lets a dot keep its position when its
+label cannot fit, and zoom separates the rest. Melbourne now holds its label at 1440px,
+and the searchable list remains the precise selector at any size.
 
 ## Accessibility
 
-Verified in the built page: zero contrast failures against WCAG AA across the default,
-selected, and withheld states, and all 95 interactive elements have accessible names.
-Stations are focusable and operable by keyboard, the search is a combobox with arrow-key
-navigation, Escape clears and deselects, and a skip link leads to the readout.
+Verified in the built page at 1440px and 390px: zero contrast failures against WCAG AA
+across the default, selected and withheld states, no interactive element without an
+accessible name, and no horizontal overflow at any width.
+
+The map canvas is `aria-hidden`, because a WebGL canvas cannot be read by assistive
+technology. Every station it shows is reachable through the list, which carries all 44
+with their values; the search is a combobox with arrow-key navigation, Escape clears and
+deselects, and a skip link leads straight to the readout.
 
 ## Honesty rules the interface enforces
 

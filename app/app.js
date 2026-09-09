@@ -228,9 +228,22 @@ function initMap(){
         "text-halo-width":1.6,
       }});
 
+    // Dataviz Light renders sea and land within a few percent of each other, which
+    // is right for a neutral overlay and wrong for a weather map. A cool tint on the
+    // water gives the coastline back without competing with the station colours.
+    try {
+      map.setPaintProperty("Water", "fill-color", "#d9e7ef");
+      map.setPaintProperty("Water shadow", "fill-color", "#c6d8e3");
+      map.setPaintProperty("Background", "background-color", "#f4f6f8");
+      map.setPaintProperty("Ocean labels", "text-color", "#8ba7b8");
+    } catch { /* a style revision may rename these; the map still works untinted */ }
+
     mapReady = true;
     paintMap();
     wireMap();
+    // A deep link resolves before the style finishes loading, so the selection made
+    // then has to be replayed here or the town is never marked on the map.
+    if (S.selected){ markSelected(S.selected); flyTo(S.selected); }
   });
   map.on("error", e => {
     if (String(e?.error?.message || "").includes("Failed to fetch")) return;
@@ -369,7 +382,8 @@ function paintFreshness(){
 
   if (behind != null && behind > 0){
     f.dataset.state = "stale";
-    t.textContent = `Estimate is ${behind} day${behind === 1 ? "" : "s"} out of date. It was for ${longDate(target)}`;
+    const d = target.toLocaleDateString("en-AU", { day:"numeric", month:"short" });
+    t.textContent = `${behind} day${behind === 1 ? "" : "s"} behind · last estimate ${d}`;
   } else {
     f.dataset.state = "fresh";
     t.textContent = obsAge ? `Observations updated ${obsAge}` : "Up to date";
