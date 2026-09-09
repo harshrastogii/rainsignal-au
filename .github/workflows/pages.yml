@@ -1,0 +1,50 @@
+name: RainSignal Site
+
+# Publishes the dashboard to GitHub Pages. Runs after new observations or a new
+# prediction land, so the site follows the data without a manual step.
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - "app/**"
+      - "data/live/**"
+      - "models/station_reliability.json"
+      - "models/metadata.json"
+      - "rainsignal/stations.json"
+      - ".github/workflows/pages.yml"
+  workflow_dispatch: {}
+
+concurrency:
+  group: pages
+  cancel-in-progress: true
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Assemble the site
+        run: python app/build_site.py _site
+      - uses: actions/configure-pages@v5
+      - uses: actions/upload-pages-artifact@v3
+        with:
+          path: _site
+
+  deploy:
+    needs: build
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - id: deployment
+        uses: actions/deploy-pages@v4

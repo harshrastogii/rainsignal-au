@@ -1,0 +1,110 @@
+<!doctype html>
+<html lang="en-AU" data-theme="dark">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>RainSignal — will it rain tomorrow?</title>
+<meta name="description" content="Live Bureau of Meteorology observations and a machine-learning estimate of tomorrow's rain for 44 Australian towns — with how much to trust it in each place.">
+<meta name="color-scheme" content="dark">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<!--
+THESIS: One instrument, one question per place — how likely is rain tomorrow here, and
+how much should you trust that number in this town. Refuses the weather-app template of
+a giant icon and a single confident number with no account of its own reliability.
+OWN-WORLD: Deep slate ground, never near-black-plus-neon. A monotonic-lightness rain
+ramp from dim slate to luminous cyan carries probability at page scale. Glass appears on
+exactly one element, the instrument panel floating over the map, because it is genuinely
+suspended above a live surface. Archivo for voice, JetBrains Mono for measurements only.
+STORY: See the country → find your town → read tomorrow's chance → see what it was built
+from → discover, by switching the map, that the estimate is weakest where rain is rarest.
+FIRST VIEWPORT: Full-bleed map of Australia, 44 nodes coloured by tomorrow's chance.
+Thin top rail: wordmark left, freshness right. Instrument panel docked right (bottom
+sheet on mobile) holding the national read and the search. Legend bottom-left.
+FORM: Map-first operating instrument, ranked first of five; the dashboard-of-cards and
+the scrolling explainer were the ruts and are refused.
+FINISH: unreviewed and undocumented is unfinished; this build ends with the finish review, the verdict, DESIGN.md, and every shipping raster carrying its provenance.
+-->
+<a class="skip" href="#panel">Skip to the readout</a>
+
+<div class="app" id="app">
+
+  <header class="rail">
+    <div class="mark">
+      <svg class="mark-glyph" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+        <path d="M12 3.2c3.1 3.6 5 6.4 5 9a5 5 0 0 1-10 0c0-2.6 1.9-5.4 5-9Z"/>
+        <path d="M12 12.6v4.9" class="mark-tick"/>
+      </svg>
+      <span class="mark-name">RainSignal</span>
+    </div>
+
+    <div class="rail-status" id="freshness" data-state="loading">
+      <span class="dot" aria-hidden="true"></span>
+      <span class="rail-status-text" id="freshness-text">Loading observations…</span>
+    </div>
+  </header>
+
+  <main class="stage">
+    <div class="map-wrap" id="map-wrap">
+      <svg class="map" id="map" role="img" aria-labelledby="map-title" tabindex="-1">
+        <title id="map-title">Map of Australia showing 44 weather stations, shaded by the chance of rain tomorrow.</title>
+        <g id="map-coast"></g>
+        <g id="map-nodes"></g>
+      </svg>
+
+      <div class="map-controls" role="group" aria-label="What the map shows">
+        <button type="button" class="seg" id="mode-rain" aria-pressed="true">Chance of rain</button>
+        <button type="button" class="seg" id="mode-trust" aria-pressed="false">How reliable here</button>
+      </div>
+
+      <figure class="legend" id="legend">
+        <figcaption id="legend-title">Chance of rain tomorrow</figcaption>
+        <div class="ramp" id="legend-ramp" aria-hidden="true"></div>
+        <div class="ramp-ends"><span id="legend-lo">0%</span><span id="legend-hi">100%</span></div>
+        <p class="legend-note" id="legend-note">Grey means we did not have enough measurements to give a number.</p>
+      </figure>
+    </div>
+
+    <section class="panel" id="panel" aria-label="Readout">
+      <div class="panel-scroll" id="panel-scroll">
+
+        <div class="pane" id="pane-national">
+          <h1 class="lede" id="lede">Will it rain tomorrow?</h1>
+          <p class="sub" id="national-sub">Reading the latest measurements…</p>
+
+          <div class="search">
+            <svg class="search-icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+              <circle cx="11" cy="11" r="6.5"/><path d="m16 16 4.5 4.5"/>
+            </svg>
+            <input id="search" type="search" autocomplete="off" spellcheck="false"
+                   placeholder="Find a town" aria-label="Find a town"
+                   aria-controls="results" aria-expanded="false" role="combobox">
+            <button type="button" class="search-clear" id="search-clear" aria-label="Clear search" hidden>
+              <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="m7 7 10 10M17 7 7 17"/></svg>
+            </button>
+          </div>
+          <ul class="results" id="results" role="listbox" aria-label="Towns"></ul>
+        </div>
+
+        <div class="pane" id="pane-station" hidden></div>
+
+      </div>
+
+      <footer class="panel-foot">
+        <p>Observations from the <strong>Bureau of Meteorology</strong>. The chance shown
+        is produced by a student machine-learning model, <strong>not a Bureau
+        forecast</strong>. For official warnings and forecasts go to
+        <a href="https://www.bom.gov.au" target="_blank" rel="noopener">bom.gov.au</a>.</p>
+      </footer>
+    </section>
+  </main>
+</div>
+
+<div class="tooltip" id="tooltip" role="status" aria-live="polite" hidden></div>
+<script src="app.js"></script>
+</body>
+</html>

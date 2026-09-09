@@ -10,3 +10,6 @@ models/random_forest.joblib
 # SQLite is a derived cache rebuilt from the JSONL store; never tracked
 *.db
 data/local/
+
+# assembled by app/build_site.py
+_site/
