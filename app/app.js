@@ -92,48 +92,6 @@ const ICON = {
 const icon = (n, cls = "") =>
   `<svg class="${cls}" viewBox="0 0 24 24" aria-hidden="true" focusable="false">${ICON[n]}</svg>`;
 
-/* --------------------------------------------------------------- projection */
-function makeProjection(w, h, pad){
-  // Equirectangular with a cosine correction at Australia's mid-latitude. Norfolk
-  // Island sits far east of the mainland, so the extent is taken from the geometry
-  // and the stations together rather than assumed.
-  const pts = [];
-  S.geo.rings.forEach(r => r.forEach(p => pts.push(p)));
-  Object.values(S.stations).forEach(s => { if (s.lon != null) pts.push([s.lon, s.lat]); });
-  const lons = pts.map(p => p[0]), lats = pts.map(p => p[1]);
-  const lon0 = Math.min(...lons), lon1 = Math.max(...lons);
-  const lat0 = Math.min(...lats), lat1 = Math.max(...lats);
-  const k = Math.cos((lat0 + lat1) / 2 * Math.PI / 180);
-  const dw = (lon1 - lon0) * k, dh = lat1 - lat0;
-  const scale = Math.min((w - pad * 2) / dw, (h - pad * 2) / dh);
-  const ox = (w - dw * scale) / 2, oy = (h - dh * scale) / 2;
-  return (lon, lat) => [ ox + (lon - lon0) * k * scale, oy + (lat1 - lat) * scale ];
-}
-
-/* Stations that sit on top of each other are nudged apart by a few pixels so both
-   remain clickable. The offset is display only -- the readout always names the town,
-   and the list is the precise selector. */
-function separate(nodes, minGap = 11, iters = 60){
-  for (let it = 0; it < iters; it++){
-    let moved = false;
-    for (let i = 0; i < nodes.length; i++){
-      for (let j = i + 1; j < nodes.length; j++){
-        const a = nodes[i], b = nodes[j];
-        let dx = b.x - a.x, dy = b.y - a.y;
-        let d = Math.hypot(dx, dy);
-        if (d === 0){ dx = 0.6; dy = 0.6; d = 0.85; }
-        if (d < minGap){
-          const push = (minGap - d) / 2 / d;
-          a.x -= dx * push; a.y -= dy * push;
-          b.x += dx * push; b.y += dy * push;
-          moved = true;
-        }
-      }
-    }
-    if (!moved) break;
-  }
-}
-
 /* -------------------------------------------------------------------- data */
 async function grab(path){
   try {
@@ -144,15 +102,15 @@ async function grab(path){
 }
 
 async function load(){
-  const [stations, preds, latest, health, trust, model, geo] = await Promise.all([
+  const [stations, preds, latest, health, trust, model] = await Promise.all([
     grab("data/stations.json"), grab("data/predictions.json"), grab("data/latest.json"),
     grab("data/health.json"),   grab("data/station_reliability.json"),
-    grab("data/model.json"),    grab("australia.json"),
+    grab("data/model.json"),
   ]);
-  if (!stations || !geo) { fail("Could not load the map data."); return false; }
+  if (!stations) { fail("Could not load the station list."); return false; }
   S.stations = Object.fromEntries(Object.entries(stations).filter(([, v]) => v.collectable));
   S.preds = preds; S.latest = latest; S.health = health;
-  S.trust = trust; S.model = model; S.geo = geo;
+  S.trust = trust; S.model = model;
   return true;
 }
 
@@ -169,132 +127,179 @@ const heldFor  = n => S.preds?.withheld?.[n] ?? null;
 const trustFor = n => S.trust?.stations?.[n] ?? null;
 const obsFor   = n => S.latest?.observations?.[n] ?? null;
 
-function metricFor(name){                       // what the map is currently showing
-  if (S.mode === "rain") return predFor(name);
-  const t = trustFor(name);
-  if (!t) return null;
-  return clamp((t.f1 - 0.35) / (0.80 - 0.35), 0, 1);   // stretched over the observed range
-}
+/* ------------------------------------------------------------------- map */
+const MAPTILER_KEY = "WBLnSvimIk9ssjlbmo5X";
+const STYLE = `https://api.maptiler.com/maps/dataviz-light/style.json?key=${MAPTILER_KEY}`;
+const AU_BOUNDS = [[110.0, -44.5], [155.5, -9.5]];   // mainland + Tasmania
 
-/* -------------------------------------------------------------------- map */
-let projection = null, nodeEls = new Map();
+// Capitals and the well-known towns claim a map label before their neighbours do.
+// MapLibre resolves label collisions natively; sort-key decides who wins one.
+const PRIORITY = { Melbourne:0, Sydney:0, Brisbane:0, Perth:0, Adelaide:0, Hobart:0,
+  Darwin:0, Canberra:0, Cairns:1, AliceSprings:1, Townsville:1, GoldCoast:1,
+  Launceston:1, Woomera:1, NorfolkIsland:1, Albany:2, Newcastle:2, Mildura:2 };
 
-function drawMap(){
-  const svg = $("#map"), wrap = $("#map-wrap");
-  const w = wrap.clientWidth, h = wrap.clientHeight;
-  if (w < 40 || h < 40) return;
-  svg.setAttribute("viewBox", `0 0 ${w} ${h}`);
-  const pad = Math.max(26, Math.min(w, h) * 0.06);
-  projection = makeProjection(w, h, pad);
+let map = null, mapReady = false;
 
-  const coast = $("#map-coast"); coast.textContent = "";
-  S.geo.rings.forEach(ring => {
-    const d = ring.map((p, i) => {
-      const [x, y] = projection(p[0], p[1]);
-      return `${i ? "L" : "M"}${x.toFixed(1)} ${y.toFixed(1)}`;
-    }).join("") + "Z";
-    coast.appendChild(el("path", { d }));
-  });
-
-  const layer = $("#map-nodes"); layer.textContent = ""; nodeEls.clear();
-  const showLabels = w > 760;
-  const placed = [];                       // rectangles a label must not overlap
-  const MAJOR = new Set(["Sydney","Melbourne","Brisbane","Perth","Adelaide","Hobart",
-                         "Darwin","Canberra","Cairns","AliceSprings","Townsville",
-                         "GoldCoast","Woomera","NorfolkIsland","Launceston","Albany"]);
-
-  const nodes = Object.entries(S.stations).map(([name, s]) => {
-    const [x, y] = projection(s.lon, s.lat);
-    return { name, x, y, ox:x, oy:y };
-  });
-  separate(nodes);
-
-  // Majors claim their label first, so a capital is never crowded out by a suburb.
-  // Every station disc is an obstacle too. Checking labels against labels alone let a
-  // neighbouring dot sit on top of a word: "Perth" rendered as "erth".
-  nodes.forEach(n => placed.push({ x:n.x - 7, y:n.y - 7, w:14, h:14 }));
-
-  const order = [...nodes].sort((a, b) =>
-    (MAJOR.has(b.name) ? 1 : 0) - (MAJOR.has(a.name) ? 1 : 0) || a.name.localeCompare(b.name));
-  // Four candidate placements per label, tried in order. With a single candidate a
-  // capital could be crowded out by a neighbouring airport's disc: Perth, Melbourne
-  // and Adelaide all vanished while minor stations kept their names.
-  const PLACES = [
-    { dx: 10, dy: 3.5, anchor:"start",  align:"left"   },
-    { dx:-10, dy: 3.5, anchor:"end",    align:"right"  },
-    { dx:  0, dy:-11,  anchor:"middle", align:"centre" },
-    { dx:  0, dy: 15,  anchor:"middle", align:"centre" },
-  ];
-  const labelFits = n => {
-    const text = pretty(n.name);
-    const tw = text.length * 5.5 + 4, th = 12;
-    for (const pl of PLACES){
-      const cx = n.x + pl.dx, cy = n.y + pl.dy;
-      const x = pl.anchor === "end" ? cx - tw : pl.anchor === "middle" ? cx - tw / 2 : cx;
-      const box = { x, y:cy - th, w:tw, h:th };
-      if (box.x < 2 || box.x + box.w > w - 2 || box.y < 2 || box.y + box.h > h - 2) continue;
-      const hit = placed.some(r => !(box.x + box.w < r.x || box.x > r.x + r.w ||
-                                     box.y + box.h < r.y || box.y > r.y + r.h));
-      if (hit) continue;
-      placed.push(box);
-      return pl;
-    }
-    return null;
+function stationsGeoJSON(){
+  return {
+    type:"FeatureCollection",
+    features: Object.entries(S.stations).map(([name, st]) => {
+      const p = predFor(name), t = trustFor(name);
+      return {
+        type:"Feature",
+        id: hashId(name),
+        geometry:{ type:"Point", coordinates:[st.lon, st.lat] },
+        properties:{
+          name, label: pretty(name),
+          prob: p == null ? -1 : p,
+          trust: t ? clamp((t.f1 - 0.35) / 0.45, 0, 1) : -1,
+          sort: PRIORITY[name] ?? 5,
+        },
+      };
+    }),
   };
-  const anchors = new Map();
-  if (showLabels) order.forEach(n => { const pl = labelFits(n); if (pl) anchors.set(n.name, pl); });
+}
+const idMap = new Map();
+function hashId(name){
+  if (!idMap.has(name)) idMap.set(name, idMap.size + 1);
+  return idMap.get(name);
+}
+const nameById = id => [...idMap.entries()].find(([, v]) => v === id)?.[0] ?? null;
 
-  nodes.forEach(n => {
-    const g = el("g", { class:"node", tabindex:"0", role:"button",
-      "aria-label":`${pretty(n.name)}. ${labelFor(n.name)}` });
-    g.dataset.name = n.name;
-    g.appendChild(el("circle", { class:"halo", cx:n.x, cy:n.y, r:14 }));
-    g.appendChild(el("circle", { class:"ring", cx:n.x, cy:n.y, r:11 }));
-    const disc = el("circle", { class:"disc", cx:n.x, cy:n.y, r:6, fill:colorFor(n.name) });
-    g.appendChild(disc);
-    const pl = anchors.get(n.name);
-    if (pl){
-      const t = el("text", { class:"node-label", x:n.x + pl.dx, y:n.y + pl.dy,
-                             "text-anchor":pl.anchor });
-      t.textContent = pretty(n.name);
-      g.appendChild(t);
-    }
-    layer.appendChild(g);
-    nodeEls.set(n.name, g);
+// One ramp expression, reused by both modes. -1 means "no value" and paints hollow.
+function rampExpr(prop){
+  const stops = [];
+  RAMP.forEach((c, i) => { stops.push(i / (RAMP.length - 1), c); });
+  return ["case", ["<", ["get", prop], 0], "#ffffff",
+          ["interpolate", ["linear"], ["get", prop], ...stops]];
+}
 
-    g.addEventListener("click", () => select(n.name));
-    g.addEventListener("keydown", e => {
-      if (e.key === "Enter" || e.key === " "){ e.preventDefault(); select(n.name); }
-    });
-    g.addEventListener("pointerenter", e => showTip(e, n.name));
-    g.addEventListener("pointermove", moveTip);
-    g.addEventListener("pointerleave", hideTip);
-    g.addEventListener("focus", () => { const r = g.getBoundingClientRect();
-      showTipAt(r.left + r.width / 2, r.top, n.name); });
-    g.addEventListener("blur", hideTip);
+function initMap(){
+  map = new maplibregl.Map({
+    container:"map", style:STYLE, bounds:AU_BOUNDS,
+    fitBoundsOptions:{ padding:mapPadding() },
+    minZoom:2.6, maxZoom:11, attributionControl:{ compact:true },
+    dragRotate:false, pitchWithRotate:false, touchZoomRotate:true,
   });
-  paintNodes();
+  map.touchZoomRotate.disableRotation();
+  map.on("load", () => {
+    map.addSource("stations", { type:"geojson", data:stationsGeoJSON(), promoteId:undefined });
+
+    // A soft halo so a dark dot never sits directly on light cartography.
+    map.addLayer({ id:"station-halo", type:"circle", source:"stations",
+      paint:{
+        "circle-radius":["interpolate",["linear"],["zoom"],3,9,6,15,10,22],
+        "circle-color":"#ffffff",
+        "circle-opacity":["case",["boolean",["feature-state","selected"],false],.95,.55],
+        "circle-blur":.35,
+      }});
+
+    map.addLayer({ id:"station-dot", type:"circle", source:"stations",
+      paint:{
+        "circle-radius":["interpolate",["linear"],["zoom"],
+          3,["case",["boolean",["feature-state","selected"],false],7.5,5],
+          6,["case",["boolean",["feature-state","selected"],false],11,8],
+          10,["case",["boolean",["feature-state","selected"],false],16,12]],
+        "circle-color":rampExpr("prob"),
+        "circle-stroke-width":["case",["boolean",["feature-state","selected"],false],2.5,1.25],
+        "circle-stroke-color":["case",
+          ["boolean",["feature-state","selected"],false],"#0e7c86",
+          ["<",["get","prob"],0],"#b6c2cd","rgba(16,28,40,.38)"],
+        "circle-opacity":["case",["<",["get","prob"],0],.9,1],
+        // transitions make mode switches and selection feel continuous
+        "circle-radius-transition":{ duration:260, delay:0 },
+        "circle-color-transition":{ duration:260, delay:0 },
+      }});
+
+    map.addLayer({ id:"station-label", type:"symbol", source:"stations",
+      layout:{
+        "text-field":["get","label"],
+        "text-font":["Inter Regular","Noto Sans Regular"],
+        "text-size":["interpolate",["linear"],["zoom"],3,11,7,13],
+        "text-offset":[0,1.1], "text-anchor":"top",
+        "text-allow-overlap":false, "text-ignore-placement":false,
+        "text-optional":true,
+        "symbol-sort-key":["get","sort"],       // capitals place first
+        "text-padding":3,
+      },
+      paint:{
+        "text-color":"#334656",
+        "text-halo-color":"rgba(255,255,255,.92)",
+        "text-halo-width":1.6,
+      }});
+
+    mapReady = true;
+    paintMap();
+    wireMap();
+  });
+  map.on("error", e => {
+    if (String(e?.error?.message || "").includes("Failed to fetch")) return;
+  });
 }
 
-function colorFor(name){
-  const v = metricFor(name);
-  return v == null ? UNKNOWN : rampColor(v);
+function mapPadding(){
+  const wide = innerWidth > 900;
+  return wide
+    ? { top:70, right:parseInt(getComputedStyle(document.documentElement)
+        .getPropertyValue("--panel-w")) + 50, bottom:60, left:60 }
+    : { top:70, right:40, bottom:Math.round(innerHeight * 0.52) + 40, left:40 };
 }
-function labelFor(name){
-  if (S.mode === "rain"){
-    const p = predFor(name);
-    return p == null ? "No estimate available" : `${pct(p)} chance of rain`;
-  }
-  const t = trustFor(name);
-  return t ? `${trustVerdict(t.f1).label}` : "Reliability not measured";
-}
-function paintNodes(){
-  nodeEls.forEach((g, name) => {
-    g.querySelector(".disc").setAttribute("fill", colorFor(name));
-    g.setAttribute("aria-label", `${pretty(name)}. ${labelFor(name)}`);
-    g.dataset.selected = String(S.selected === name);
-    g.dataset.dim = String(!!S.selected && S.selected !== name);
+
+function wireMap(){
+  const hit = ["station-dot","station-halo"];
+  let hoveredId = null;
+
+  map.on("mousemove", "station-dot", e => {
+    map.getCanvas().style.cursor = "pointer";
+    const f = e.features[0]; if (!f) return;
+    if (hoveredId !== null && hoveredId !== f.id)
+      map.setFeatureState({ source:"stations", id:hoveredId }, { hover:false });
+    hoveredId = f.id;
+    map.setFeatureState({ source:"stations", id:f.id }, { hover:true });
+    showTipAt(e.originalEvent.clientX, e.originalEvent.clientY, f.properties.name);
   });
+  map.on("mouseleave", "station-dot", () => {
+    map.getCanvas().style.cursor = "";
+    if (hoveredId !== null) map.setFeatureState({ source:"stations", id:hoveredId }, { hover:false });
+    hoveredId = null; hideTip();
+  });
+  map.on("click", "station-dot", e => { if (e.features[0]) select(e.features[0].properties.name); });
+  map.on("click", e => {
+    const f = map.queryRenderedFeatures(e.point, { layers:hit });
+    if (!f.length && S.selected) deselect();
+  });
+
+  $("#zoom-in").addEventListener("click", () => map.zoomIn({ duration:260 }));
+  $("#zoom-out").addEventListener("click", () => map.zoomOut({ duration:260 }));
+  $("#zoom-reset").addEventListener("click", () =>
+    map.fitBounds(AU_BOUNDS, { padding:mapPadding(), duration:600 }));
+}
+
+function paintMap(){
+  if (!mapReady) return;
+  const prop = S.mode === "rain" ? "prob" : "trust";
+  map.setPaintProperty("station-dot", "circle-color", rampExpr(prop));
+  map.setPaintProperty("station-dot", "circle-stroke-color", ["case",
+    ["boolean",["feature-state","selected"],false],"#0e7c86",
+    ["<",["get",prop],0],"#b6c2cd","rgba(16,28,40,.38)"]);
+  map.setPaintProperty("station-dot", "circle-opacity",
+    ["case",["<",["get",prop],0],.9,1]);
+}
+
+let selectedId = null;
+function markSelected(name){
+  if (!mapReady) return;
+  if (selectedId !== null) map.setFeatureState({ source:"stations", id:selectedId }, { selected:false });
+  selectedId = name ? hashId(name) : null;
+  if (selectedId !== null) map.setFeatureState({ source:"stations", id:selectedId }, { selected:true });
+}
+
+function flyTo(name){
+  if (!mapReady || !name) return;
+  const st = S.stations[name]; if (!st) return;
+  // Ease toward the town without diving in: the national picture stays legible.
+  map.easeTo({ center:[st.lon, st.lat], zoom:Math.max(map.getZoom(), 5.4),
+               padding:mapPadding(), duration:700, easing:t => 1 - Math.pow(1 - t, 3) });
 }
 
 /* ----------------------------------------------------------------- tooltip */
@@ -323,11 +328,8 @@ function paintLegend(){
   $("#legend-lo").textContent = rain ? "0%" : "Weakest";
   $("#legend-hi").textContent = rain ? "100%" : "Strongest";
   $("#legend-note").textContent = rain
-    ? "Grey means we did not have enough measurements to give a number."
+    ? "Hollow means we did not have enough measurements to give a number."
     : "Measured on years of past days the model never saw while learning.";
-  $("#map-title").textContent = rain
-    ? "Map of Australia showing 44 weather stations, shaded by the chance of rain tomorrow."
-    : "Map of Australia showing 44 weather stations, shaded by how reliable the estimate is at each one.";
 }
 
 /* ---------------------------------------------------------------- national */
@@ -433,21 +435,26 @@ function select(name, push = true){
   if (!S.stations[name]) return;
   S.selected = name;
   if (push && location.hash !== `#${name}`) history.replaceState(null, "", `#${name}`);
-  paintNodes();
+  markSelected(name);
+  flyTo(name);
   hideTip();
   $("#pane-national").hidden = true;
   const pane = $("#pane-station");
   pane.hidden = false;
   pane.innerHTML = readout(name);
-  pane.classList.remove("settle"); void pane.offsetWidth; pane.classList.add("settle");
+  pane.dataset.entering = "true";
+  requestAnimationFrame(() => requestAnimationFrame(() => { pane.dataset.entering = "false"; }));
   $("#panel-scroll").scrollTop = 0;
+  const fill = pane.querySelector(".answer-fill");
+  if (fill){ fill.style.setProperty("--fill", "0");
+    requestAnimationFrame(() => requestAnimationFrame(() => fill.style.setProperty("--fill", "1"))); }
   $("#back")?.addEventListener("click", deselect);
   pane.querySelector(".back")?.focus({ preventScroll:true });
 }
 function deselect(){
   S.selected = null;
   if (location.hash) history.replaceState(null, "", location.pathname + location.search);
-  paintNodes();
+  markSelected(null);
   $("#pane-station").hidden = true;
   $("#pane-national").hidden = false;
   $("#search").focus({ preventScroll:true });
@@ -582,7 +589,7 @@ function setMode(mode){
   S.mode = mode;
   $("#mode-rain").setAttribute("aria-pressed", String(mode === "rain"));
   $("#mode-trust").setAttribute("aria-pressed", String(mode === "trust"));
-  paintNodes(); paintLegend();
+  paintMap(); paintLegend();
 }
 
 function wire(){
@@ -612,7 +619,10 @@ function wire(){
   });
 
   let t = null;
-  addEventListener("resize", () => { clearTimeout(t); t = setTimeout(drawMap, 140); });
+  addEventListener("resize", () => {
+    clearTimeout(t);
+    t = setTimeout(() => { if (mapReady) map.resize(); }, 140);
+  });
 }
 
 /* ------------------------------------------------------------------- boot */
@@ -621,7 +631,7 @@ function wire(){
   const ok = await load();
   if (!ok) return;
   paintFreshness(); paintNational(); paintLegend(); paintResults();
-  drawMap();
+  initMap();
 
   const want = decodeURIComponent(location.hash.replace(/^#/, ""));
   if (want && S.stations[want]) select(want, false);
