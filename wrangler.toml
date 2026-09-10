@@ -13,4 +13,6 @@ compatibility_date = "2026-09-10"
 
 [assets]
 directory = "./_site"
-not_found_handling = "single-page-application"
+# No SPA fallback: RainSignal routes on the hash (#Melbourne), so there are no deep
+# paths to rewrite. With the fallback on, every mistyped URL returned the whole app
+# with a 200 instead of a 404.
