@@ -31,7 +31,8 @@ import pandas as pd                                              # noqa: E402
 from sklearn.compose import ColumnTransformer                    # noqa: E402
 from sklearn.ensemble import RandomForestClassifier              # noqa: E402
 from sklearn.impute import SimpleImputer                         # noqa: E402
-from sklearn.metrics import accuracy_score, f1_score, roc_auc_score  # noqa: E402
+from sklearn.metrics import (accuracy_score, f1_score,               # noqa: E402
+                             precision_score, recall_score, roc_auc_score)
 from sklearn.model_selection import train_test_split             # noqa: E402
 from sklearn.pipeline import Pipeline                            # noqa: E402
 from sklearn.preprocessing import OneHotEncoder, StandardScaler   # noqa: E402
@@ -101,7 +102,11 @@ def main() -> int:
     fitted, metrics = {}, {}
 
     def score(name, proba, pred):
+        # precision and recall are recorded so the interface can say "caught this many
+        # of the rainy days" and "was right this often" without re-deriving them
         m = {"accuracy": accuracy_score(y_test, pred),
+             "precision": precision_score(y_test, pred, zero_division=0),
+             "recall": recall_score(y_test, pred),
              "f1": f1_score(y_test, pred),
              "roc_auc": roc_auc_score(y_test, proba)}
         metrics[name] = {k: round(v, 4) for k, v in m.items()}

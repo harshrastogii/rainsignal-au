@@ -11,5 +11,4 @@ models/random_forest.joblib
 *.db
 data/local/
 
-# assembled by app/build_site.py
-_site/
+# _site is committed on purpose: Cloudflare Pages serves it with no build step

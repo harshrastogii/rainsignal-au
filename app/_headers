@@ -1,0 +1,9 @@
+# Live data must never be served stale; the shell may be cached briefly.
+/data/*
+  Cache-Control: public, max-age=60, must-revalidate
+
+/*.svg
+  Cache-Control: public, max-age=86400
+
+/
+  Cache-Control: public, max-age=300, must-revalidate

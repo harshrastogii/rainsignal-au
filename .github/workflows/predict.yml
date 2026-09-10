@@ -44,12 +44,16 @@ jobs:
           RAINSIGNAL_STORE: data/live
         run: python -m rainsignal.predict --store data/live
 
+
+      - name: Rebuild the site with the new data
+        run: python app/build_site.py _site
+
       - name: Commit predictions
         if: success()
         run: |
           git config user.name  "Harsh Rastogi"
           git config user.email "S386401@students.cdu.edu.au"
-          git add data/live/predictions.json
+          git add data/live/predictions.json _site/
           git diff --staged --quiet || git commit -m "predict: run $(date -u +%FT%TZ)"
           for attempt in 1 2 3; do
             git push && break

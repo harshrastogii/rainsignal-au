@@ -6,16 +6,22 @@ and cannot — tell you about tomorrow's rain, station by station.
 Built for **PRT565 Machine Learning, Artificial Intelligence and Algorithms**,
 Charles Darwin University, Darwin (Danala) Campus.
 
-**Group 85** — Harsh Rastogi, Saira Zafar, Tharushi Wimalachandra.
+Built for **PRT565 Assessment 3**, Group 85: Harsh Rastogi (student ID 386401),
+Saira Zafar and Tharushi Wimalachandra.
+
+Only my own student ID appears here, because it is the one the assessment materials
+need against this repository. My group members' IDs are personal identifiers and stay
+in the submitted documents rather than on a public page.
 
 ## Status
 
 | Component | State |
 |---|---|
-| Data collector | **built and running** — see [docs/collector.md](docs/collector.md) |
-| Frozen model artefacts | not yet exported |
-| Live prediction layer | not yet built |
-| Frontend | not yet built |
+| Data collector | running — [docs/collector.md](docs/collector.md) |
+| Daily assembler | running — [docs/assembler.md](docs/assembler.md) |
+| Frozen model artefacts | exported and verified — [models/README.md](models/README.md) |
+| Live prediction layer | running — [docs/prediction.md](docs/prediction.md) |
+| Dashboard | live — [docs/deploy.md](docs/deploy.md) |
 
 ## What this is
 
@@ -51,10 +57,13 @@ was measured.
 ## Layout
 
 ```
-collector/    fetch, validate, normalise, store
-rainsignal/   frozen schema contract + curated station map
-data/live/    live observations (SQLite) + health + latest snapshot
-tests/        collector test suite
+app/          the dashboard, and the script that assembles the deployable site
+collector/    fetch, validate, normalise, store, assemble
+rainsignal/   frozen schema contract, curated station map, prediction
+models/       frozen artefacts + per-station reliability
+data/live/    observations (JSONL), health, latest snapshot, predictions
+_site/        the built site Cloudflare Pages serves
+tests/        50 tests
 docs/         component documentation
 ```
 

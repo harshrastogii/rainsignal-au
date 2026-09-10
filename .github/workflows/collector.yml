@@ -60,6 +60,10 @@ jobs:
           RAINSIGNAL_STORE: data/live
         run: python collector/collect.py
 
+
+      - name: Rebuild the site with the new data
+        run: python app/build_site.py _site
+
       - name: Upload health report
         if: always()
         uses: actions/upload-artifact@v4
@@ -73,7 +77,7 @@ jobs:
         run: |
           git config user.name  "Harsh Rastogi"
           git config user.email "S386401@students.cdu.edu.au"
-          git add data/live/
+          git add data/live/ _site/
           git diff --staged --quiet || git commit -m "data: collector run $(date -u +%FT%TZ)"
           # Another scheduled run may have landed while this one was fetching.
           # Rebase onto it and retry rather than failing: the JSONL store is
