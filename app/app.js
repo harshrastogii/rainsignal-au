@@ -251,43 +251,21 @@ function initMap(){
   });
 }
 
-/* Two insets, because the two jobs want different things.
-
-   Fitting the whole country wants the map to use the space it has: a large inset
-   shrinks Australia into a sliver, which is what happened when the fly inset was
-   reused here and the opening view showed only Melbourne and Hobart.
-
-   Flying to one town wants the furniture measured, so the town never lands under the
-   legend or behind the panel. */
-function furnitureInset(){
-  const box = sel => { const n = document.querySelector(sel);
-    return n ? n.getBoundingClientRect() : null; };
-  const stage = box(".stage");
-  if (!stage) return 0;
-  const panel = box(".panel"), controls = box(".controls");
-  return Math.max(
-    panel ? stage.top + stage.height - panel.top : 0,
-    controls ? stage.top + stage.height - controls.top : 0);
-}
-
+/* Desktop keeps the panel inset because the readout genuinely covers the map there.
+   On mobile nothing overlays the map, so both jobs want the same plain inset. */
 function mapPadding(){          // fitting all of Australia
   if (innerWidth > 900){
     return { top:70, right:parseInt(getComputedStyle(document.documentElement)
       .getPropertyValue("--panel-w")) + 50, bottom:60, left:60 };
   }
-  const panel = document.querySelector(".panel");
-  const stage = document.querySelector(".stage");
-  const below = (panel && stage)
-    ? stage.getBoundingClientRect().bottom - panel.getBoundingClientRect().top : 0;
-  return { top:18, right:56, bottom:Math.round(below) + 14, left:18 };
+  // The map is its own block now, with the controls beneath it, so a plain inset is
+  // all it needs.
+  return { top:18, right:18, bottom:18, left:18 };
 }
 
 function flyPadding(){          // centring one town
   if (innerWidth > 900) return mapPadding();
-  const stage = document.querySelector(".stage");
-  const h = stage ? stage.getBoundingClientRect().height : innerHeight;
-  return { top:24, right:62, left:24,
-           bottom:Math.min(Math.round(furnitureInset()) + 18, Math.round(h * 0.66)) };
+  return { top:22, right:22, bottom:22, left:22 };
 }
 
 function wireMap(){
@@ -549,6 +527,13 @@ function select(name, push = true){
   pane.dataset.entering = "true";
   requestAnimationFrame(() => requestAnimationFrame(() => { pane.dataset.entering = "false"; }));
   $("#panel-scroll").scrollTop = 0;
+  // On a phone the readout lives below the map, so scroll it into view rather than
+  // leaving the visitor looking at a map that silently changed.
+  if (innerWidth <= 900){
+    const p = $("#panel"), host = $("#pane-map");
+    if (p && host) host.scrollTo({ top:Math.max(p.offsetTop - 8, 0),
+      behavior: matchMedia("(prefers-reduced-motion: reduce)").matches ? "auto" : "smooth" });
+  }
   const fill = pane.querySelector(".answer-fill");
   if (fill){ fill.style.setProperty("--fill", "0");
     requestAnimationFrame(() => requestAnimationFrame(() => fill.style.setProperty("--fill", "1"))); }
@@ -730,11 +715,7 @@ const REPO = "https://github.com/harshrastogii/rainsignal-au";
 function pctOf(x){ return Math.round(x * 100); }
 
 function barChart(rows, opts = {}){
-  const narrow = innerWidth < 620;
-  // On a phone the 150px name gutter left almost nothing for the bars, and shrinking
-  // the whole drawing to fit made its labels about 7px on screen. Narrow puts each
-  // name on its own line above its bars and drops the gutter.
-  if (narrow) return barChartNarrow(rows, opts);
+  if (innerWidth < 620) return barChartNarrow(rows);
   const w = 660, rowH = 46, pad = { l:150, r:56, t:6, b:22 };
   const h = pad.t + rows.length * rowH + pad.b;
   const iw = w - pad.l - pad.r;
@@ -759,31 +740,18 @@ function barChart(rows, opts = {}){
   return `<div class="chart"><svg viewBox="0 0 ${w} ${h}" role="img" aria-label="${opts.alt || ""}">${parts.join("")}</svg></div>`;
 }
 
-function barChartNarrow(rows, opts = {}){
-  // The name sits on its own line; each bar keeps a reserved lane to its right for the
-  // value. Labels drawn inside the bars were unreadable on the lighter of the two and
-  // ran off the end of short ones.
-  const w = 340, rowH = 60, pad = { l:6, r:6, t:4, b:20 }, lane = 92;
-  const h = pad.t + rows.length * rowH + pad.b;
-  const iw = w - pad.l - pad.r - lane;
-  const max = opts.max ?? 100;
-  const parts = [];
-  [0, 50, 100].forEach(t => {
-    const x = pad.l + (t / max) * iw;
-    parts.push(`<line class="ax-line" x1="${x}" x2="${x}" y1="${pad.t + 14}" y2="${pad.t + rows.length * rowH - 12}"/>`);
-    parts.push(`<text class="ax-txt" x="${x}" y="${h - 5}" text-anchor="${t === 0 ? "start" : t === 100 ? "end" : "middle"}">${t}</text>`);
-  });
-  rows.forEach((r, i) => {
-    const y = pad.t + i * rowH;
-    parts.push(`<text class="bar-name" x="${pad.l}" y="${y + 12}">${r.name}</text>`);
-    r.bars.forEach((b, j) => {
-      const bw = Math.max((b.value / max) * iw, 2), by = y + 20 + j * 15;
-      parts.push(`<rect x="${pad.l}" y="${by}" width="${bw}" height="11" rx="3" fill="${b.color}"${
-        b.dim ? ' opacity=".55"' : ""}/>`);
-      parts.push(`<text class="bar-val" x="${pad.l + iw + 7}" y="${by + 9.5}">${b.short}</text>`);
-    });
-  });
-  return `<div class="chart"><svg viewBox="0 0 ${w} ${h}" role="img" aria-label="${opts.alt || ""}">${parts.join("")}</svg></div>`;
+function barChartNarrow(rows){
+  // Drawn as HTML rather than SVG. Text in a 340-unit viewBox came out around 7px on a
+  // phone, and short labels inside the bars were unreadable. Plain elements wrap, scale
+  // with the reader's text size, and let each bar carry a sentence instead of a code.
+  return `<div class="mbars">${rows.map(r => `
+    <div class="mbar">
+      <b>${r.name}</b>
+      ${r.bars.map(b => `
+        <p>${b.say}</p>
+        <span class="mbar-track"><i style="width:${Math.max(b.value, 2)}%;background:${b.color}${
+          b.dim ? ";opacity:.55" : ""}"></i></span>`).join("")}
+    </div>`).join("")}</div>`;
 }
 
 function scatterReliability(){
@@ -833,9 +801,11 @@ function buildStory(){
     name: NICE[k],
     bars: [
       { value: pctOf(T[k].recall), label: `caught ${pctOf(T[k].recall)} of 100`,
-        short: `${pctOf(T[k].recall)} caught`, color:"var(--r4)" },
+        say: `Spotted ${pctOf(T[k].recall)} of every 100 rainy days`,
+        color:"var(--r4)" },
       { value: pctOf(T[k].precision), label: `right ${pctOf(T[k].precision)}% of the time`,
-        short: `${pctOf(T[k].precision)}% right`, color:"var(--r2)", dim:true },
+        say: `When it did warn of rain, it was right ${pctOf(T[k].precision)}% of the time`,
+        color:"var(--r2)", dim:true },
     ],
   }));
 
@@ -865,22 +835,24 @@ function buildStory(){
     accuracy on its own proves nothing, and we never judged these programs by it.</p>
 
     <h2>What we measured</h2>
-    <p>Two things matter, and improving one usually costs the other. <strong>How many of
-    the rainy days did it catch?</strong> And <strong>when it announced rain, how often
-    was it right?</strong></p>
+    <p>Two things matter, and getting better at one usually costs the other. <strong>How
+    many rainy days did it spot?</strong> And <strong>when it warned of rain, how often was
+    it right?</strong> A program that warns every day spots everything and is almost always
+    wrong; one that never warns is never wrong and never useful.</p>
     ${barChart(catchRows, { alt:"Rainy days caught and how often each program was right." })}
     <div class="chart-key">
-      <span><i style="background:var(--r4)"></i>rainy days caught, out of 100</span>
-      <span><i style="background:var(--r2);opacity:.55"></i>correct when it announced rain</span>
+      <span><i style="background:var(--r4)"></i>rainy days it spotted</span>
+      <span><i style="background:var(--r2);opacity:.55"></i>how often it was right to warn</span>
     </div>
-    <p class="caption">Naive Bayes catches the most rain but cries wolf the most often.
-    The neural network catches fewer and is right far more often when it speaks up.</p>
+    <p class="caption">Naive Bayes spots the most rain, but it warns so often that barely
+    half its warnings are right. The neural network warns less and is right far more often
+    when it does.</p>
 
     <h2>The most complicated one won, barely</h2>
     <div class="stat-line">
       <span class="stat-num">${catch10} in 10</span>
-      <span class="stat-say">rainy days caught by the ${NICE[best].toLowerCase()},
-      the program RainSignal uses</span>
+      <span class="stat-say">rainy days spotted a day ahead by the program RainSignal
+      uses, the ${NICE[best].toLowerCase()}</span>
     </div>
     <p>It came first on every measure we tried. But its lead over the much simpler
     <strong>random forest</strong> was about seven days in every thousand. That is a real
@@ -937,7 +909,11 @@ function buildStory(){
         to publish its output as a probability rather than a yes or no. Its best decision
         threshold sits near 0.31, not 0.5, so no label is imposed.</p>
         <p>Every figure here is produced by the notebook in
-        <a href="${REPO}" target="_blank" rel="noopener">the project repository</a> and can
+        <a href="how-it-works">
+        <svg viewBox="0 0 16 16" aria-hidden="true"><path d="M8 1a7 7 0 1 0 0 14A7 7 0 0 0 8 1Zm0 1.4A5.6 5.6 0 1 1 8 13.6 5.6 5.6 0 0 1 8 2.4Zm0 2a2.1 2.1 0 0 0-2.1 2.1h1.4a.7.7 0 1 1 1.4 0c0 .5-.2.7-.6 1-.5.4-.8.8-.8 1.6h1.4c0-.4.2-.6.6-.9.5-.4.9-.9.9-1.7A2.1 2.1 0 0 0 8 4.4Zm-.7 6.1v1.4h1.4v-1.4Z"/></svg>
+        How RainSignal works
+      </a>
+      <a href="${REPO}" target="_blank" rel="noopener">the project repository</a> and can
         be reproduced from it.</p>
       </div>
     </details>`;
@@ -963,6 +939,10 @@ function paintFooter(){
     forecast</strong>. For official forecasts and warnings go to
     <a href="https://www.bom.gov.au" target="_blank" rel="noopener">bom.gov.au</a>.</p>
     <p class="foot-links">
+      <a href="how-it-works">
+        <svg viewBox="0 0 16 16" aria-hidden="true"><path d="M8 1a7 7 0 1 0 0 14A7 7 0 0 0 8 1Zm0 1.4A5.6 5.6 0 1 1 8 13.6 5.6 5.6 0 0 1 8 2.4Zm0 2a2.1 2.1 0 0 0-2.1 2.1h1.4a.7.7 0 1 1 1.4 0c0 .5-.2.7-.6 1-.5.4-.8.8-.8 1.6h1.4c0-.4.2-.6.6-.9.5-.4.9-.9.9-1.7A2.1 2.1 0 0 0 8 4.4Zm-.7 6.1v1.4h1.4v-1.4Z"/></svg>
+        How RainSignal works
+      </a>
       <a href="${REPO}" target="_blank" rel="noopener">
         <svg viewBox="0 0 16 16" aria-hidden="true"><path d="M8 0C3.58 0 0 3.58 0 8a8 8 0 0 0 5.47 7.59c.4.07.55-.17.55-.38l-.01-1.49c-2.01.37-2.53-.49-2.7-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82a7.4 7.4 0 0 1 4 0c1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48l-.01 2.19c0 .21.15.46.55.38A8.01 8.01 0 0 0 16 8c0-4.42-3.58-8-8-8Z"/></svg>
         View the project on GitHub
@@ -1028,6 +1008,9 @@ function wire(){
   if (!ok) return;
   paintFreshness(); paintNational(); paintLegend(); paintResults(); paintFooter();
   initMap();
+
+  // ?view=analytics lets the How-it-works page link straight to the Analytics view
+  if (new URLSearchParams(location.search).get("view") === "analytics") setView("analytics");
 
   const want = decodeURIComponent(location.hash.replace(/^#/, ""));
   if (want && S.stations[want]) select(want, false);

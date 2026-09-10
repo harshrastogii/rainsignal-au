@@ -25,7 +25,7 @@ if OUT.exists():
     shutil.rmtree(OUT)
 (OUT / "data").mkdir(parents=True)
 
-for name in ("index.html", "styles.css", "app.js", "logo.svg", "favicon.svg", "_headers"):
+for name in ("index.html", "how-it-works.html", "styles.css", "app.js", "logo.svg", "favicon.svg", "_headers"):
     shutil.copy2(APP / name, OUT / name)
 
 missing = []

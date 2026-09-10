@@ -1,0 +1,238 @@
+<!doctype html>
+<html lang="en-AU">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>How RainSignal works</title>
+<meta name="description" content="How RainSignal turns Bureau of Meteorology observations into a chance of rain, what the numbers mean, and what the model can and cannot tell you.">
+<meta name="color-scheme" content="light">
+<meta name="theme-color" content="#eef2f6">
+<link rel="icon" href="favicon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body class="doc">
+<a class="skip" href="#start">Skip to the explanation</a>
+
+<header class="head">
+  <a class="brand" href="./" aria-label="RainSignal home">
+    <img class="brand-mark" src="logo.svg" alt="" width="30" height="30">
+    <span class="brand-name">RainSignal</span>
+  </a>
+  <nav class="views" aria-label="View">
+    <a class="view-btn" href="./">Map</a>
+    <a class="view-btn" href="./?view=analytics">Analytics</a>
+    <span class="view-btn" aria-current="page">How it works</span>
+  </nav>
+</header>
+
+<main class="doc-scroll">
+  <article class="story" id="start">
+    <h1>How RainSignal works</h1>
+    <p class="standfirst">RainSignal takes yesterday's weather measurements from 44
+    Australian towns and estimates the chance of rain the next day. This page explains
+    where the numbers come from, what they mean, and where they stop being useful. It
+    starts in plain language and gets more technical as it goes.</p>
+
+    <h2>What RainSignal actually does</h2>
+    <p>Every day, weather stations around Australia record things like temperature,
+    humidity, air pressure and wind. RainSignal collects those measurements, waits until
+    a day is complete, and feeds that finished day into a computer program that has
+    studied eighteen years of Australian weather. The program returns one number: the
+    chance that more than one millimetre of rain falls at that town the next day.</p>
+    <p>That is the whole product. It does not forecast temperature, storms, or anything
+    beyond the single yes-or-no question of rain, and it only knows about the 44 towns
+    it was trained on.</p>
+
+    <h2>Where the weather information comes from</h2>
+    <p>Observations come from the <strong>Bureau of Meteorology</strong>, Australia's
+    national weather agency, through the file service the Bureau provides for automated
+    access. RainSignal reads seven files covering every state, several times a day, and
+    keeps only the stations it needs.</p>
+    <p>These are <em>observations</em>: measurements of weather that has already
+    happened. They are not the Bureau's forecasts. RainSignal never uses a forecast as an
+    input, because a prediction built on someone else's prediction is not a prediction of
+    its own.</p>
+
+    <h2>How a prediction is produced</h2>
+    <ol class="steps">
+      <li><b>Collect.</b> Current readings are fetched and checked. A reading outside a
+      physically possible range is thrown away rather than corrected, because a corrected
+      value looks exactly like a real one.</li>
+      <li><b>Wait for the day to finish.</b> A day is only usable once every hour of it
+      has passed in that town's own time zone. This matters more than it sounds: a day
+      still in progress would mean guessing at its own totals.</li>
+      <li><b>Assemble.</b> The day's readings are arranged into the same shape the
+      program learned from: the temperature, humidity, pressure and wind at 9am and 3pm,
+      the day's high and low, its rainfall, and its strongest gust.</li>
+      <li><b>Estimate.</b> That row goes through the frozen program, which returns a
+      probability between 0 and 100.</li>
+      <li><b>Publish.</b> The number appears on the map with the date it was measured and
+      the date it refers to.</li>
+    </ol>
+    <p>Nothing in this chain retrains or adjusts the program. It was trained once,
+    measured once, and frozen before this site existed, which is what makes the accuracy
+    figures on the Analytics page meaningful.</p>
+
+    <h2>What the number means</h2>
+    <p>A reading of <strong>70</strong> means: on days that looked like this one, at this
+    town, it rained about 70 times in 100.</p>
+    <p>It is not a promise, and it is not a percentage of the sky or of the day. A 30%
+    day that turns out wet is not necessarily a mistake — roughly three in ten of those
+    days are supposed to be wet. You can only judge these numbers over many days, which
+    is exactly how they were tested.</p>
+    <p>RainSignal deliberately shows a probability rather than a yes-or-no answer. Turning
+    a probability into a label means choosing a cut-off, and that choice silently decides
+    whether the tool would rather miss rain or cry wolf. That decision belongs to whoever
+    is reading, not to us.</p>
+
+    <h2>Why some towns show no estimate</h2>
+    <p>The program needs a complete day. If a station did not report some of the
+    measurements — its 3pm humidity, say, or its rainfall total — RainSignal shows no
+    number for that town and says which measurements were missing.</p>
+    <p>Filling those gaps with plausible guesses would produce a number that looks exactly
+    as confident as a real one, and there would be no way for a reader to tell the
+    difference. Withholding it is the honest option.</p>
+    <p>Five of the 49 towns in the historical record have no live weather station at all,
+    so they never appear on the map.</p>
+
+    <h2>What it can and cannot tell you</h2>
+    <div class="two">
+      <div>
+        <h3>It can</h3>
+        <ul>
+          <li>Give a reasonable sense of whether tomorrow looks wet or dry at one of its towns.</li>
+          <li>Tell you how well it has performed in that particular town before.</li>
+          <li>Show you the actual measurements its answer was built from.</li>
+        </ul>
+      </div>
+      <div>
+        <h3>It cannot</h3>
+        <ul>
+          <li>Replace the Bureau of Meteorology. For warnings, flooding or any decision
+          that matters, use <a href="https://www.bom.gov.au" target="_blank" rel="noopener">bom.gov.au</a>.</li>
+          <li>Say how much rain will fall, or when in the day.</li>
+          <li>Say anything about a place it has no station for.</li>
+          <li>See further than one day ahead.</li>
+        </ul>
+      </div>
+    </div>
+
+    <h2>The words you will see</h2>
+    <p>These terms appear in the Technical detail sections. Each is given plainly first,
+    then precisely.</p>
+
+    <dl class="terms">
+      <div>
+        <dt>Probability</dt>
+        <dd><b>Plainly:</b> how likely rain is, out of 100.
+        <b>Precisely:</b> the model's estimated conditional probability that tomorrow's
+        rainfall exceeds 1&nbsp;mm, given today's observations at that station.</dd>
+      </div>
+      <div>
+        <dt>Recall</dt>
+        <dd><b>Plainly:</b> of the days it really rained, how many the model spotted.
+        <b>Precisely:</b> true positives divided by all actual positives. RainSignal's
+        model has a recall of about 0.55 nationally, so it spots roughly 55 of every 100
+        rainy days.</dd>
+      </div>
+      <div>
+        <dt>Precision</dt>
+        <dd><b>Plainly:</b> when it warned of rain, how often it was right.
+        <b>Precisely:</b> true positives divided by all predicted positives. About 0.78
+        nationally, so roughly four out of five rain warnings were correct.</dd>
+      </div>
+      <div>
+        <dt>F1</dt>
+        <dd><b>Plainly:</b> a single score that balances the two above, so a model cannot
+        look good by only chasing one.
+        <b>Precisely:</b> the harmonic mean of precision and recall. The harmonic mean is
+        used rather than a plain average because it punishes a model that is excellent at
+        one and poor at the other.</dd>
+      </div>
+      <div>
+        <dt>Accuracy, and why we do not lead with it</dt>
+        <dd><b>Plainly:</b> the share of all days it got right — which sounds like the
+        obvious measure and is nearly useless here.
+        <b>Precisely:</b> rain falls on about 22% of days, so always answering "no rain"
+        scores 78% accuracy while catching no rain at all. This is called
+        <em>class imbalance</em>, and it is why precision, recall and F1 carry the
+        judgement instead.</dd>
+      </div>
+      <div>
+        <dt>ROC-AUC</dt>
+        <dd><b>Plainly:</b> how good the model is at ranking wet days above dry ones,
+        where 0.5 is a coin toss and 1.0 is perfect.
+        <b>Precisely:</b> the area under the receiver operating characteristic curve — the
+        probability that a randomly chosen rainy day is scored higher than a randomly
+        chosen dry one. RainSignal's model scores about 0.90.</dd>
+      </div>
+      <div>
+        <dt>Calibration</dt>
+        <dd><b>Plainly:</b> whether a 70 really means 70.
+        <b>Precisely:</b> the agreement between predicted probabilities and observed
+        frequencies. Measured by expected calibration error; RainSignal's model scores
+        0.0120, which is what makes it defensible to publish its output as a probability
+        at all.</dd>
+      </div>
+      <div>
+        <dt>Reliability (the "how reliable" map)</dt>
+        <dd><b>Plainly:</b> how well the model has done in one particular town.
+        <b>Precisely:</b> that station's F1 on the held-out test set. It ranges from 0.40
+        to 0.78 across the 44 towns and correlates 0.47 with how often it rains there —
+        the model is weakest where rain is rarest, because there are fewer examples of
+        rain to learn from.</dd>
+      </div>
+    </dl>
+
+    <h2>How it was tested</h2>
+    <p>The program studied 187,121 days and was then judged on 80,196 days it had never
+    seen. Those days were set aside before any tuning, and were looked at once, at the
+    end. Tuning against a test set turns it into a practice set, and the score stops
+    meaning anything.</p>
+    <p>Four programs were compared on identical data. A neural network scored best and is
+    the one RainSignal serves, though it beat a much simpler random forest by only about
+    seven days in a thousand.</p>
+
+    <details>
+      <summary>Technical detail</summary>
+      <div class="tech">
+        <p>Target: <span class="mono">RainTomorrow</span>, defined as more than 1&nbsp;mm
+        of rainfall on the following day, from the <em>weatherAUS</em> record originally
+        distributed with the <span class="mono">rattle</span> package.</p>
+        <p>Features: 16 same-day observations plus five derived terms — a cyclical month
+        encoding, the day's temperature range, and the 9am-to-3pm changes in pressure and
+        humidity. Sunshine, evaporation and cloud were dropped because their absence is
+        structural rather than random: 19 of 49 stations never record sunshine at all,
+        so imputing it would write one national median into every row of those stations.</p>
+        <p>A column named <span class="mono">RISK_MM</span> was removed after testing
+        showed it to be the next day's rainfall recorded on the current day. Thresholding
+        it at 1&nbsp;mm reproduced the target on 100.0000% of 267,317 rows. Any model
+        given it reads the answer rather than predicting it.</p>
+        <p>Preprocessing — median and most-frequent imputation, standardisation and
+        one-hot encoding — is fitted on the training split alone and frozen. Live
+        observations pass through that same fitted preprocessing, so a gap in the live
+        data is filled exactly as it was during training, and nowhere else.</p>
+        <p>Model: a three-layer network (128, 64, 32) with dropout 0.3, early stopping on
+        validation loss. Test-set accuracy 0.8666, precision 0.7815, recall 0.5482, F1
+        0.6444, ROC-AUC 0.8994, Brier 0.0966, expected calibration error 0.0120. Its best
+        decision threshold sits near 0.31 rather than 0.5, which is a further reason no
+        yes-or-no label is imposed.</p>
+        <p>Everything above is reproducible from the notebook and code in
+        <a href="https://github.com/harshrastogii/rainsignal-au" target="_blank" rel="noopener">the
+        project repository</a>.</p>
+      </div>
+    </details>
+
+    <p class="doc-foot">RainSignal is a student project built for PRT565 at Charles Darwin
+    University. Observations are reproduced from the Bureau of Meteorology. The chance
+    shown is produced by a machine-learning model and is <strong>not a Bureau
+    forecast</strong>.</p>
+
+    <p class="doc-back"><a href="./">← Back to the map</a></p>
+  </article>
+</main>
+</body>
+</html>
