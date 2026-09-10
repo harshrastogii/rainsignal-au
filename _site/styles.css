@@ -43,6 +43,9 @@
   --panel-w:394px;
   --head-h:58px;
   --legend-h:126px;
+  --status-h:33px;
+  --sheet-h:52dvh;
+  --legend-h-m:66px;
   --ui:"Archivo",-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,sans-serif;
   --mono:"JetBrains Mono",ui-monospace,SFMono-Regular,Menlo,monospace;
   --chev:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23000' stroke-width='2.2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='m9 5 7 7-7 7'/%3E%3C/svg%3E");
@@ -330,23 +333,106 @@ details[open] summary::before{transform:rotate(90deg)}
 #pane-station[data-entering="true"]{opacity:0;transform:translateY(8px);filter:blur(5px)}
 
 /* --------------------------------------------------------- responsive */
+/* =====================================================================
+   Mobile. Desktop rules above this point are untouched.
+   ===================================================================== */
 @media (max-width:900px){
-  .panel{top:auto;left:8px;right:8px;bottom:8px;width:auto;height:52dvh;max-height:52dvh}
+  /* The header keeps the mark and the view switch exactly where they are; only the
+     tap height grows. The freshness line moves to its own strip below, because at
+     phone widths it had 194px of text in an 83px box and read "Observation...". */
+  .head{height:var(--head-h);padding:0 12px;gap:10px}
+  /* every control a thumb lands on gets at least 40px of height */
+  .view-btn{padding:0 18px;font-size:13.5px;min-height:42px;
+    display:inline-flex;align-items:center;justify-content:center}
+  .brand{padding:8px 6px}
+  .seg{padding:0 15px;min-height:42px;display:inline-flex;align-items:center;justify-content:center}
+  /* footer links were 12px tall; give them a real tap area without moving the text */
+  .panel-foot a{display:inline-block;padding:6px 0}
+  .foot-links{gap:14px}
+  .foot-links a{padding:8px 0}
+  .status{position:fixed;top:var(--head-h);left:0;right:0;z-index:19;
+    margin:0;border-radius:0;justify-content:center;padding:7px 12px;
+    border-left:0;border-right:0;border-top:0;border-bottom:1px solid var(--glass-line);
+    background:rgba(255,255,255,.62);
+    backdrop-filter:blur(20px) saturate(180%);-webkit-backdrop-filter:blur(20px) saturate(180%);
+    box-shadow:none}
+  .status-text{overflow:visible;text-overflow:clip;font-size:12.5px}
+
+  .stage{top:calc(var(--head-h) + var(--status-h))}
+
+  /* Panel */
+  .panel{top:auto;left:8px;right:8px;bottom:8px;width:auto;
+    height:var(--sheet-h);max-height:var(--sheet-h)}
   .panel-scroll{padding:16px 16px 8px}
   .panel-foot{padding:11px 16px 12px}
-  .controls{bottom:calc(52dvh + 16px);left:8px;gap:8px}
-  .legend{max-width:200px;padding:10px 12px}
+  .panel-foot p{font-size:11px}
+
+  /* Map furniture: compact, and clear of the middle of the map */
+  .controls{bottom:calc(var(--sheet-h) + 14px);left:8px;gap:7px}
+  .switch{padding:3px}
+  .seg{font-size:12.5px}
+  .legend{width:186px;height:var(--legend-h-m);padding:9px 11px}
+  .legend figcaption{font-size:11.5px;margin-bottom:6px}
+  .ramp{height:6px;margin-bottom:4px}
+  .ramp-ends{font-size:10px}
   .legend-note{display:none}
-  .zoom{right:8px;bottom:calc(52dvh + 16px)}
-  .brand{top:10px;left:8px;padding:8px 12px 8px 10px}
-  .status{top:10px;right:8px;max-width:calc(100vw - 180px);padding:8px 12px}
-  .answer-num{font-size:46px}
+
+  /* Touch targets: 44px, not 32px */
+  .zoom{right:8px;bottom:calc(var(--sheet-h) + 14px);padding:4px;gap:3px}
+  .zoom button{width:44px;height:44px;border-radius:11px}
+  .zoom svg{width:20px;height:20px}
+
+  /* Search and results sized for thumbs */
+  #search{padding:13px 40px;font-size:16px}      /* 16px stops iOS zooming on focus */
+  .search-icon{left:13px;width:17px;height:17px}
+  .search-clear{right:5px;width:40px;height:40px}
+  .search-clear svg{width:15px;height:15px}
+  .res{padding:12px 10px;gap:12px}
+  .res-name{font-size:15px}
+  .res-val{font-size:13px}
   .results{max-height:none}
+
+  /* Readout */
+  .lede{font-size:23px}
+  .answer-num{font-size:46px}
+  .place{font-size:22px}
+
+  /* Analytics */
+  .maplibregl-ctrl-attrib{font-size:11.5px!important}
+  .maplibregl-ctrl-attrib a{padding:2px 0}
+  .analytics-scroll{padding:12px 8px 28px}
+  .story{padding:20px 16px 18px;border-radius:var(--r-md);max-width:none}
+  .story > h1{font-size:23px}
+  .story .standfirst{font-size:15px}
+  .story h2{font-size:17px;margin-top:28px}
+  .story p{font-size:14.5px}
+  .dots-100{max-width:none;gap:2.5px}
+  .takeaways li{padding:13px 0}
+  .chart-key{font-size:12px;gap:6px 14px}
+  .caption{font-size:12.5px}
+  .story a{display:inline-block;padding:7px 0}
+  .tech table{font-size:12px}
+  .tech th,.tech td{padding:7px 0}
 }
-@media (max-width:420px){
-  .obs{grid-template-columns:1fr}
+
+/* Phones proper. */
+@media (max-width:560px){
+  :root{--head-h:54px;--status-h:31px;--sheet-h:50dvh;--legend-h-m:62px}
   .brand-name{display:none}
-  .status{max-width:calc(100vw - 80px)}
+  .brand-mark{width:28px;height:28px}
+  .obs{grid-template-columns:1fr 1fr}
+  .obs div{padding:9px 11px}
+  .obs dd{font-size:13.5px}
+  /* the two readout blocks that must never be cut off mid-word */
+  .nonum{padding:12px 12px}
+  .missing-list li{font-size:11px}
+}
+
+@media (max-width:380px){
+  :root{--sheet-h:52dvh}
+  .legend{width:164px}
+  .seg{padding:0 11px;font-size:12px}
+  .obs{grid-template-columns:1fr}
 }
 
 @media (prefers-reduced-motion:reduce){

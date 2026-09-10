@@ -251,12 +251,43 @@ function initMap(){
   });
 }
 
-function mapPadding(){
-  const wide = innerWidth > 900;
-  return wide
-    ? { top:70, right:parseInt(getComputedStyle(document.documentElement)
-        .getPropertyValue("--panel-w")) + 50, bottom:60, left:60 }
-    : { top:70, right:40, bottom:Math.round(innerHeight * 0.52) + 40, left:40 };
+/* Two insets, because the two jobs want different things.
+
+   Fitting the whole country wants the map to use the space it has: a large inset
+   shrinks Australia into a sliver, which is what happened when the fly inset was
+   reused here and the opening view showed only Melbourne and Hobart.
+
+   Flying to one town wants the furniture measured, so the town never lands under the
+   legend or behind the panel. */
+function furnitureInset(){
+  const box = sel => { const n = document.querySelector(sel);
+    return n ? n.getBoundingClientRect() : null; };
+  const stage = box(".stage");
+  if (!stage) return 0;
+  const panel = box(".panel"), controls = box(".controls");
+  return Math.max(
+    panel ? stage.top + stage.height - panel.top : 0,
+    controls ? stage.top + stage.height - controls.top : 0);
+}
+
+function mapPadding(){          // fitting all of Australia
+  if (innerWidth > 900){
+    return { top:70, right:parseInt(getComputedStyle(document.documentElement)
+      .getPropertyValue("--panel-w")) + 50, bottom:60, left:60 };
+  }
+  const panel = document.querySelector(".panel");
+  const stage = document.querySelector(".stage");
+  const below = (panel && stage)
+    ? stage.getBoundingClientRect().bottom - panel.getBoundingClientRect().top : 0;
+  return { top:18, right:56, bottom:Math.round(below) + 14, left:18 };
+}
+
+function flyPadding(){          // centring one town
+  if (innerWidth > 900) return mapPadding();
+  const stage = document.querySelector(".stage");
+  const h = stage ? stage.getBoundingClientRect().height : innerHeight;
+  return { top:24, right:62, left:24,
+           bottom:Math.min(Math.round(furnitureInset()) + 18, Math.round(h * 0.66)) };
 }
 
 function wireMap(){
@@ -369,7 +400,7 @@ function flyTo(name){
   const st = S.stations[name]; if (!st) return;
   // Ease toward the town without diving in: the national picture stays legible.
   map.easeTo({ center:[st.lon, st.lat], zoom:Math.max(map.getZoom(), 5.4),
-               padding:mapPadding(), duration:700, easing:t => 1 - Math.pow(1 - t, 3) });
+               padding:flyPadding(), duration:700, easing:t => 1 - Math.pow(1 - t, 3) });
 }
 
 /* ----------------------------------------------------------------- tooltip */
@@ -699,6 +730,11 @@ const REPO = "https://github.com/harshrastogii/rainsignal-au";
 function pctOf(x){ return Math.round(x * 100); }
 
 function barChart(rows, opts = {}){
+  const narrow = innerWidth < 620;
+  // On a phone the 150px name gutter left almost nothing for the bars, and shrinking
+  // the whole drawing to fit made its labels about 7px on screen. Narrow puts each
+  // name on its own line above its bars and drops the gutter.
+  if (narrow) return barChartNarrow(rows, opts);
   const w = 660, rowH = 46, pad = { l:150, r:56, t:6, b:22 };
   const h = pad.t + rows.length * rowH + pad.b;
   const iw = w - pad.l - pad.r;
@@ -723,9 +759,38 @@ function barChart(rows, opts = {}){
   return `<div class="chart"><svg viewBox="0 0 ${w} ${h}" role="img" aria-label="${opts.alt || ""}">${parts.join("")}</svg></div>`;
 }
 
+function barChartNarrow(rows, opts = {}){
+  // The name sits on its own line; each bar keeps a reserved lane to its right for the
+  // value. Labels drawn inside the bars were unreadable on the lighter of the two and
+  // ran off the end of short ones.
+  const w = 340, rowH = 60, pad = { l:6, r:6, t:4, b:20 }, lane = 92;
+  const h = pad.t + rows.length * rowH + pad.b;
+  const iw = w - pad.l - pad.r - lane;
+  const max = opts.max ?? 100;
+  const parts = [];
+  [0, 50, 100].forEach(t => {
+    const x = pad.l + (t / max) * iw;
+    parts.push(`<line class="ax-line" x1="${x}" x2="${x}" y1="${pad.t + 14}" y2="${pad.t + rows.length * rowH - 12}"/>`);
+    parts.push(`<text class="ax-txt" x="${x}" y="${h - 5}" text-anchor="${t === 0 ? "start" : t === 100 ? "end" : "middle"}">${t}</text>`);
+  });
+  rows.forEach((r, i) => {
+    const y = pad.t + i * rowH;
+    parts.push(`<text class="bar-name" x="${pad.l}" y="${y + 12}">${r.name}</text>`);
+    r.bars.forEach((b, j) => {
+      const bw = Math.max((b.value / max) * iw, 2), by = y + 20 + j * 15;
+      parts.push(`<rect x="${pad.l}" y="${by}" width="${bw}" height="11" rx="3" fill="${b.color}"${
+        b.dim ? ' opacity=".55"' : ""}/>`);
+      parts.push(`<text class="bar-val" x="${pad.l + iw + 7}" y="${by + 9.5}">${b.short}</text>`);
+    });
+  });
+  return `<div class="chart"><svg viewBox="0 0 ${w} ${h}" role="img" aria-label="${opts.alt || ""}">${parts.join("")}</svg></div>`;
+}
+
 function scatterReliability(){
   const st = S.trust?.stations; if (!st) return "";
-  const w = 660, h = 300, pad = { l:48, r:18, t:12, b:44 };
+  const narrow = innerWidth < 620;
+  const w = narrow ? 340 : 660, h = narrow ? 250 : 300;
+  const pad = narrow ? { l:34, r:10, t:10, b:40 } : { l:48, r:18, t:12, b:44 };
   const iw = w - pad.l - pad.r, ih = h - pad.t - pad.b;
   const pts = Object.entries(st);
   const X = v => pad.l + ((v - 0.03) / (0.37 - 0.03)) * iw;
@@ -734,14 +799,15 @@ function scatterReliability(){
   [0.4, 0.5, 0.6, 0.7, 0.8].forEach(v => {
     parts.push(`<line class="ax-line" x1="${pad.l}" x2="${pad.l + iw}" y1="${Y(v)}" y2="${Y(v)}"/>`);
   });
-  [0.05, 0.1, 0.15, 0.2, 0.25, 0.3, 0.35].forEach(v => {
-    parts.push(`<text class="ax-txt" x="${X(v)}" y="${h - 24}" text-anchor="middle">${pctOf(v)}%</text>`);
+  (narrow ? [0.1, 0.2, 0.3] : [0.05, 0.1, 0.15, 0.2, 0.25, 0.3, 0.35]).forEach(v => {
+    parts.push(`<text class="ax-txt" x="${X(v)}" y="${h - 22}" text-anchor="middle">${pctOf(v)}%</text>`);
   });
   parts.push(`<text class="ax-txt" x="${pad.l + iw / 2}" y="${h - 6}" text-anchor="middle">how often it rains in that town</text>`);
-  parts.push(`<text class="ax-txt" x="14" y="${pad.t + ih / 2}" text-anchor="middle" transform="rotate(-90 14 ${pad.t + ih / 2})">how well it worked</text>`);
+  parts.push(`<text class="ax-txt" x="${narrow ? 11 : 14}" y="${pad.t + ih / 2}" text-anchor="middle" transform="rotate(-90 ${narrow ? 11 : 14} ${pad.t + ih / 2})">${
+    narrow ? "how well it worked" : "how well it worked"}</text>`);
   pts.forEach(([name, v]) => {
     const dry = v.rain_rate < 0.15;
-    parts.push(`<circle cx="${X(v.rain_rate).toFixed(1)}" cy="${Y(v.f1).toFixed(1)}" r="5"
+    parts.push(`<circle cx="${X(v.rain_rate).toFixed(1)}" cy="${Y(v.f1).toFixed(1)}" r="${narrow ? 4.5 : 5}"
       fill="${dry ? "var(--warn)" : "var(--r3)"}" opacity=".8" stroke="#fff" stroke-width="1.5"><title>${pretty(name)}</title></circle>`);
   });
   const worst = S.trust.worst, best = S.trust.best;
@@ -766,8 +832,10 @@ function buildStory(){
   const catchRows = order.filter(k => T[k]).map(k => ({
     name: NICE[k],
     bars: [
-      { value: pctOf(T[k].recall), label: `caught ${pctOf(T[k].recall)} of 100`, color:"var(--r4)" },
-      { value: pctOf(T[k].precision), label: `right ${pctOf(T[k].precision)}% of the time`, color:"var(--r2)", dim:true },
+      { value: pctOf(T[k].recall), label: `caught ${pctOf(T[k].recall)} of 100`,
+        short: `${pctOf(T[k].recall)} caught`, color:"var(--r4)" },
+      { value: pctOf(T[k].precision), label: `right ${pctOf(T[k].precision)}% of the time`,
+        short: `${pctOf(T[k].precision)}% right`, color:"var(--r2)", dim:true },
     ],
   }));
 
@@ -939,9 +1007,17 @@ function wire(){
   });
 
   let t = null;
+  let wasNarrow = innerWidth < 620;
   addEventListener("resize", () => {
     clearTimeout(t);
-    t = setTimeout(() => { if (mapReady) map.resize(); }, 140);
+    t = setTimeout(() => {
+      if (mapReady) map.resize();
+      // the charts are drawn at one of two geometries; rebuild if we crossed over
+      const now = innerWidth < 620;
+      if (now !== wasNarrow && $("#story").dataset.built){
+        wasNarrow = now; buildStory();
+      }
+    }, 160);
   });
 }
 
