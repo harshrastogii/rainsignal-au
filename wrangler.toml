@@ -1,3 +1,16 @@
+# RainSignal is a static site: the build is committed under _site/ and served directly.
+#
+# This project was created in Cloudflare as a Worker with Workers Builds, so its deploy
+# command is `npx wrangler deploy`. The previous config declared `pages_build_output_dir`,
+# which only Pages reads; wrangler therefore found no Worker entry point and no assets
+# directory, and the build failed with "Missing entry-point to Worker script or to assets
+# directory".
+#
+# Declaring the assets directory makes `wrangler deploy` publish _site/ as a static-asset
+# Worker. The _headers file inside _site is parsed by Workers and is not itself served.
 name = "rainsignal"
 compatibility_date = "2026-09-10"
-pages_build_output_dir = "_site"
+
+[assets]
+directory = "./_site"
+not_found_handling = "single-page-application"
