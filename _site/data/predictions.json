@@ -1,5 +1,5 @@
 {
- "generated_utc": "2026-09-09T22:18:49+00:00",
+ "generated_utc": "2026-09-10T06:32:28+00:00",
  "observation_date": "2026-09-09",
  "target_date": "2026-09-10",
  "what_this_is": "A machine-learning estimate of the chance of more than 1 mm of rain on the target date, computed from completed observations recorded on the observation date.",
@@ -11,6 +11,8 @@
   "trained_on": "weatherAUS historical record, frozen after Stage 3",
   "test_metrics": {
    "accuracy": 0.8666,
+   "precision": 0.7815,
+   "recall": 0.5482,
    "f1": 0.6444,
    "roc_auc": 0.8994
   },
