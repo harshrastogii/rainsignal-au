@@ -530,8 +530,8 @@ function select(name, push = true){
   // On a phone the readout lives below the map, so scroll it into view rather than
   // leaving the visitor looking at a map that silently changed.
   if (innerWidth <= 900){
-    const p = $("#panel"), host = $("#pane-map");
-    if (p && host) host.scrollTo({ top:Math.max(p.offsetTop - 8, 0),
+    const p = $("#panel");
+    if (p) p.scrollIntoView({ block:"start",
       behavior: matchMedia("(prefers-reduced-motion: reduce)").matches ? "auto" : "smooth" });
   }
   const fill = pane.querySelector(".answer-fill");
