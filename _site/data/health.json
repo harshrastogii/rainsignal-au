@@ -1,5 +1,5 @@
 {
- "run_utc": "2026-09-12T13:54:33+00:00",
+ "run_utc": "2026-09-12T22:55:44+00:00",
  "duration_s": 18.5,
  "source": "Bureau of Meteorology, anonymous FTP observation products",
  "products_requested": [
@@ -19,7 +19,7 @@
  "stale_detail": [
   {
    "location": "Albany",
-   "age_min": 775
+   "age_min": 1316
   }
  ],
  "rows_inserted": 43,
@@ -42,8 +42,8 @@
    "location": "Adelaide",
    "ok": true,
    "stale": false,
-   "observed_utc": "2026-09-12T13:50:00+00:00",
-   "age_min": 5,
+   "observed_utc": "2026-09-12T22:50:00+00:00",
+   "age_min": 6,
    "fields_present": 12,
    "fields_rejected": null,
    "fields_absent": null
@@ -53,7 +53,7 @@
    "ok": true,
    "stale": true,
    "observed_utc": "2026-09-12T01:00:00+00:00",
-   "age_min": 775,
+   "age_min": 1316,
    "fields_present": 6,
    "fields_rejected": null,
    "fields_absent": [
@@ -67,20 +67,18 @@
    "location": "Albury",
    "ok": true,
    "stale": false,
-   "observed_utc": "2026-09-12T13:50:00+00:00",
-   "age_min": 5,
-   "fields_present": 11,
-   "fields_rejected": {
-    "wind_dir": "not a 16-point compass label: 'CALM'"
-   },
+   "observed_utc": "2026-09-12T22:50:00+00:00",
+   "age_min": 6,
+   "fields_present": 12,
+   "fields_rejected": null,
    "fields_absent": null
   },
   {
    "location": "AliceSprings",
    "ok": true,
    "stale": false,
-   "observed_utc": "2026-09-12T13:50:00+00:00",
-   "age_min": 5,
+   "observed_utc": "2026-09-12T22:50:00+00:00",
+   "age_min": 6,
    "fields_present": 12,
    "fields_rejected": null,
    "fields_absent": null
@@ -89,8 +87,8 @@
    "location": "BadgerysCreek",
    "ok": true,
    "stale": false,
-   "observed_utc": "2026-09-12T13:50:00+00:00",
-   "age_min": 5,
+   "observed_utc": "2026-09-12T22:50:00+00:00",
+   "age_min": 6,
    "fields_present": 12,
    "fields_rejected": null,
    "fields_absent": null
@@ -99,8 +97,8 @@
    "location": "Ballarat",
    "ok": true,
    "stale": false,
-   "observed_utc": "2026-09-12T13:50:00+00:00",
-   "age_min": 5,
+   "observed_utc": "2026-09-12T22:50:00+00:00",
+   "age_min": 6,
    "fields_present": 12,
    "fields_rejected": null,
    "fields_absent": null
@@ -109,8 +107,8 @@
    "location": "Bendigo",
    "ok": true,
    "stale": false,
-   "observed_utc": "2026-09-12T13:50:00+00:00",
-   "age_min": 5,
+   "observed_utc": "2026-09-12T22:50:00+00:00",
+   "age_min": 6,
    "fields_present": 12,
    "fields_rejected": null,
    "fields_absent": null
@@ -119,8 +117,8 @@
    "location": "Brisbane",
    "ok": true,
    "stale": false,
-   "observed_utc": "2026-09-12T13:50:00+00:00",
-   "age_min": 5,
+   "observed_utc": "2026-09-12T22:50:00+00:00",
+   "age_min": 6,
    "fields_present": 12,
    "fields_rejected": null,
    "fields_absent": null
@@ -129,8 +127,8 @@
    "location": "Cairns",
    "ok": true,
    "stale": false,
-   "observed_utc": "2026-09-12T13:50:00+00:00",
-   "age_min": 5,
+   "observed_utc": "2026-09-12T22:50:00+00:00",
+   "age_min": 6,
    "fields_present": 12,
    "fields_rejected": null,
    "fields_absent": null
@@ -139,8 +137,8 @@
    "location": "Canberra",
    "ok": true,
    "stale": false,
-   "observed_utc": "2026-09-12T13:50:00+00:00",
-   "age_min": 5,
+   "observed_utc": "2026-09-12T22:50:00+00:00",
+   "age_min": 6,
    "fields_present": 11,
    "fields_rejected": {
     "wind_dir": "not a 16-point compass label: 'CALM'"
@@ -151,8 +149,8 @@
    "location": "Cobar",
    "ok": true,
    "stale": false,
-   "observed_utc": "2026-09-12T13:50:00+00:00",
-   "age_min": 5,
+   "observed_utc": "2026-09-12T22:50:00+00:00",
+   "age_min": 6,
    "fields_present": 12,
    "fields_rejected": null,
    "fields_absent": null
@@ -161,8 +159,8 @@
    "location": "CoffsHarbour",
    "ok": true,
    "stale": false,
-   "observed_utc": "2026-09-12T13:50:00+00:00",
-   "age_min": 5,
+   "observed_utc": "2026-09-12T22:50:00+00:00",
+   "age_min": 6,
    "fields_present": 12,
    "fields_rejected": null,
    "fields_absent": null
@@ -171,8 +169,8 @@
    "location": "Dartmoor",
    "ok": true,
    "stale": false,
-   "observed_utc": "2026-09-12T13:50:00+00:00",
-   "age_min": 5,
+   "observed_utc": "2026-09-12T22:50:00+00:00",
+   "age_min": 6,
    "fields_present": 12,
    "fields_rejected": null,
    "fields_absent": null
@@ -181,8 +179,8 @@
    "location": "Darwin",
    "ok": true,
    "stale": false,
-   "observed_utc": "2026-09-12T13:50:00+00:00",
-   "age_min": 5,
+   "observed_utc": "2026-09-12T22:50:00+00:00",
+   "age_min": 6,
    "fields_present": 12,
    "fields_rejected": null,
    "fields_absent": null
@@ -191,8 +189,8 @@
    "location": "GoldCoast",
    "ok": true,
    "stale": false,
-   "observed_utc": "2026-09-12T13:50:00+00:00",
-   "age_min": 5,
+   "observed_utc": "2026-09-12T22:50:00+00:00",
+   "age_min": 6,
    "fields_present": 12,
    "fields_rejected": null,
    "fields_absent": null
@@ -201,8 +199,8 @@
    "location": "Hobart",
    "ok": true,
    "stale": false,
-   "observed_utc": "2026-09-12T13:50:00+00:00",
-   "age_min": 5,
+   "observed_utc": "2026-09-12T22:50:00+00:00",
+   "age_min": 6,
    "fields_present": 12,
    "fields_rejected": null,
    "fields_absent": null
@@ -211,8 +209,8 @@
    "location": "Launceston",
    "ok": true,
    "stale": false,
-   "observed_utc": "2026-09-12T13:50:00+00:00",
-   "age_min": 5,
+   "observed_utc": "2026-09-12T22:50:00+00:00",
+   "age_min": 6,
    "fields_present": 10,
    "fields_rejected": null,
    "fields_absent": null
@@ -221,8 +219,8 @@
    "location": "Melbourne",
    "ok": true,
    "stale": false,
-   "observed_utc": "2026-09-12T13:50:00+00:00",
-   "age_min": 5,
+   "observed_utc": "2026-09-12T22:50:00+00:00",
+   "age_min": 6,
    "fields_present": 12,
    "fields_rejected": null,
    "fields_absent": null
@@ -231,8 +229,8 @@
    "location": "MelbourneAirport",
    "ok": true,
    "stale": false,
-   "observed_utc": "2026-09-12T13:50:00+00:00",
-   "age_min": 5,
+   "observed_utc": "2026-09-12T22:50:00+00:00",
+   "age_min": 6,
    "fields_present": 12,
    "fields_rejected": null,
    "fields_absent": null
@@ -241,8 +239,8 @@
    "location": "Mildura",
    "ok": true,
    "stale": false,
-   "observed_utc": "2026-09-12T13:50:00+00:00",
-   "age_min": 5,
+   "observed_utc": "2026-09-12T22:50:00+00:00",
+   "age_min": 6,
    "fields_present": 12,
    "fields_rejected": null,
    "fields_absent": null
@@ -251,8 +249,8 @@
    "location": "Moree",
    "ok": true,
    "stale": false,
-   "observed_utc": "2026-09-12T13:50:00+00:00",
-   "age_min": 5,
+   "observed_utc": "2026-09-12T22:50:00+00:00",
+   "age_min": 6,
    "fields_present": 12,
    "fields_rejected": null,
    "fields_absent": null
@@ -261,8 +259,8 @@
    "location": "MountGambier",
    "ok": true,
    "stale": false,
-   "observed_utc": "2026-09-12T13:50:00+00:00",
-   "age_min": 5,
+   "observed_utc": "2026-09-12T22:50:00+00:00",
+   "age_min": 6,
    "fields_present": 12,
    "fields_rejected": null,
    "fields_absent": null
@@ -271,7 +269,7 @@
    "location": "MountGinini",
    "ok": true,
    "stale": false,
-   "observed_utc": "2026-09-12T13:49:00+00:00",
+   "observed_utc": "2026-09-12T22:50:00+00:00",
    "age_min": 6,
    "fields_present": 10,
    "fields_rejected": null,
@@ -281,8 +279,8 @@
    "location": "Newcastle",
    "ok": true,
    "stale": false,
-   "observed_utc": "2026-09-12T13:50:00+00:00",
-   "age_min": 5,
+   "observed_utc": "2026-09-12T22:50:00+00:00",
+   "age_min": 6,
    "fields_present": 10,
    "fields_rejected": null,
    "fields_absent": null
@@ -291,8 +289,8 @@
    "location": "NorahHead",
    "ok": true,
    "stale": false,
-   "observed_utc": "2026-09-12T13:50:00+00:00",
-   "age_min": 5,
+   "observed_utc": "2026-09-12T22:50:00+00:00",
+   "age_min": 6,
    "fields_present": 12,
    "fields_rejected": null,
    "fields_absent": null
@@ -301,8 +299,8 @@
    "location": "NorfolkIsland",
    "ok": true,
    "stale": false,
-   "observed_utc": "2026-09-12T13:50:00+00:00",
-   "age_min": 5,
+   "observed_utc": "2026-09-12T22:50:00+00:00",
+   "age_min": 6,
    "fields_present": 12,
    "fields_rejected": null,
    "fields_absent": null
@@ -311,8 +309,8 @@
    "location": "Nuriootpa",
    "ok": true,
    "stale": false,
-   "observed_utc": "2026-09-12T13:50:00+00:00",
-   "age_min": 5,
+   "observed_utc": "2026-09-12T22:50:00+00:00",
+   "age_min": 6,
    "fields_present": 12,
    "fields_rejected": null,
    "fields_absent": null
@@ -321,8 +319,8 @@
    "location": "PearceRAAF",
    "ok": true,
    "stale": false,
-   "observed_utc": "2026-09-12T13:50:00+00:00",
-   "age_min": 5,
+   "observed_utc": "2026-09-12T22:50:00+00:00",
+   "age_min": 6,
    "fields_present": 12,
    "fields_rejected": null,
    "fields_absent": null
@@ -331,20 +329,18 @@
    "location": "Penrith",
    "ok": true,
    "stale": false,
-   "observed_utc": "2026-09-12T13:50:00+00:00",
-   "age_min": 5,
-   "fields_present": 9,
-   "fields_rejected": {
-    "wind_dir": "not a 16-point compass label: 'CALM'"
-   },
+   "observed_utc": "2026-09-12T22:50:00+00:00",
+   "age_min": 6,
+   "fields_present": 10,
+   "fields_rejected": null,
    "fields_absent": null
   },
   {
    "location": "Perth",
    "ok": true,
    "stale": false,
-   "observed_utc": "2026-09-12T13:50:00+00:00",
-   "age_min": 5,
+   "observed_utc": "2026-09-12T22:50:00+00:00",
+   "age_min": 6,
    "fields_present": 11,
    "fields_rejected": {
     "wind_dir": "not a 16-point compass label: 'CALM'"
@@ -355,8 +351,8 @@
    "location": "PerthAirport",
    "ok": true,
    "stale": false,
-   "observed_utc": "2026-09-12T13:50:00+00:00",
-   "age_min": 5,
+   "observed_utc": "2026-09-12T22:50:00+00:00",
+   "age_min": 6,
    "fields_present": 12,
    "fields_rejected": null,
    "fields_absent": null
@@ -365,8 +361,8 @@
    "location": "Portland",
    "ok": true,
    "stale": false,
-   "observed_utc": "2026-09-12T13:50:00+00:00",
-   "age_min": 5,
+   "observed_utc": "2026-09-12T22:50:00+00:00",
+   "age_min": 6,
    "fields_present": 12,
    "fields_rejected": null,
    "fields_absent": null
@@ -375,20 +371,18 @@
    "location": "Richmond",
    "ok": true,
    "stale": false,
-   "observed_utc": "2026-09-12T13:50:00+00:00",
-   "age_min": 5,
-   "fields_present": 11,
-   "fields_rejected": {
-    "wind_dir": "not a 16-point compass label: 'CALM'"
-   },
+   "observed_utc": "2026-09-12T22:50:00+00:00",
+   "age_min": 6,
+   "fields_present": 12,
+   "fields_rejected": null,
    "fields_absent": null
   },
   {
    "location": "Sale",
    "ok": true,
    "stale": false,
-   "observed_utc": "2026-09-12T13:50:00+00:00",
-   "age_min": 5,
+   "observed_utc": "2026-09-12T22:50:00+00:00",
+   "age_min": 6,
    "fields_present": 12,
    "fields_rejected": null,
    "fields_absent": null
@@ -397,8 +391,8 @@
    "location": "SalmonGums",
    "ok": true,
    "stale": false,
-   "observed_utc": "2026-09-12T13:50:00+00:00",
-   "age_min": 5,
+   "observed_utc": "2026-09-12T22:50:00+00:00",
+   "age_min": 6,
    "fields_present": 9,
    "fields_rejected": {
     "wind_dir": "not a 16-point compass label: 'CALM'"
@@ -409,8 +403,8 @@
    "location": "Sydney",
    "ok": true,
    "stale": false,
-   "observed_utc": "2026-09-12T13:50:00+00:00",
-   "age_min": 5,
+   "observed_utc": "2026-09-12T22:50:00+00:00",
+   "age_min": 6,
    "fields_present": 10,
    "fields_rejected": null,
    "fields_absent": [
@@ -422,8 +416,8 @@
    "location": "SydneyAirport",
    "ok": true,
    "stale": false,
-   "observed_utc": "2026-09-12T13:50:00+00:00",
-   "age_min": 5,
+   "observed_utc": "2026-09-12T22:50:00+00:00",
+   "age_min": 6,
    "fields_present": 12,
    "fields_rejected": null,
    "fields_absent": null
@@ -432,8 +426,8 @@
    "location": "Townsville",
    "ok": true,
    "stale": false,
-   "observed_utc": "2026-09-12T13:50:00+00:00",
-   "age_min": 5,
+   "observed_utc": "2026-09-12T22:50:00+00:00",
+   "age_min": 6,
    "fields_present": 12,
    "fields_rejected": null,
    "fields_absent": null
@@ -442,8 +436,8 @@
    "location": "Tuggeranong",
    "ok": true,
    "stale": false,
-   "observed_utc": "2026-09-12T13:50:00+00:00",
-   "age_min": 5,
+   "observed_utc": "2026-09-12T22:50:00+00:00",
+   "age_min": 6,
    "fields_present": 11,
    "fields_rejected": {
     "wind_dir": "not a 16-point compass label: 'CALM'"
@@ -454,20 +448,18 @@
    "location": "WaggaWagga",
    "ok": true,
    "stale": false,
-   "observed_utc": "2026-09-12T13:50:00+00:00",
-   "age_min": 5,
-   "fields_present": 11,
-   "fields_rejected": {
-    "wind_dir": "not a 16-point compass label: 'CALM'"
-   },
+   "observed_utc": "2026-09-12T22:50:00+00:00",
+   "age_min": 6,
+   "fields_present": 12,
+   "fields_rejected": null,
    "fields_absent": null
   },
   {
    "location": "Walpole",
    "ok": true,
    "stale": false,
-   "observed_utc": "2026-09-12T13:50:00+00:00",
-   "age_min": 5,
+   "observed_utc": "2026-09-12T22:50:00+00:00",
+   "age_min": 6,
    "fields_present": 12,
    "fields_rejected": null,
    "fields_absent": null
@@ -476,8 +468,8 @@
    "location": "Williamtown",
    "ok": true,
    "stale": false,
-   "observed_utc": "2026-09-12T13:50:00+00:00",
-   "age_min": 5,
+   "observed_utc": "2026-09-12T22:50:00+00:00",
+   "age_min": 6,
    "fields_present": 12,
    "fields_rejected": null,
    "fields_absent": null
@@ -486,8 +478,8 @@
    "location": "Witchcliffe",
    "ok": true,
    "stale": false,
-   "observed_utc": "2026-09-12T13:50:00+00:00",
-   "age_min": 5,
+   "observed_utc": "2026-09-12T22:50:00+00:00",
+   "age_min": 6,
    "fields_present": 12,
    "fields_rejected": null,
    "fields_absent": null
@@ -496,13 +488,13 @@
    "location": "Woomera",
    "ok": true,
    "stale": false,
-   "observed_utc": "2026-09-12T13:50:00+00:00",
-   "age_min": 5,
+   "observed_utc": "2026-09-12T22:50:00+00:00",
+   "age_min": 6,
    "fields_present": 12,
    "fields_rejected": null,
    "fields_absent": null
   }
  ],
  "store": "data/live",
- "rows_in_store": 1684
+ "rows_in_store": 1727
 }
