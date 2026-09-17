@@ -1,7 +1,7 @@
 {
- "generated_utc": "2026-09-16T17:43:08+00:00",
- "observation_date": "2026-09-16",
- "target_date": "2026-09-17",
+ "generated_utc": "2026-09-17T12:44:32+00:00",
+ "observation_date": "2026-09-17",
+ "target_date": "2026-09-18",
  "what_this_is": "A machine-learning estimate of the chance of more than 1 mm of rain on the target date, computed from completed observations recorded on the observation date.",
  "not_a_bureau_forecast": true,
  "disclaimer": "This is a model estimate produced by a student project, not a forecast issued by the Bureau of Meteorology. For official forecasts see bom.gov.au.",
@@ -19,1019 +19,214 @@
   "reports": "probability, not a yes/no label",
   "note": "Stage 3 measured the best decision threshold near 0.31 rather than 0.5, so no label is imposed here."
  },
- "stations_predicted": 29,
- "stations_withheld": 15,
+ "stations_predicted": 6,
+ "stations_withheld": 38,
  "predictions": {
   "Adelaide": {
-   "rain_probability": 0.0068,
-   "observation_date": "2026-09-16",
-   "target_date": "2026-09-17",
+   "rain_probability": 0.0021,
+   "observation_date": "2026-09-17",
+   "target_date": "2026-09-18",
    "inputs_present": 22,
    "inputs_total": 22,
    "imputed_by_frozen_pipeline": null,
    "provenance": {
     "9am": {
-     "observed_local": "2026-09-16T08:50:00+09:30",
-     "offset_min": 10.0
+     "observed_local": "2026-09-17T09:00:00+09:30",
+     "offset_min": 0.0
     },
     "3pm": {
-     "observed_local": "2026-09-16T15:10:00+09:30",
-     "offset_min": 10.0
-    },
-    "Rainfall": {
-     "window_end": "2026-09-16T09:00:00+09:30"
-    },
-    "MinTemp": {
-     "window": {
-      "start": "2026-09-15T18:00:00+09:30",
-      "end": "2026-09-16T09:00:00+09:30",
-      "instance": "running"
-     }
-    },
-    "MaxTemp": {
-     "window": {
-      "start": "2026-09-16T06:00:00+09:30",
-      "end": "2026-09-16T21:00:00+09:30",
-      "instance": "running"
-     }
-    }
-   }
-  },
-  "Albury": {
-   "rain_probability": 0.0074,
-   "observation_date": "2026-09-16",
-   "target_date": "2026-09-17",
-   "inputs_present": 22,
-   "inputs_total": 22,
-   "imputed_by_frozen_pipeline": null,
-   "provenance": {
-    "9am": {
-     "observed_local": "2026-09-16T09:20:00+10:00",
+     "observed_local": "2026-09-17T15:20:00+09:30",
      "offset_min": 20.0
     },
-    "3pm": {
-     "observed_local": "2026-09-16T15:40:00+10:00",
-     "offset_min": 40.0
-    },
     "Rainfall": {
-     "window_end": "2026-09-16T09:00:00+10:00"
+     "window_end": "2026-09-17T09:00:00+09:30"
     },
     "MinTemp": {
      "window": {
-      "start": "2026-09-15T18:00:00+10:00",
-      "end": "2026-09-16T09:00:00+10:00",
+      "start": "2026-09-16T18:00:00+09:30",
+      "end": "2026-09-17T09:00:00+09:30",
       "instance": "running"
      }
     },
     "MaxTemp": {
      "window": {
-      "start": "2026-09-16T06:00:00+10:00",
-      "end": "2026-09-16T21:00:00+10:00",
+      "start": "2026-09-17T06:00:00+09:30",
+      "end": "2026-09-17T21:00:00+09:30",
       "instance": "running"
      }
     }
    }
   },
   "AliceSprings": {
-   "rain_probability": 0.0182,
-   "observation_date": "2026-09-16",
-   "target_date": "2026-09-17",
+   "rain_probability": 0.0028,
+   "observation_date": "2026-09-17",
+   "target_date": "2026-09-18",
    "inputs_present": 22,
    "inputs_total": 22,
    "imputed_by_frozen_pipeline": null,
    "provenance": {
     "9am": {
-     "observed_local": "2026-09-16T08:50:00+09:30",
-     "offset_min": 10.0
+     "observed_local": "2026-09-17T09:00:00+09:30",
+     "offset_min": 0.0
     },
     "3pm": {
-     "observed_local": "2026-09-16T15:10:00+09:30",
-     "offset_min": 10.0
-    },
-    "Rainfall": {
-     "window_end": "2026-09-16T09:00:00+09:30"
-    },
-    "MinTemp": {
-     "window": {
-      "start": "2026-09-15T18:00:00+09:30",
-      "end": "2026-09-16T09:00:00+09:30",
-      "instance": "running"
-     }
-    },
-    "MaxTemp": {
-     "window": {
-      "start": "2026-09-16T06:00:00+09:30",
-      "end": "2026-09-16T21:00:00+09:30",
-      "instance": "running"
-     }
-    }
-   }
-  },
-  "BadgerysCreek": {
-   "rain_probability": 0.0082,
-   "observation_date": "2026-09-16",
-   "target_date": "2026-09-17",
-   "inputs_present": 22,
-   "inputs_total": 22,
-   "imputed_by_frozen_pipeline": null,
-   "provenance": {
-    "9am": {
-     "observed_local": "2026-09-16T09:20:00+10:00",
+     "observed_local": "2026-09-17T15:20:00+09:30",
      "offset_min": 20.0
     },
-    "3pm": {
-     "observed_local": "2026-09-16T15:40:00+10:00",
-     "offset_min": 40.0
-    },
     "Rainfall": {
-     "window_end": "2026-09-16T09:00:00+10:00"
+     "window_end": "2026-09-17T09:00:00+09:30"
     },
     "MinTemp": {
      "window": {
-      "start": "2026-09-15T18:00:00+10:00",
-      "end": "2026-09-16T09:00:00+10:00",
+      "start": "2026-09-16T18:00:00+09:30",
+      "end": "2026-09-17T09:00:00+09:30",
       "instance": "running"
      }
     },
     "MaxTemp": {
      "window": {
-      "start": "2026-09-16T06:00:00+10:00",
-      "end": "2026-09-16T21:00:00+10:00",
-      "instance": "running"
-     }
-    }
-   }
-  },
-  "Ballarat": {
-   "rain_probability": 0.0113,
-   "observation_date": "2026-09-16",
-   "target_date": "2026-09-17",
-   "inputs_present": 22,
-   "inputs_total": 22,
-   "imputed_by_frozen_pipeline": null,
-   "provenance": {
-    "9am": {
-     "observed_local": "2026-09-16T09:20:00+10:00",
-     "offset_min": 20.0
-    },
-    "3pm": {
-     "observed_local": "2026-09-16T15:40:00+10:00",
-     "offset_min": 40.0
-    },
-    "Rainfall": {
-     "window_end": "2026-09-16T09:00:00+10:00"
-    },
-    "MinTemp": {
-     "window": {
-      "start": "2026-09-15T18:00:00+10:00",
-      "end": "2026-09-16T09:00:00+10:00",
-      "instance": "running"
-     }
-    },
-    "MaxTemp": {
-     "window": {
-      "start": "2026-09-16T06:00:00+10:00",
-      "end": "2026-09-16T21:00:00+10:00",
-      "instance": "running"
-     }
-    }
-   }
-  },
-  "Bendigo": {
-   "rain_probability": 0.0041,
-   "observation_date": "2026-09-16",
-   "target_date": "2026-09-17",
-   "inputs_present": 22,
-   "inputs_total": 22,
-   "imputed_by_frozen_pipeline": null,
-   "provenance": {
-    "9am": {
-     "observed_local": "2026-09-16T09:20:00+10:00",
-     "offset_min": 20.0
-    },
-    "3pm": {
-     "observed_local": "2026-09-16T15:40:00+10:00",
-     "offset_min": 40.0
-    },
-    "Rainfall": {
-     "window_end": "2026-09-16T09:00:00+10:00"
-    },
-    "MinTemp": {
-     "window": {
-      "start": "2026-09-15T18:00:00+10:00",
-      "end": "2026-09-16T09:00:00+10:00",
-      "instance": "running"
-     }
-    },
-    "MaxTemp": {
-     "window": {
-      "start": "2026-09-16T06:00:00+10:00",
-      "end": "2026-09-16T21:00:00+10:00",
-      "instance": "running"
-     }
-    }
-   }
-  },
-  "Brisbane": {
-   "rain_probability": 0.4264,
-   "observation_date": "2026-09-16",
-   "target_date": "2026-09-17",
-   "inputs_present": 22,
-   "inputs_total": 22,
-   "imputed_by_frozen_pipeline": null,
-   "provenance": {
-    "9am": {
-     "observed_local": "2026-09-16T09:20:00+10:00",
-     "offset_min": 20.0
-    },
-    "3pm": {
-     "observed_local": "2026-09-16T15:40:00+10:00",
-     "offset_min": 40.0
-    },
-    "Rainfall": {
-     "window_end": "2026-09-16T09:00:00+10:00"
-    },
-    "MinTemp": {
-     "window": {
-      "start": "2026-09-15T18:00:00+10:00",
-      "end": "2026-09-16T09:00:00+10:00",
-      "instance": "running"
-     }
-    },
-    "MaxTemp": {
-     "window": {
-      "start": "2026-09-16T06:00:00+10:00",
-      "end": "2026-09-16T21:00:00+10:00",
-      "instance": "running"
-     }
-    }
-   }
-  },
-  "Cairns": {
-   "rain_probability": 0.0615,
-   "observation_date": "2026-09-16",
-   "target_date": "2026-09-17",
-   "inputs_present": 22,
-   "inputs_total": 22,
-   "imputed_by_frozen_pipeline": null,
-   "provenance": {
-    "9am": {
-     "observed_local": "2026-09-16T09:20:00+10:00",
-     "offset_min": 20.0
-    },
-    "3pm": {
-     "observed_local": "2026-09-16T15:40:00+10:00",
-     "offset_min": 40.0
-    },
-    "Rainfall": {
-     "window_end": "2026-09-16T09:00:00+10:00"
-    },
-    "MinTemp": {
-     "window": {
-      "start": "2026-09-15T18:00:00+10:00",
-      "end": "2026-09-16T09:00:00+10:00",
-      "instance": "running"
-     }
-    },
-    "MaxTemp": {
-     "window": {
-      "start": "2026-09-16T06:00:00+10:00",
-      "end": "2026-09-16T21:00:00+10:00",
-      "instance": "running"
-     }
-    }
-   }
-  },
-  "Canberra": {
-   "rain_probability": 0.0013,
-   "observation_date": "2026-09-16",
-   "target_date": "2026-09-17",
-   "inputs_present": 22,
-   "inputs_total": 22,
-   "imputed_by_frozen_pipeline": null,
-   "provenance": {
-    "9am": {
-     "observed_local": "2026-09-16T09:20:00+10:00",
-     "offset_min": 20.0
-    },
-    "3pm": {
-     "observed_local": "2026-09-16T15:40:00+10:00",
-     "offset_min": 40.0
-    },
-    "Rainfall": {
-     "window_end": "2026-09-16T09:00:00+10:00"
-    },
-    "MinTemp": {
-     "window": {
-      "start": "2026-09-15T18:00:00+10:00",
-      "end": "2026-09-16T09:00:00+10:00",
-      "instance": "running"
-     }
-    },
-    "MaxTemp": {
-     "window": {
-      "start": "2026-09-16T06:00:00+10:00",
-      "end": "2026-09-16T21:00:00+10:00",
-      "instance": "running"
-     }
-    }
-   }
-  },
-  "Cobar": {
-   "rain_probability": 0.0006,
-   "observation_date": "2026-09-16",
-   "target_date": "2026-09-17",
-   "inputs_present": 22,
-   "inputs_total": 22,
-   "imputed_by_frozen_pipeline": null,
-   "provenance": {
-    "9am": {
-     "observed_local": "2026-09-16T09:20:00+10:00",
-     "offset_min": 20.0
-    },
-    "3pm": {
-     "observed_local": "2026-09-16T15:40:00+10:00",
-     "offset_min": 40.0
-    },
-    "Rainfall": {
-     "window_end": "2026-09-16T09:00:00+10:00"
-    },
-    "MinTemp": {
-     "window": {
-      "start": "2026-09-15T18:00:00+10:00",
-      "end": "2026-09-16T09:00:00+10:00",
-      "instance": "running"
-     }
-    },
-    "MaxTemp": {
-     "window": {
-      "start": "2026-09-16T06:00:00+10:00",
-      "end": "2026-09-16T21:00:00+10:00",
-      "instance": "running"
-     }
-    }
-   }
-  },
-  "CoffsHarbour": {
-   "rain_probability": 0.2046,
-   "observation_date": "2026-09-16",
-   "target_date": "2026-09-17",
-   "inputs_present": 22,
-   "inputs_total": 22,
-   "imputed_by_frozen_pipeline": null,
-   "provenance": {
-    "9am": {
-     "observed_local": "2026-09-16T09:20:00+10:00",
-     "offset_min": 20.0
-    },
-    "3pm": {
-     "observed_local": "2026-09-16T15:40:00+10:00",
-     "offset_min": 40.0
-    },
-    "Rainfall": {
-     "window_end": "2026-09-16T09:00:00+10:00"
-    },
-    "MinTemp": {
-     "window": {
-      "start": "2026-09-15T18:00:00+10:00",
-      "end": "2026-09-16T09:00:00+10:00",
-      "instance": "running"
-     }
-    },
-    "MaxTemp": {
-     "window": {
-      "start": "2026-09-16T06:00:00+10:00",
-      "end": "2026-09-16T21:00:00+10:00",
+      "start": "2026-09-17T06:00:00+09:30",
+      "end": "2026-09-17T21:00:00+09:30",
       "instance": "running"
      }
     }
    }
   },
   "Darwin": {
-   "rain_probability": 0.0464,
-   "observation_date": "2026-09-16",
-   "target_date": "2026-09-17",
+   "rain_probability": 0.0667,
+   "observation_date": "2026-09-17",
+   "target_date": "2026-09-18",
    "inputs_present": 22,
    "inputs_total": 22,
    "imputed_by_frozen_pipeline": null,
    "provenance": {
     "9am": {
-     "observed_local": "2026-09-16T08:50:00+09:30",
-     "offset_min": 10.0
+     "observed_local": "2026-09-17T09:00:00+09:30",
+     "offset_min": 0.0
     },
     "3pm": {
-     "observed_local": "2026-09-16T15:10:00+09:30",
-     "offset_min": 10.0
-    },
-    "Rainfall": {
-     "window_end": "2026-09-16T09:00:00+09:30"
-    },
-    "MinTemp": {
-     "window": {
-      "start": "2026-09-15T18:00:00+09:30",
-      "end": "2026-09-16T09:00:00+09:30",
-      "instance": "running"
-     }
-    },
-    "MaxTemp": {
-     "window": {
-      "start": "2026-09-16T06:00:00+09:30",
-      "end": "2026-09-16T21:00:00+09:30",
-      "instance": "running"
-     }
-    }
-   }
-  },
-  "GoldCoast": {
-   "rain_probability": 0.2776,
-   "observation_date": "2026-09-16",
-   "target_date": "2026-09-17",
-   "inputs_present": 22,
-   "inputs_total": 22,
-   "imputed_by_frozen_pipeline": null,
-   "provenance": {
-    "9am": {
-     "observed_local": "2026-09-16T09:20:00+10:00",
+     "observed_local": "2026-09-17T15:20:00+09:30",
      "offset_min": 20.0
     },
-    "3pm": {
-     "observed_local": "2026-09-16T15:40:00+10:00",
-     "offset_min": 40.0
-    },
     "Rainfall": {
-     "window_end": "2026-09-16T09:00:00+10:00"
+     "window_end": "2026-09-17T09:00:00+09:30"
     },
     "MinTemp": {
      "window": {
-      "start": "2026-09-15T18:00:00+10:00",
-      "end": "2026-09-16T09:00:00+10:00",
+      "start": "2026-09-16T18:00:00+09:30",
+      "end": "2026-09-17T09:00:00+09:30",
       "instance": "running"
      }
     },
     "MaxTemp": {
      "window": {
-      "start": "2026-09-16T06:00:00+10:00",
-      "end": "2026-09-16T21:00:00+10:00",
-      "instance": "running"
-     }
-    }
-   }
-  },
-  "Hobart": {
-   "rain_probability": 0.0139,
-   "observation_date": "2026-09-16",
-   "target_date": "2026-09-17",
-   "inputs_present": 22,
-   "inputs_total": 22,
-   "imputed_by_frozen_pipeline": null,
-   "provenance": {
-    "9am": {
-     "observed_local": "2026-09-16T09:20:00+10:00",
-     "offset_min": 20.0
-    },
-    "3pm": {
-     "observed_local": "2026-09-16T15:40:00+10:00",
-     "offset_min": 40.0
-    },
-    "Rainfall": {
-     "window_end": "2026-09-16T09:00:00+10:00"
-    },
-    "MinTemp": {
-     "window": {
-      "start": "2026-09-15T18:00:00+10:00",
-      "end": "2026-09-16T09:00:00+10:00",
-      "instance": "running"
-     }
-    },
-    "MaxTemp": {
-     "window": {
-      "start": "2026-09-16T06:00:00+10:00",
-      "end": "2026-09-16T21:00:00+10:00",
-      "instance": "running"
-     }
-    }
-   }
-  },
-  "Melbourne": {
-   "rain_probability": 0.0489,
-   "observation_date": "2026-09-16",
-   "target_date": "2026-09-17",
-   "inputs_present": 22,
-   "inputs_total": 22,
-   "imputed_by_frozen_pipeline": null,
-   "provenance": {
-    "9am": {
-     "observed_local": "2026-09-16T09:20:00+10:00",
-     "offset_min": 20.0
-    },
-    "3pm": {
-     "observed_local": "2026-09-16T15:40:00+10:00",
-     "offset_min": 40.0
-    },
-    "Rainfall": {
-     "window_end": "2026-09-16T09:00:00+10:00"
-    },
-    "MinTemp": {
-     "window": {
-      "start": "2026-09-15T18:00:00+10:00",
-      "end": "2026-09-16T09:00:00+10:00",
-      "instance": "running"
-     }
-    },
-    "MaxTemp": {
-     "window": {
-      "start": "2026-09-16T06:00:00+10:00",
-      "end": "2026-09-16T21:00:00+10:00",
-      "instance": "running"
-     }
-    }
-   }
-  },
-  "MelbourneAirport": {
-   "rain_probability": 0.019,
-   "observation_date": "2026-09-16",
-   "target_date": "2026-09-17",
-   "inputs_present": 22,
-   "inputs_total": 22,
-   "imputed_by_frozen_pipeline": null,
-   "provenance": {
-    "9am": {
-     "observed_local": "2026-09-16T09:20:00+10:00",
-     "offset_min": 20.0
-    },
-    "3pm": {
-     "observed_local": "2026-09-16T15:40:00+10:00",
-     "offset_min": 40.0
-    },
-    "Rainfall": {
-     "window_end": "2026-09-16T09:00:00+10:00"
-    },
-    "MinTemp": {
-     "window": {
-      "start": "2026-09-15T18:00:00+10:00",
-      "end": "2026-09-16T09:00:00+10:00",
-      "instance": "running"
-     }
-    },
-    "MaxTemp": {
-     "window": {
-      "start": "2026-09-16T06:00:00+10:00",
-      "end": "2026-09-16T21:00:00+10:00",
-      "instance": "running"
-     }
-    }
-   }
-  },
-  "Mildura": {
-   "rain_probability": 0.0014,
-   "observation_date": "2026-09-16",
-   "target_date": "2026-09-17",
-   "inputs_present": 22,
-   "inputs_total": 22,
-   "imputed_by_frozen_pipeline": null,
-   "provenance": {
-    "9am": {
-     "observed_local": "2026-09-16T09:20:00+10:00",
-     "offset_min": 20.0
-    },
-    "3pm": {
-     "observed_local": "2026-09-16T15:40:00+10:00",
-     "offset_min": 40.0
-    },
-    "Rainfall": {
-     "window_end": "2026-09-16T09:00:00+10:00"
-    },
-    "MinTemp": {
-     "window": {
-      "start": "2026-09-15T18:00:00+10:00",
-      "end": "2026-09-16T09:00:00+10:00",
-      "instance": "running"
-     }
-    },
-    "MaxTemp": {
-     "window": {
-      "start": "2026-09-16T06:00:00+10:00",
-      "end": "2026-09-16T21:00:00+10:00",
-      "instance": "running"
-     }
-    }
-   }
-  },
-  "Moree": {
-   "rain_probability": 0.0086,
-   "observation_date": "2026-09-16",
-   "target_date": "2026-09-17",
-   "inputs_present": 22,
-   "inputs_total": 22,
-   "imputed_by_frozen_pipeline": null,
-   "provenance": {
-    "9am": {
-     "observed_local": "2026-09-16T09:20:00+10:00",
-     "offset_min": 20.0
-    },
-    "3pm": {
-     "observed_local": "2026-09-16T15:40:00+10:00",
-     "offset_min": 40.0
-    },
-    "Rainfall": {
-     "window_end": "2026-09-16T09:00:00+10:00"
-    },
-    "MinTemp": {
-     "window": {
-      "start": "2026-09-15T18:00:00+10:00",
-      "end": "2026-09-16T09:00:00+10:00",
-      "instance": "running"
-     }
-    },
-    "MaxTemp": {
-     "window": {
-      "start": "2026-09-16T06:00:00+10:00",
-      "end": "2026-09-16T21:00:00+10:00",
+      "start": "2026-09-17T06:00:00+09:30",
+      "end": "2026-09-17T21:00:00+09:30",
       "instance": "running"
      }
     }
    }
   },
   "MountGambier": {
-   "rain_probability": 0.001,
-   "observation_date": "2026-09-16",
-   "target_date": "2026-09-17",
+   "rain_probability": 0.0083,
+   "observation_date": "2026-09-17",
+   "target_date": "2026-09-18",
    "inputs_present": 22,
    "inputs_total": 22,
    "imputed_by_frozen_pipeline": null,
    "provenance": {
     "9am": {
-     "observed_local": "2026-09-16T08:50:00+09:30",
-     "offset_min": 10.0
+     "observed_local": "2026-09-17T09:00:00+09:30",
+     "offset_min": 0.0
     },
     "3pm": {
-     "observed_local": "2026-09-16T15:10:00+09:30",
-     "offset_min": 10.0
-    },
-    "Rainfall": {
-     "window_end": "2026-09-16T09:00:00+09:30"
-    },
-    "MinTemp": {
-     "window": {
-      "start": "2026-09-15T18:00:00+09:30",
-      "end": "2026-09-16T09:00:00+09:30",
-      "instance": "running"
-     }
-    },
-    "MaxTemp": {
-     "window": {
-      "start": "2026-09-16T06:00:00+09:30",
-      "end": "2026-09-16T21:00:00+09:30",
-      "instance": "running"
-     }
-    }
-   }
-  },
-  "NorahHead": {
-   "rain_probability": 0.3183,
-   "observation_date": "2026-09-16",
-   "target_date": "2026-09-17",
-   "inputs_present": 22,
-   "inputs_total": 22,
-   "imputed_by_frozen_pipeline": null,
-   "provenance": {
-    "9am": {
-     "observed_local": "2026-09-16T09:20:00+10:00",
+     "observed_local": "2026-09-17T15:20:00+09:30",
      "offset_min": 20.0
     },
-    "3pm": {
-     "observed_local": "2026-09-16T15:40:00+10:00",
-     "offset_min": 40.0
-    },
     "Rainfall": {
-     "window_end": "2026-09-16T09:00:00+10:00"
+     "window_end": "2026-09-17T09:00:00+09:30"
     },
     "MinTemp": {
      "window": {
-      "start": "2026-09-15T18:00:00+10:00",
-      "end": "2026-09-16T09:00:00+10:00",
+      "start": "2026-09-16T18:00:00+09:30",
+      "end": "2026-09-17T09:00:00+09:30",
       "instance": "running"
      }
     },
     "MaxTemp": {
      "window": {
-      "start": "2026-09-16T06:00:00+10:00",
-      "end": "2026-09-16T21:00:00+10:00",
+      "start": "2026-09-17T06:00:00+09:30",
+      "end": "2026-09-17T21:00:00+09:30",
       "instance": "running"
      }
     }
    }
   },
   "Nuriootpa": {
-   "rain_probability": 0.0064,
-   "observation_date": "2026-09-16",
-   "target_date": "2026-09-17",
+   "rain_probability": 0.0019,
+   "observation_date": "2026-09-17",
+   "target_date": "2026-09-18",
    "inputs_present": 22,
    "inputs_total": 22,
    "imputed_by_frozen_pipeline": null,
    "provenance": {
     "9am": {
-     "observed_local": "2026-09-16T08:50:00+09:30",
-     "offset_min": 10.0
+     "observed_local": "2026-09-17T09:00:00+09:30",
+     "offset_min": 0.0
     },
     "3pm": {
-     "observed_local": "2026-09-16T15:10:00+09:30",
-     "offset_min": 10.0
-    },
-    "Rainfall": {
-     "window_end": "2026-09-16T09:00:00+09:30"
-    },
-    "MinTemp": {
-     "window": {
-      "start": "2026-09-15T18:00:00+09:30",
-      "end": "2026-09-16T09:00:00+09:30",
-      "instance": "running"
-     }
-    },
-    "MaxTemp": {
-     "window": {
-      "start": "2026-09-16T06:00:00+09:30",
-      "end": "2026-09-16T21:00:00+09:30",
-      "instance": "running"
-     }
-    }
-   }
-  },
-  "Portland": {
-   "rain_probability": 0.0572,
-   "observation_date": "2026-09-16",
-   "target_date": "2026-09-17",
-   "inputs_present": 22,
-   "inputs_total": 22,
-   "imputed_by_frozen_pipeline": null,
-   "provenance": {
-    "9am": {
-     "observed_local": "2026-09-16T09:20:00+10:00",
+     "observed_local": "2026-09-17T15:20:00+09:30",
      "offset_min": 20.0
     },
-    "3pm": {
-     "observed_local": "2026-09-16T14:30:00+10:00",
-     "offset_min": 30.0
-    },
     "Rainfall": {
-     "window_end": "2026-09-16T09:00:00+10:00"
+     "window_end": "2026-09-17T09:00:00+09:30"
     },
     "MinTemp": {
      "window": {
-      "start": "2026-09-15T18:00:00+10:00",
-      "end": "2026-09-16T09:00:00+10:00",
+      "start": "2026-09-16T18:00:00+09:30",
+      "end": "2026-09-17T09:00:00+09:30",
       "instance": "running"
      }
     },
     "MaxTemp": {
      "window": {
-      "start": "2026-09-16T06:00:00+10:00",
-      "end": "2026-09-16T21:00:00+10:00",
-      "instance": "running"
-     }
-    }
-   }
-  },
-  "Richmond": {
-   "rain_probability": 0.0042,
-   "observation_date": "2026-09-16",
-   "target_date": "2026-09-17",
-   "inputs_present": 22,
-   "inputs_total": 22,
-   "imputed_by_frozen_pipeline": null,
-   "provenance": {
-    "9am": {
-     "observed_local": "2026-09-16T09:20:00+10:00",
-     "offset_min": 20.0
-    },
-    "3pm": {
-     "observed_local": "2026-09-16T15:40:00+10:00",
-     "offset_min": 40.0
-    },
-    "Rainfall": {
-     "window_end": "2026-09-16T09:00:00+10:00"
-    },
-    "MinTemp": {
-     "window": {
-      "start": "2026-09-15T18:00:00+10:00",
-      "end": "2026-09-16T09:00:00+10:00",
-      "instance": "running"
-     }
-    },
-    "MaxTemp": {
-     "window": {
-      "start": "2026-09-16T06:00:00+10:00",
-      "end": "2026-09-16T21:00:00+10:00",
-      "instance": "running"
-     }
-    }
-   }
-  },
-  "Sale": {
-   "rain_probability": 0.0432,
-   "observation_date": "2026-09-16",
-   "target_date": "2026-09-17",
-   "inputs_present": 22,
-   "inputs_total": 22,
-   "imputed_by_frozen_pipeline": null,
-   "provenance": {
-    "9am": {
-     "observed_local": "2026-09-16T09:20:00+10:00",
-     "offset_min": 20.0
-    },
-    "3pm": {
-     "observed_local": "2026-09-16T15:40:00+10:00",
-     "offset_min": 40.0
-    },
-    "Rainfall": {
-     "window_end": "2026-09-16T09:00:00+10:00"
-    },
-    "MinTemp": {
-     "window": {
-      "start": "2026-09-15T18:00:00+10:00",
-      "end": "2026-09-16T09:00:00+10:00",
-      "instance": "running"
-     }
-    },
-    "MaxTemp": {
-     "window": {
-      "start": "2026-09-16T06:00:00+10:00",
-      "end": "2026-09-16T21:00:00+10:00",
-      "instance": "running"
-     }
-    }
-   }
-  },
-  "SydneyAirport": {
-   "rain_probability": 0.1898,
-   "observation_date": "2026-09-16",
-   "target_date": "2026-09-17",
-   "inputs_present": 22,
-   "inputs_total": 22,
-   "imputed_by_frozen_pipeline": null,
-   "provenance": {
-    "9am": {
-     "observed_local": "2026-09-16T09:20:00+10:00",
-     "offset_min": 20.0
-    },
-    "3pm": {
-     "observed_local": "2026-09-16T15:40:00+10:00",
-     "offset_min": 40.0
-    },
-    "Rainfall": {
-     "window_end": "2026-09-16T09:00:00+10:00"
-    },
-    "MinTemp": {
-     "window": {
-      "start": "2026-09-15T18:00:00+10:00",
-      "end": "2026-09-16T09:00:00+10:00",
-      "instance": "running"
-     }
-    },
-    "MaxTemp": {
-     "window": {
-      "start": "2026-09-16T06:00:00+10:00",
-      "end": "2026-09-16T21:00:00+10:00",
-      "instance": "running"
-     }
-    }
-   }
-  },
-  "Townsville": {
-   "rain_probability": 0.0009,
-   "observation_date": "2026-09-16",
-   "target_date": "2026-09-17",
-   "inputs_present": 22,
-   "inputs_total": 22,
-   "imputed_by_frozen_pipeline": null,
-   "provenance": {
-    "9am": {
-     "observed_local": "2026-09-16T09:20:00+10:00",
-     "offset_min": 20.0
-    },
-    "3pm": {
-     "observed_local": "2026-09-16T15:40:00+10:00",
-     "offset_min": 40.0
-    },
-    "Rainfall": {
-     "window_end": "2026-09-16T09:00:00+10:00"
-    },
-    "MinTemp": {
-     "window": {
-      "start": "2026-09-15T18:00:00+10:00",
-      "end": "2026-09-16T09:00:00+10:00",
-      "instance": "running"
-     }
-    },
-    "MaxTemp": {
-     "window": {
-      "start": "2026-09-16T06:00:00+10:00",
-      "end": "2026-09-16T21:00:00+10:00",
-      "instance": "running"
-     }
-    }
-   }
-  },
-  "Tuggeranong": {
-   "rain_probability": 0.0033,
-   "observation_date": "2026-09-16",
-   "target_date": "2026-09-17",
-   "inputs_present": 22,
-   "inputs_total": 22,
-   "imputed_by_frozen_pipeline": null,
-   "provenance": {
-    "9am": {
-     "observed_local": "2026-09-16T09:20:00+10:00",
-     "offset_min": 20.0
-    },
-    "3pm": {
-     "observed_local": "2026-09-16T15:40:00+10:00",
-     "offset_min": 40.0
-    },
-    "Rainfall": {
-     "window_end": "2026-09-16T09:00:00+10:00"
-    },
-    "MinTemp": {
-     "window": {
-      "start": "2026-09-15T18:00:00+10:00",
-      "end": "2026-09-16T09:00:00+10:00",
-      "instance": "running"
-     }
-    },
-    "MaxTemp": {
-     "window": {
-      "start": "2026-09-16T06:00:00+10:00",
-      "end": "2026-09-16T21:00:00+10:00",
-      "instance": "running"
-     }
-    }
-   }
-  },
-  "WaggaWagga": {
-   "rain_probability": 0.0025,
-   "observation_date": "2026-09-16",
-   "target_date": "2026-09-17",
-   "inputs_present": 22,
-   "inputs_total": 22,
-   "imputed_by_frozen_pipeline": null,
-   "provenance": {
-    "9am": {
-     "observed_local": "2026-09-16T09:20:00+10:00",
-     "offset_min": 20.0
-    },
-    "3pm": {
-     "observed_local": "2026-09-16T15:40:00+10:00",
-     "offset_min": 40.0
-    },
-    "Rainfall": {
-     "window_end": "2026-09-16T09:00:00+10:00"
-    },
-    "MinTemp": {
-     "window": {
-      "start": "2026-09-15T18:00:00+10:00",
-      "end": "2026-09-16T09:00:00+10:00",
-      "instance": "running"
-     }
-    },
-    "MaxTemp": {
-     "window": {
-      "start": "2026-09-16T06:00:00+10:00",
-      "end": "2026-09-16T21:00:00+10:00",
+      "start": "2026-09-17T06:00:00+09:30",
+      "end": "2026-09-17T21:00:00+09:30",
       "instance": "running"
      }
     }
    }
   },
   "Woomera": {
-   "rain_probability": 0.0016,
-   "observation_date": "2026-09-16",
-   "target_date": "2026-09-17",
+   "rain_probability": 0.0004,
+   "observation_date": "2026-09-17",
+   "target_date": "2026-09-18",
    "inputs_present": 22,
    "inputs_total": 22,
    "imputed_by_frozen_pipeline": null,
    "provenance": {
     "9am": {
-     "observed_local": "2026-09-16T08:50:00+09:30",
-     "offset_min": 10.0
+     "observed_local": "2026-09-17T09:00:00+09:30",
+     "offset_min": 0.0
     },
     "3pm": {
-     "observed_local": "2026-09-16T15:10:00+09:30",
-     "offset_min": 10.0
+     "observed_local": "2026-09-17T15:20:00+09:30",
+     "offset_min": 20.0
     },
     "Rainfall": {
-     "window_end": "2026-09-16T09:00:00+09:30"
+     "window_end": "2026-09-17T09:00:00+09:30"
     },
     "MinTemp": {
      "window": {
-      "start": "2026-09-15T18:00:00+09:30",
-      "end": "2026-09-16T09:00:00+09:30",
+      "start": "2026-09-16T18:00:00+09:30",
+      "end": "2026-09-17T09:00:00+09:30",
       "instance": "running"
      }
     },
     "MaxTemp": {
      "window": {
-      "start": "2026-09-16T06:00:00+09:30",
-      "end": "2026-09-16T21:00:00+09:30",
+      "start": "2026-09-17T06:00:00+09:30",
+      "end": "2026-09-17T21:00:00+09:30",
       "instance": "running"
      }
     }
@@ -1044,64 +239,351 @@
    "missing": [
     "MinTemp",
     "MaxTemp",
+    "Rainfall",
     "WindGustSpeed",
+    "WindDir9am",
     "WindDir3pm",
+    "WindSpeed9am",
     "WindSpeed3pm",
+    "Humidity9am",
     "Humidity3pm",
     "Pressure9am",
     "Pressure3pm",
+    "Temp9am",
     "Temp3pm",
+    "RainToday",
     "TempRange",
     "PressureChange",
     "HumidityChange"
    ],
    "notes": [
+    "no reading within 45 min of 9am",
     "no reading within 45 min of 3pm",
+    "no rainfall_24hr window ending 09:00 on this date",
     "no overnight minimum window ending 09:00 on this date",
     "no closed daytime maximum window on this date"
+   ]
+  },
+  "Albury": {
+   "reason": "required observations incomplete",
+   "missing": [
+    "WindDir3pm",
+    "WindSpeed3pm",
+    "Humidity3pm",
+    "Pressure3pm",
+    "Temp3pm",
+    "PressureChange",
+    "HumidityChange"
+   ],
+   "notes": [
+    "no reading within 45 min of 3pm",
+    "MaxTemp/MinTemp use BoM's 06:00-21:00 and 18:00-09:00 windows; weatherAUS uses 9am-to-9am"
+   ]
+  },
+  "BadgerysCreek": {
+   "reason": "required observations incomplete",
+   "missing": [
+    "WindDir3pm",
+    "WindSpeed3pm",
+    "Humidity3pm",
+    "Pressure3pm",
+    "Temp3pm",
+    "PressureChange",
+    "HumidityChange"
+   ],
+   "notes": [
+    "no reading within 45 min of 3pm",
+    "MaxTemp/MinTemp use BoM's 06:00-21:00 and 18:00-09:00 windows; weatherAUS uses 9am-to-9am"
+   ]
+  },
+  "Ballarat": {
+   "reason": "required observations incomplete",
+   "missing": [
+    "WindDir3pm",
+    "WindSpeed3pm",
+    "Humidity3pm",
+    "Pressure3pm",
+    "Temp3pm",
+    "PressureChange",
+    "HumidityChange"
+   ],
+   "notes": [
+    "no reading within 45 min of 3pm",
+    "MaxTemp/MinTemp use BoM's 06:00-21:00 and 18:00-09:00 windows; weatherAUS uses 9am-to-9am"
+   ]
+  },
+  "Bendigo": {
+   "reason": "required observations incomplete",
+   "missing": [
+    "WindDir3pm",
+    "WindSpeed3pm",
+    "Humidity3pm",
+    "Pressure3pm",
+    "Temp3pm",
+    "PressureChange",
+    "HumidityChange"
+   ],
+   "notes": [
+    "no reading within 45 min of 3pm",
+    "MaxTemp/MinTemp use BoM's 06:00-21:00 and 18:00-09:00 windows; weatherAUS uses 9am-to-9am"
+   ]
+  },
+  "Brisbane": {
+   "reason": "required observations incomplete",
+   "missing": [
+    "WindDir3pm",
+    "WindSpeed3pm",
+    "Humidity3pm",
+    "Pressure3pm",
+    "Temp3pm",
+    "PressureChange",
+    "HumidityChange"
+   ],
+   "notes": [
+    "no reading within 45 min of 3pm",
+    "MaxTemp/MinTemp use BoM's 06:00-21:00 and 18:00-09:00 windows; weatherAUS uses 9am-to-9am"
+   ]
+  },
+  "Cairns": {
+   "reason": "required observations incomplete",
+   "missing": [
+    "WindDir3pm",
+    "WindSpeed3pm",
+    "Humidity3pm",
+    "Pressure3pm",
+    "Temp3pm",
+    "PressureChange",
+    "HumidityChange"
+   ],
+   "notes": [
+    "no reading within 45 min of 3pm",
+    "MaxTemp/MinTemp use BoM's 06:00-21:00 and 18:00-09:00 windows; weatherAUS uses 9am-to-9am"
+   ]
+  },
+  "Canberra": {
+   "reason": "required observations incomplete",
+   "missing": [
+    "WindDir3pm",
+    "WindSpeed3pm",
+    "Humidity3pm",
+    "Pressure3pm",
+    "Temp3pm",
+    "PressureChange",
+    "HumidityChange"
+   ],
+   "notes": [
+    "no reading within 45 min of 3pm",
+    "MaxTemp/MinTemp use BoM's 06:00-21:00 and 18:00-09:00 windows; weatherAUS uses 9am-to-9am"
+   ]
+  },
+  "Cobar": {
+   "reason": "required observations incomplete",
+   "missing": [
+    "WindDir3pm",
+    "WindSpeed3pm",
+    "Humidity3pm",
+    "Pressure3pm",
+    "Temp3pm",
+    "PressureChange",
+    "HumidityChange"
+   ],
+   "notes": [
+    "no reading within 45 min of 3pm",
+    "MaxTemp/MinTemp use BoM's 06:00-21:00 and 18:00-09:00 windows; weatherAUS uses 9am-to-9am"
+   ]
+  },
+  "CoffsHarbour": {
+   "reason": "required observations incomplete",
+   "missing": [
+    "WindDir3pm",
+    "WindSpeed3pm",
+    "Humidity3pm",
+    "Pressure3pm",
+    "Temp3pm",
+    "PressureChange",
+    "HumidityChange"
+   ],
+   "notes": [
+    "no reading within 45 min of 3pm",
+    "MaxTemp/MinTemp use BoM's 06:00-21:00 and 18:00-09:00 windows; weatherAUS uses 9am-to-9am"
    ]
   },
   "Dartmoor": {
    "reason": "required observations incomplete",
    "missing": [
-    "Rainfall",
-    "RainToday"
+    "WindDir3pm",
+    "WindSpeed3pm",
+    "Humidity3pm",
+    "Pressure3pm",
+    "Temp3pm",
+    "PressureChange",
+    "HumidityChange"
    ],
    "notes": [
-    "no rainfall_24hr window ending 09:00 on this date",
+    "no reading within 45 min of 3pm",
+    "MaxTemp/MinTemp use BoM's 06:00-21:00 and 18:00-09:00 windows; weatherAUS uses 9am-to-9am"
+   ]
+  },
+  "GoldCoast": {
+   "reason": "required observations incomplete",
+   "missing": [
+    "WindDir3pm",
+    "WindSpeed3pm",
+    "Humidity3pm",
+    "Pressure3pm",
+    "Temp3pm",
+    "PressureChange",
+    "HumidityChange"
+   ],
+   "notes": [
+    "no reading within 45 min of 3pm",
+    "MaxTemp/MinTemp use BoM's 06:00-21:00 and 18:00-09:00 windows; weatherAUS uses 9am-to-9am"
+   ]
+  },
+  "Hobart": {
+   "reason": "required observations incomplete",
+   "missing": [
+    "WindDir3pm",
+    "WindSpeed3pm",
+    "Humidity3pm",
+    "Pressure3pm",
+    "Temp3pm",
+    "PressureChange",
+    "HumidityChange"
+   ],
+   "notes": [
+    "no reading within 45 min of 3pm",
     "MaxTemp/MinTemp use BoM's 06:00-21:00 and 18:00-09:00 windows; weatherAUS uses 9am-to-9am"
    ]
   },
   "Launceston": {
    "reason": "required observations incomplete",
    "missing": [
+    "WindDir3pm",
+    "WindSpeed3pm",
+    "Humidity3pm",
     "Pressure9am",
     "Pressure3pm",
-    "PressureChange"
+    "Temp3pm",
+    "PressureChange",
+    "HumidityChange"
    ],
    "notes": [
+    "no reading within 45 min of 3pm",
+    "MaxTemp/MinTemp use BoM's 06:00-21:00 and 18:00-09:00 windows; weatherAUS uses 9am-to-9am"
+   ]
+  },
+  "Melbourne": {
+   "reason": "required observations incomplete",
+   "missing": [
+    "WindDir3pm",
+    "WindSpeed3pm",
+    "Humidity3pm",
+    "Pressure3pm",
+    "Temp3pm",
+    "PressureChange",
+    "HumidityChange"
+   ],
+   "notes": [
+    "no reading within 45 min of 3pm",
+    "MaxTemp/MinTemp use BoM's 06:00-21:00 and 18:00-09:00 windows; weatherAUS uses 9am-to-9am"
+   ]
+  },
+  "MelbourneAirport": {
+   "reason": "required observations incomplete",
+   "missing": [
+    "WindDir3pm",
+    "WindSpeed3pm",
+    "Humidity3pm",
+    "Pressure3pm",
+    "Temp3pm",
+    "PressureChange",
+    "HumidityChange"
+   ],
+   "notes": [
+    "no reading within 45 min of 3pm",
+    "MaxTemp/MinTemp use BoM's 06:00-21:00 and 18:00-09:00 windows; weatherAUS uses 9am-to-9am"
+   ]
+  },
+  "Mildura": {
+   "reason": "required observations incomplete",
+   "missing": [
+    "WindDir3pm",
+    "WindSpeed3pm",
+    "Humidity3pm",
+    "Pressure3pm",
+    "Temp3pm",
+    "PressureChange",
+    "HumidityChange"
+   ],
+   "notes": [
+    "no reading within 45 min of 3pm",
+    "MaxTemp/MinTemp use BoM's 06:00-21:00 and 18:00-09:00 windows; weatherAUS uses 9am-to-9am"
+   ]
+  },
+  "Moree": {
+   "reason": "required observations incomplete",
+   "missing": [
+    "WindDir3pm",
+    "WindSpeed3pm",
+    "Humidity3pm",
+    "Pressure3pm",
+    "Temp3pm",
+    "PressureChange",
+    "HumidityChange"
+   ],
+   "notes": [
+    "no reading within 45 min of 3pm",
     "MaxTemp/MinTemp use BoM's 06:00-21:00 and 18:00-09:00 windows; weatherAUS uses 9am-to-9am"
    ]
   },
   "MountGinini": {
    "reason": "required observations incomplete",
    "missing": [
+    "WindDir3pm",
+    "WindSpeed3pm",
+    "Humidity3pm",
     "Pressure9am",
     "Pressure3pm",
-    "PressureChange"
+    "Temp3pm",
+    "PressureChange",
+    "HumidityChange"
    ],
    "notes": [
+    "no reading within 45 min of 3pm",
     "MaxTemp/MinTemp use BoM's 06:00-21:00 and 18:00-09:00 windows; weatherAUS uses 9am-to-9am"
    ]
   },
   "Newcastle": {
    "reason": "required observations incomplete",
    "missing": [
+    "WindDir3pm",
+    "WindSpeed3pm",
+    "Humidity3pm",
     "Pressure9am",
     "Pressure3pm",
-    "PressureChange"
+    "Temp3pm",
+    "PressureChange",
+    "HumidityChange"
    ],
    "notes": [
+    "no reading within 45 min of 3pm",
+    "MaxTemp/MinTemp use BoM's 06:00-21:00 and 18:00-09:00 windows; weatherAUS uses 9am-to-9am"
+   ]
+  },
+  "NorahHead": {
+   "reason": "required observations incomplete",
+   "missing": [
+    "WindDir3pm",
+    "WindSpeed3pm",
+    "Humidity3pm",
+    "Pressure3pm",
+    "Temp3pm",
+    "PressureChange",
+    "HumidityChange"
+   ],
+   "notes": [
+    "no reading within 45 min of 3pm",
     "MaxTemp/MinTemp use BoM's 06:00-21:00 and 18:00-09:00 windows; weatherAUS uses 9am-to-9am"
    ]
   },
@@ -1130,9 +612,28 @@
   "PearceRAAF": {
    "reason": "required observations incomplete",
    "missing": [
+    "MaxTemp",
     "WindDir3pm",
     "WindSpeed3pm",
     "Humidity3pm",
+    "Pressure3pm",
+    "Temp3pm",
+    "TempRange",
+    "PressureChange",
+    "HumidityChange"
+   ],
+   "notes": [
+    "no reading within 45 min of 3pm",
+    "no closed daytime maximum window on this date"
+   ]
+  },
+  "Penrith": {
+   "reason": "required observations incomplete",
+   "missing": [
+    "WindDir3pm",
+    "WindSpeed3pm",
+    "Humidity3pm",
+    "Pressure9am",
     "Pressure3pm",
     "Temp3pm",
     "PressureChange",
@@ -1140,79 +641,46 @@
    ],
    "notes": [
     "no reading within 45 min of 3pm",
-    "MaxTemp/MinTemp use BoM's 06:00-21:00 and 18:00-09:00 windows; weatherAUS uses 9am-to-9am"
-   ]
-  },
-  "Penrith": {
-   "reason": "required observations incomplete",
-   "missing": [
-    "Pressure9am",
-    "Pressure3pm",
-    "PressureChange"
-   ],
-   "notes": [
     "MaxTemp/MinTemp use BoM's 06:00-21:00 and 18:00-09:00 windows; weatherAUS uses 9am-to-9am"
    ]
   },
   "Perth": {
    "reason": "required observations incomplete",
    "missing": [
+    "MaxTemp",
     "WindDir3pm",
     "WindSpeed3pm",
     "Humidity3pm",
     "Pressure3pm",
     "Temp3pm",
+    "TempRange",
     "PressureChange",
     "HumidityChange"
    ],
    "notes": [
     "no reading within 45 min of 3pm",
-    "MaxTemp/MinTemp use BoM's 06:00-21:00 and 18:00-09:00 windows; weatherAUS uses 9am-to-9am"
+    "no closed daytime maximum window on this date"
    ]
   },
   "PerthAirport": {
    "reason": "required observations incomplete",
    "missing": [
+    "MaxTemp",
     "WindDir3pm",
     "WindSpeed3pm",
     "Humidity3pm",
     "Pressure3pm",
     "Temp3pm",
+    "TempRange",
     "PressureChange",
     "HumidityChange"
    ],
    "notes": [
     "no reading within 45 min of 3pm",
-    "MaxTemp/MinTemp use BoM's 06:00-21:00 and 18:00-09:00 windows; weatherAUS uses 9am-to-9am"
+    "no closed daytime maximum window on this date"
    ]
   },
-  "SalmonGums": {
-   "reason": "required observations incomplete",
-   "missing": [
-    "WindDir3pm",
-    "WindSpeed3pm",
-    "Humidity3pm",
-    "Pressure9am",
-    "Pressure3pm",
-    "Temp3pm",
-    "PressureChange",
-    "HumidityChange"
-   ],
-   "notes": [
-    "no reading within 45 min of 3pm",
-    "MaxTemp/MinTemp use BoM's 06:00-21:00 and 18:00-09:00 windows; weatherAUS uses 9am-to-9am"
-   ]
-  },
-  "Sydney": {
-   "reason": "required observations incomplete",
-   "missing": [
-    "WindGustSpeed"
-   ],
-   "notes": [
-    "MaxTemp/MinTemp use BoM's 06:00-21:00 and 18:00-09:00 windows; weatherAUS uses 9am-to-9am"
-   ]
-  },
-  "Walpole": {
+  "Portland": {
    "reason": "required observations incomplete",
    "missing": [
     "Rainfall",
@@ -1231,18 +699,7 @@
     "MaxTemp/MinTemp use BoM's 06:00-21:00 and 18:00-09:00 windows; weatherAUS uses 9am-to-9am"
    ]
   },
-  "Williamtown": {
-   "reason": "required observations incomplete",
-   "missing": [
-    "Rainfall",
-    "RainToday"
-   ],
-   "notes": [
-    "no rainfall_24hr window ending 09:00 on this date",
-    "MaxTemp/MinTemp use BoM's 06:00-21:00 and 18:00-09:00 windows; weatherAUS uses 9am-to-9am"
-   ]
-  },
-  "Witchcliffe": {
+  "Richmond": {
    "reason": "required observations incomplete",
    "missing": [
     "WindDir3pm",
@@ -1256,6 +713,177 @@
    "notes": [
     "no reading within 45 min of 3pm",
     "MaxTemp/MinTemp use BoM's 06:00-21:00 and 18:00-09:00 windows; weatherAUS uses 9am-to-9am"
+   ]
+  },
+  "Sale": {
+   "reason": "required observations incomplete",
+   "missing": [
+    "WindDir3pm",
+    "WindSpeed3pm",
+    "Humidity3pm",
+    "Pressure3pm",
+    "Temp3pm",
+    "PressureChange",
+    "HumidityChange"
+   ],
+   "notes": [
+    "no reading within 45 min of 3pm",
+    "MaxTemp/MinTemp use BoM's 06:00-21:00 and 18:00-09:00 windows; weatherAUS uses 9am-to-9am"
+   ]
+  },
+  "SalmonGums": {
+   "reason": "required observations incomplete",
+   "missing": [
+    "MaxTemp",
+    "WindDir3pm",
+    "WindSpeed3pm",
+    "Humidity3pm",
+    "Pressure9am",
+    "Pressure3pm",
+    "Temp3pm",
+    "TempRange",
+    "PressureChange",
+    "HumidityChange"
+   ],
+   "notes": [
+    "no reading within 45 min of 3pm",
+    "no closed daytime maximum window on this date"
+   ]
+  },
+  "Sydney": {
+   "reason": "required observations incomplete",
+   "missing": [
+    "WindGustSpeed",
+    "WindDir3pm",
+    "WindSpeed3pm",
+    "Humidity3pm",
+    "Pressure3pm",
+    "Temp3pm",
+    "PressureChange",
+    "HumidityChange"
+   ],
+   "notes": [
+    "no reading within 45 min of 3pm",
+    "MaxTemp/MinTemp use BoM's 06:00-21:00 and 18:00-09:00 windows; weatherAUS uses 9am-to-9am"
+   ]
+  },
+  "SydneyAirport": {
+   "reason": "required observations incomplete",
+   "missing": [
+    "WindDir3pm",
+    "WindSpeed3pm",
+    "Humidity3pm",
+    "Pressure3pm",
+    "Temp3pm",
+    "PressureChange",
+    "HumidityChange"
+   ],
+   "notes": [
+    "no reading within 45 min of 3pm",
+    "MaxTemp/MinTemp use BoM's 06:00-21:00 and 18:00-09:00 windows; weatherAUS uses 9am-to-9am"
+   ]
+  },
+  "Townsville": {
+   "reason": "required observations incomplete",
+   "missing": [
+    "WindDir3pm",
+    "WindSpeed3pm",
+    "Humidity3pm",
+    "Pressure3pm",
+    "Temp3pm",
+    "PressureChange",
+    "HumidityChange"
+   ],
+   "notes": [
+    "no reading within 45 min of 3pm",
+    "MaxTemp/MinTemp use BoM's 06:00-21:00 and 18:00-09:00 windows; weatherAUS uses 9am-to-9am"
+   ]
+  },
+  "Tuggeranong": {
+   "reason": "required observations incomplete",
+   "missing": [
+    "WindDir3pm",
+    "WindSpeed3pm",
+    "Humidity3pm",
+    "Pressure3pm",
+    "Temp3pm",
+    "PressureChange",
+    "HumidityChange"
+   ],
+   "notes": [
+    "no reading within 45 min of 3pm",
+    "MaxTemp/MinTemp use BoM's 06:00-21:00 and 18:00-09:00 windows; weatherAUS uses 9am-to-9am"
+   ]
+  },
+  "WaggaWagga": {
+   "reason": "required observations incomplete",
+   "missing": [
+    "WindDir3pm",
+    "WindSpeed3pm",
+    "Humidity3pm",
+    "Pressure3pm",
+    "Temp3pm",
+    "PressureChange",
+    "HumidityChange"
+   ],
+   "notes": [
+    "no reading within 45 min of 3pm",
+    "MaxTemp/MinTemp use BoM's 06:00-21:00 and 18:00-09:00 windows; weatherAUS uses 9am-to-9am"
+   ]
+  },
+  "Walpole": {
+   "reason": "required observations incomplete",
+   "missing": [
+    "MaxTemp",
+    "Rainfall",
+    "WindDir3pm",
+    "WindSpeed3pm",
+    "Humidity3pm",
+    "Pressure3pm",
+    "Temp3pm",
+    "RainToday",
+    "TempRange",
+    "PressureChange",
+    "HumidityChange"
+   ],
+   "notes": [
+    "no reading within 45 min of 3pm",
+    "no rainfall_24hr window ending 09:00 on this date",
+    "no closed daytime maximum window on this date"
+   ]
+  },
+  "Williamtown": {
+   "reason": "required observations incomplete",
+   "missing": [
+    "WindDir3pm",
+    "WindSpeed3pm",
+    "Humidity3pm",
+    "Pressure3pm",
+    "Temp3pm",
+    "PressureChange",
+    "HumidityChange"
+   ],
+   "notes": [
+    "no reading within 45 min of 3pm",
+    "MaxTemp/MinTemp use BoM's 06:00-21:00 and 18:00-09:00 windows; weatherAUS uses 9am-to-9am"
+   ]
+  },
+  "Witchcliffe": {
+   "reason": "required observations incomplete",
+   "missing": [
+    "MaxTemp",
+    "WindDir3pm",
+    "WindSpeed3pm",
+    "Humidity3pm",
+    "Pressure3pm",
+    "Temp3pm",
+    "TempRange",
+    "PressureChange",
+    "HumidityChange"
+   ],
+   "notes": [
+    "no reading within 45 min of 3pm",
+    "no closed daytime maximum window on this date"
    ]
   }
  }
