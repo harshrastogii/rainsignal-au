@@ -1,5 +1,5 @@
 {
- "generated_utc": "2026-09-23T12:41:46+00:00",
+ "generated_utc": "2026-09-23T15:20:45+00:00",
  "source": "Bureau of Meteorology, anonymous FTP observation products",
  "attribution": "Bureau of Meteorology, \u00a9 Commonwealth of Australia.",
  "stale_after_minutes": 180,
@@ -14,7 +14,7 @@
    "RainToday": "No",
    "observed_utc": "2026-09-23T09:50:00+00:00",
    "observed_local": "2026-09-23T19:20:00+09:30",
-   "age_min": 172
+   "age_min": 331
   },
   "Albany": {
    "Location": "Albany",
@@ -26,7 +26,7 @@
    "RainToday": "No",
    "observed_utc": "2026-09-23T01:00:00+00:00",
    "observed_local": "2026-09-23T09:00:00+08:00",
-   "age_min": 702
+   "age_min": 861
   },
   "Albury": {
    "Location": "Albury",
@@ -38,7 +38,7 @@
    "RainToday": "No",
    "observed_utc": "2026-09-23T09:50:00+00:00",
    "observed_local": "2026-09-23T19:50:00+10:00",
-   "age_min": 172
+   "age_min": 331
   },
   "AliceSprings": {
    "Location": "AliceSprings",
@@ -50,7 +50,7 @@
    "RainToday": "No",
    "observed_utc": "2026-09-23T09:50:00+00:00",
    "observed_local": "2026-09-23T19:20:00+09:30",
-   "age_min": 172
+   "age_min": 331
   },
   "BadgerysCreek": {
    "Location": "BadgerysCreek",
@@ -62,7 +62,7 @@
    "RainToday": "No",
    "observed_utc": "2026-09-23T09:50:00+00:00",
    "observed_local": "2026-09-23T19:50:00+10:00",
-   "age_min": 172
+   "age_min": 331
   },
   "Ballarat": {
    "Location": "Ballarat",
@@ -74,7 +74,7 @@
    "RainToday": "No",
    "observed_utc": "2026-09-23T09:50:00+00:00",
    "observed_local": "2026-09-23T19:50:00+10:00",
-   "age_min": 172
+   "age_min": 331
   },
   "Bendigo": {
    "Location": "Bendigo",
@@ -86,7 +86,7 @@
    "RainToday": "No",
    "observed_utc": "2026-09-23T09:50:00+00:00",
    "observed_local": "2026-09-23T19:50:00+10:00",
-   "age_min": 172
+   "age_min": 331
   },
   "Brisbane": {
    "Location": "Brisbane",
@@ -98,7 +98,7 @@
    "RainToday": "No",
    "observed_utc": "2026-09-23T09:50:00+00:00",
    "observed_local": "2026-09-23T19:50:00+10:00",
-   "age_min": 172
+   "age_min": 331
   },
   "Cairns": {
    "Location": "Cairns",
@@ -110,7 +110,7 @@
    "RainToday": "Yes",
    "observed_utc": "2026-09-23T09:50:00+00:00",
    "observed_local": "2026-09-23T19:50:00+10:00",
-   "age_min": 172
+   "age_min": 331
   },
   "Canberra": {
    "Location": "Canberra",
@@ -122,7 +122,7 @@
    "RainToday": "No",
    "observed_utc": "2026-09-23T09:50:00+00:00",
    "observed_local": "2026-09-23T19:50:00+10:00",
-   "age_min": 172
+   "age_min": 331
   },
   "Cobar": {
    "Location": "Cobar",
@@ -134,7 +134,7 @@
    "RainToday": "No",
    "observed_utc": "2026-09-23T09:50:00+00:00",
    "observed_local": "2026-09-23T19:50:00+10:00",
-   "age_min": 172
+   "age_min": 331
   },
   "CoffsHarbour": {
    "Location": "CoffsHarbour",
@@ -146,7 +146,7 @@
    "RainToday": "No",
    "observed_utc": "2026-09-23T09:50:00+00:00",
    "observed_local": "2026-09-23T19:50:00+10:00",
-   "age_min": 172
+   "age_min": 331
   },
   "Dartmoor": {
    "Location": "Dartmoor",
@@ -158,7 +158,7 @@
    "RainToday": "No",
    "observed_utc": "2026-09-23T09:50:00+00:00",
    "observed_local": "2026-09-23T19:50:00+10:00",
-   "age_min": 172
+   "age_min": 331
   },
   "Darwin": {
    "Location": "Darwin",
@@ -170,7 +170,7 @@
    "RainToday": "No",
    "observed_utc": "2026-09-23T09:50:00+00:00",
    "observed_local": "2026-09-23T19:20:00+09:30",
-   "age_min": 172
+   "age_min": 331
   },
   "GoldCoast": {
    "Location": "GoldCoast",
@@ -182,7 +182,7 @@
    "RainToday": "No",
    "observed_utc": "2026-09-23T09:50:00+00:00",
    "observed_local": "2026-09-23T19:50:00+10:00",
-   "age_min": 172
+   "age_min": 331
   },
   "Hobart": {
    "Location": "Hobart",
@@ -194,7 +194,7 @@
    "RainToday": "No",
    "observed_utc": "2026-09-23T09:50:00+00:00",
    "observed_local": "2026-09-23T19:50:00+10:00",
-   "age_min": 172
+   "age_min": 331
   },
   "Launceston": {
    "Location": "Launceston",
@@ -206,7 +206,7 @@
    "RainToday": "No",
    "observed_utc": "2026-09-23T09:50:00+00:00",
    "observed_local": "2026-09-23T19:50:00+10:00",
-   "age_min": 172
+   "age_min": 331
   },
   "Melbourne": {
    "Location": "Melbourne",
@@ -218,7 +218,7 @@
    "RainToday": "No",
    "observed_utc": "2026-09-23T09:50:00+00:00",
    "observed_local": "2026-09-23T19:50:00+10:00",
-   "age_min": 172
+   "age_min": 331
   },
   "MelbourneAirport": {
    "Location": "MelbourneAirport",
@@ -230,7 +230,7 @@
    "RainToday": "No",
    "observed_utc": "2026-09-23T09:50:00+00:00",
    "observed_local": "2026-09-23T19:50:00+10:00",
-   "age_min": 172
+   "age_min": 331
   },
   "Mildura": {
    "Location": "Mildura",
@@ -242,7 +242,7 @@
    "RainToday": "No",
    "observed_utc": "2026-09-23T09:50:00+00:00",
    "observed_local": "2026-09-23T19:50:00+10:00",
-   "age_min": 172
+   "age_min": 331
   },
   "Moree": {
    "Location": "Moree",
@@ -254,7 +254,7 @@
    "RainToday": "No",
    "observed_utc": "2026-09-23T09:50:00+00:00",
    "observed_local": "2026-09-23T19:50:00+10:00",
-   "age_min": 172
+   "age_min": 331
   },
   "MountGambier": {
    "Location": "MountGambier",
@@ -266,7 +266,7 @@
    "RainToday": "No",
    "observed_utc": "2026-09-23T09:50:00+00:00",
    "observed_local": "2026-09-23T19:20:00+09:30",
-   "age_min": 172
+   "age_min": 331
   },
   "MountGinini": {
    "Location": "MountGinini",
@@ -278,7 +278,7 @@
    "RainToday": "No",
    "observed_utc": "2026-09-23T09:50:00+00:00",
    "observed_local": "2026-09-23T19:50:00+10:00",
-   "age_min": 172
+   "age_min": 331
   },
   "Newcastle": {
    "Location": "Newcastle",
@@ -290,7 +290,7 @@
    "RainToday": "No",
    "observed_utc": "2026-09-23T09:50:00+00:00",
    "observed_local": "2026-09-23T19:50:00+10:00",
-   "age_min": 172
+   "age_min": 331
   },
   "NorahHead": {
    "Location": "NorahHead",
@@ -302,7 +302,7 @@
    "RainToday": "Yes",
    "observed_utc": "2026-09-23T09:50:00+00:00",
    "observed_local": "2026-09-23T19:50:00+10:00",
-   "age_min": 172
+   "age_min": 331
   },
   "NorfolkIsland": {
    "Location": "NorfolkIsland",
@@ -314,7 +314,7 @@
    "RainToday": "No",
    "observed_utc": "2026-09-23T09:50:00+00:00",
    "observed_local": "2026-09-23T21:20:00+11:30",
-   "age_min": 172
+   "age_min": 331
   },
   "Nuriootpa": {
    "Location": "Nuriootpa",
@@ -326,7 +326,7 @@
    "RainToday": "No",
    "observed_utc": "2026-09-23T09:50:00+00:00",
    "observed_local": "2026-09-23T19:20:00+09:30",
-   "age_min": 172
+   "age_min": 331
   },
   "PearceRAAF": {
    "Location": "PearceRAAF",
@@ -338,7 +338,7 @@
    "RainToday": "No",
    "observed_utc": "2026-09-23T09:50:00+00:00",
    "observed_local": "2026-09-23T17:50:00+08:00",
-   "age_min": 172
+   "age_min": 331
   },
   "Penrith": {
    "Location": "Penrith",
@@ -350,7 +350,7 @@
    "RainToday": "No",
    "observed_utc": "2026-09-23T09:50:00+00:00",
    "observed_local": "2026-09-23T19:50:00+10:00",
-   "age_min": 172
+   "age_min": 331
   },
   "Perth": {
    "Location": "Perth",
@@ -362,7 +362,7 @@
    "RainToday": "No",
    "observed_utc": "2026-09-23T09:50:00+00:00",
    "observed_local": "2026-09-23T17:50:00+08:00",
-   "age_min": 172
+   "age_min": 331
   },
   "PerthAirport": {
    "Location": "PerthAirport",
@@ -374,7 +374,7 @@
    "RainToday": "No",
    "observed_utc": "2026-09-23T09:50:00+00:00",
    "observed_local": "2026-09-23T17:50:00+08:00",
-   "age_min": 172
+   "age_min": 331
   },
   "Portland": {
    "Location": "Portland",
@@ -386,7 +386,7 @@
    "RainToday": "No",
    "observed_utc": "2026-09-23T09:50:00+00:00",
    "observed_local": "2026-09-23T19:50:00+10:00",
-   "age_min": 172
+   "age_min": 331
   },
   "Richmond": {
    "Location": "Richmond",
@@ -398,7 +398,7 @@
    "RainToday": "No",
    "observed_utc": "2026-09-23T09:50:00+00:00",
    "observed_local": "2026-09-23T19:50:00+10:00",
-   "age_min": 172
+   "age_min": 331
   },
   "Sale": {
    "Location": "Sale",
@@ -410,7 +410,7 @@
    "RainToday": "No",
    "observed_utc": "2026-09-23T09:50:00+00:00",
    "observed_local": "2026-09-23T19:50:00+10:00",
-   "age_min": 172
+   "age_min": 331
   },
   "SalmonGums": {
    "Location": "SalmonGums",
@@ -422,7 +422,7 @@
    "RainToday": "No",
    "observed_utc": "2026-09-23T09:50:00+00:00",
    "observed_local": "2026-09-23T17:50:00+08:00",
-   "age_min": 172
+   "age_min": 331
   },
   "Sydney": {
    "Location": "Sydney",
@@ -434,7 +434,7 @@
    "RainToday": "Yes",
    "observed_utc": "2026-09-23T09:50:00+00:00",
    "observed_local": "2026-09-23T19:50:00+10:00",
-   "age_min": 172
+   "age_min": 331
   },
   "SydneyAirport": {
    "Location": "SydneyAirport",
@@ -446,7 +446,7 @@
    "RainToday": "Yes",
    "observed_utc": "2026-09-23T09:50:00+00:00",
    "observed_local": "2026-09-23T19:50:00+10:00",
-   "age_min": 172
+   "age_min": 331
   },
   "Townsville": {
    "Location": "Townsville",
@@ -458,7 +458,7 @@
    "RainToday": "No",
    "observed_utc": "2026-09-23T09:50:00+00:00",
    "observed_local": "2026-09-23T19:50:00+10:00",
-   "age_min": 172
+   "age_min": 331
   },
   "Tuggeranong": {
    "Location": "Tuggeranong",
@@ -470,7 +470,7 @@
    "RainToday": "No",
    "observed_utc": "2026-09-23T09:50:00+00:00",
    "observed_local": "2026-09-23T19:50:00+10:00",
-   "age_min": 172
+   "age_min": 331
   },
   "WaggaWagga": {
    "Location": "WaggaWagga",
@@ -482,7 +482,7 @@
    "RainToday": "No",
    "observed_utc": "2026-09-23T09:50:00+00:00",
    "observed_local": "2026-09-23T19:50:00+10:00",
-   "age_min": 172
+   "age_min": 331
   },
   "Walpole": {
    "Location": "Walpole",
@@ -494,7 +494,7 @@
    "RainToday": null,
    "observed_utc": "2026-09-23T09:50:00+00:00",
    "observed_local": "2026-09-23T17:50:00+08:00",
-   "age_min": 172
+   "age_min": 331
   },
   "Williamtown": {
    "Location": "Williamtown",
@@ -506,7 +506,7 @@
    "RainToday": "No",
    "observed_utc": "2026-09-23T09:50:00+00:00",
    "observed_local": "2026-09-23T19:50:00+10:00",
-   "age_min": 172
+   "age_min": 331
   },
   "Witchcliffe": {
    "Location": "Witchcliffe",
@@ -518,7 +518,7 @@
    "RainToday": "No",
    "observed_utc": "2026-09-23T09:50:00+00:00",
    "observed_local": "2026-09-23T17:50:00+08:00",
-   "age_min": 172
+   "age_min": 331
   },
   "Woomera": {
    "Location": "Woomera",
@@ -530,7 +530,7 @@
    "RainToday": "No",
    "observed_utc": "2026-09-23T09:50:00+00:00",
    "observed_local": "2026-09-23T19:20:00+09:30",
-   "age_min": 172
+   "age_min": 331
   }
  }
 }
