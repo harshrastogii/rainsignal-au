@@ -1,5 +1,5 @@
 {
- "generated_utc": "2026-09-25T12:55:24+00:00",
+ "generated_utc": "2026-09-25T18:03:01+00:00",
  "observation_date": "2026-09-25",
  "target_date": "2026-09-26",
  "what_this_is": "A machine-learning estimate of the chance of more than 1 mm of rain on the target date, computed from completed observations recorded on the observation date.",
@@ -604,19 +604,17 @@
   "PearceRAAF": {
    "reason": "required observations incomplete",
    "missing": [
-    "MaxTemp",
     "WindDir3pm",
     "WindSpeed3pm",
     "Humidity3pm",
     "Pressure3pm",
     "Temp3pm",
-    "TempRange",
     "PressureChange",
     "HumidityChange"
    ],
    "notes": [
     "no reading within 45 min of 3pm",
-    "no closed daytime maximum window on this date"
+    "MaxTemp/MinTemp use BoM's 06:00-21:00 and 18:00-09:00 windows; weatherAUS uses 9am-to-9am"
    ]
   },
   "Penrith": {
@@ -642,37 +640,33 @@
   "Perth": {
    "reason": "required observations incomplete",
    "missing": [
-    "MaxTemp",
     "WindDir3pm",
     "WindSpeed3pm",
     "Humidity3pm",
     "Pressure3pm",
     "Temp3pm",
-    "TempRange",
     "PressureChange",
     "HumidityChange"
    ],
    "notes": [
     "no reading within 45 min of 3pm",
-    "no closed daytime maximum window on this date"
+    "MaxTemp/MinTemp use BoM's 06:00-21:00 and 18:00-09:00 windows; weatherAUS uses 9am-to-9am"
    ]
   },
   "PerthAirport": {
    "reason": "required observations incomplete",
    "missing": [
-    "MaxTemp",
     "WindDir3pm",
     "WindSpeed3pm",
     "Humidity3pm",
     "Pressure3pm",
     "Temp3pm",
-    "TempRange",
     "PressureChange",
     "HumidityChange"
    ],
    "notes": [
     "no reading within 45 min of 3pm",
-    "no closed daytime maximum window on this date"
+    "MaxTemp/MinTemp use BoM's 06:00-21:00 and 18:00-09:00 windows; weatherAUS uses 9am-to-9am"
    ]
   },
   "Portland": {
@@ -726,20 +720,18 @@
   "SalmonGums": {
    "reason": "required observations incomplete",
    "missing": [
-    "MaxTemp",
     "WindDir3pm",
     "WindSpeed3pm",
     "Humidity3pm",
     "Pressure9am",
     "Pressure3pm",
     "Temp3pm",
-    "TempRange",
     "PressureChange",
     "HumidityChange"
    ],
    "notes": [
     "no reading within 45 min of 3pm",
-    "no closed daytime maximum window on this date"
+    "MaxTemp/MinTemp use BoM's 06:00-21:00 and 18:00-09:00 windows; weatherAUS uses 9am-to-9am"
    ]
   },
   "Sydney": {
@@ -826,7 +818,6 @@
   "Walpole": {
    "reason": "required observations incomplete",
    "missing": [
-    "MaxTemp",
     "Rainfall",
     "WindDir3pm",
     "WindSpeed3pm",
@@ -834,14 +825,13 @@
     "Pressure3pm",
     "Temp3pm",
     "RainToday",
-    "TempRange",
     "PressureChange",
     "HumidityChange"
    ],
    "notes": [
     "no reading within 45 min of 3pm",
     "no rainfall_24hr window ending 09:00 on this date",
-    "no closed daytime maximum window on this date"
+    "MaxTemp/MinTemp use BoM's 06:00-21:00 and 18:00-09:00 windows; weatherAUS uses 9am-to-9am"
    ]
   },
   "Williamtown": {
@@ -863,19 +853,17 @@
   "Witchcliffe": {
    "reason": "required observations incomplete",
    "missing": [
-    "MaxTemp",
     "WindDir3pm",
     "WindSpeed3pm",
     "Humidity3pm",
     "Pressure3pm",
     "Temp3pm",
-    "TempRange",
     "PressureChange",
     "HumidityChange"
    ],
    "notes": [
     "no reading within 45 min of 3pm",
-    "no closed daytime maximum window on this date"
+    "MaxTemp/MinTemp use BoM's 06:00-21:00 and 18:00-09:00 windows; weatherAUS uses 9am-to-9am"
    ]
   }
  }
