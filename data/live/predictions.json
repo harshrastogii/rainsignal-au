@@ -1,7 +1,7 @@
 {
- "generated_utc": "2026-09-27T13:14:26+00:00",
- "observation_date": "2026-09-27",
- "target_date": "2026-09-28",
+ "generated_utc": "2026-09-28T15:51:41+00:00",
+ "observation_date": "2026-09-28",
+ "target_date": "2026-09-29",
  "what_this_is": "A machine-learning estimate of the chance of more than 1 mm of rain on the target date, computed from completed observations recorded on the observation date.",
  "not_a_bureau_forecast": true,
  "disclaimer": "This is a model estimate produced by a student project, not a forecast issued by the Bureau of Meteorology. For official forecasts see bom.gov.au.",
@@ -23,140 +23,140 @@
  "stations_withheld": 40,
  "predictions": {
   "PearceRAAF": {
-   "rain_probability": 0.567,
-   "observation_date": "2026-09-27",
-   "target_date": "2026-09-28",
+   "rain_probability": 0.5129,
+   "observation_date": "2026-09-28",
+   "target_date": "2026-09-29",
    "inputs_present": 22,
    "inputs_total": 22,
    "imputed_by_frozen_pipeline": null,
    "provenance": {
     "9am": {
-     "observed_local": "2026-09-27T08:40:00+08:00",
-     "offset_min": 20.0
+     "observed_local": "2026-09-28T08:50:00+08:00",
+     "offset_min": 10.0
     },
     "3pm": {
-     "observed_local": "2026-09-27T14:20:00+08:00",
-     "offset_min": 40.0
+     "observed_local": "2026-09-28T14:30:00+08:00",
+     "offset_min": 30.0
     },
     "Rainfall": {
-     "window_end": "2026-09-27T09:00:00+08:00"
+     "window_end": "2026-09-28T09:00:00+08:00"
     },
     "MinTemp": {
      "window": {
-      "start": "2026-09-26T18:00:00+08:00",
-      "end": "2026-09-27T09:00:00+08:00",
+      "start": "2026-09-27T18:00:00+08:00",
+      "end": "2026-09-28T09:00:00+08:00",
       "instance": "running"
      }
     },
     "MaxTemp": {
      "window": {
-      "start": "2026-09-27T06:00:00+08:00",
-      "end": "2026-09-27T21:00:00+08:00",
+      "start": "2026-09-28T06:00:00+08:00",
+      "end": "2026-09-28T21:00:00+08:00",
       "instance": "running"
      }
     }
    }
   },
   "Perth": {
-   "rain_probability": 0.4253,
-   "observation_date": "2026-09-27",
-   "target_date": "2026-09-28",
+   "rain_probability": 0.2731,
+   "observation_date": "2026-09-28",
+   "target_date": "2026-09-29",
    "inputs_present": 22,
    "inputs_total": 22,
    "imputed_by_frozen_pipeline": null,
    "provenance": {
     "9am": {
-     "observed_local": "2026-09-27T08:40:00+08:00",
-     "offset_min": 20.0
+     "observed_local": "2026-09-28T08:50:00+08:00",
+     "offset_min": 10.0
     },
     "3pm": {
-     "observed_local": "2026-09-27T14:20:00+08:00",
-     "offset_min": 40.0
+     "observed_local": "2026-09-28T14:30:00+08:00",
+     "offset_min": 30.0
     },
     "Rainfall": {
-     "window_end": "2026-09-27T09:00:00+08:00"
+     "window_end": "2026-09-28T09:00:00+08:00"
     },
     "MinTemp": {
      "window": {
-      "start": "2026-09-26T18:00:00+08:00",
-      "end": "2026-09-27T09:00:00+08:00",
+      "start": "2026-09-27T18:00:00+08:00",
+      "end": "2026-09-28T09:00:00+08:00",
       "instance": "running"
      }
     },
     "MaxTemp": {
      "window": {
-      "start": "2026-09-27T06:00:00+08:00",
-      "end": "2026-09-27T21:00:00+08:00",
+      "start": "2026-09-28T06:00:00+08:00",
+      "end": "2026-09-28T21:00:00+08:00",
       "instance": "running"
      }
     }
    }
   },
   "PerthAirport": {
-   "rain_probability": 0.401,
-   "observation_date": "2026-09-27",
-   "target_date": "2026-09-28",
+   "rain_probability": 0.2386,
+   "observation_date": "2026-09-28",
+   "target_date": "2026-09-29",
    "inputs_present": 22,
    "inputs_total": 22,
    "imputed_by_frozen_pipeline": null,
    "provenance": {
     "9am": {
-     "observed_local": "2026-09-27T08:40:00+08:00",
-     "offset_min": 20.0
+     "observed_local": "2026-09-28T08:50:00+08:00",
+     "offset_min": 10.0
     },
     "3pm": {
-     "observed_local": "2026-09-27T14:20:00+08:00",
-     "offset_min": 40.0
+     "observed_local": "2026-09-28T14:30:00+08:00",
+     "offset_min": 30.0
     },
     "Rainfall": {
-     "window_end": "2026-09-27T09:00:00+08:00"
+     "window_end": "2026-09-28T09:00:00+08:00"
     },
     "MinTemp": {
      "window": {
-      "start": "2026-09-26T18:00:00+08:00",
-      "end": "2026-09-27T09:00:00+08:00",
+      "start": "2026-09-27T18:00:00+08:00",
+      "end": "2026-09-28T09:00:00+08:00",
       "instance": "running"
      }
     },
     "MaxTemp": {
      "window": {
-      "start": "2026-09-27T06:00:00+08:00",
-      "end": "2026-09-27T21:00:00+08:00",
+      "start": "2026-09-28T06:00:00+08:00",
+      "end": "2026-09-28T21:00:00+08:00",
       "instance": "running"
      }
     }
    }
   },
   "Witchcliffe": {
-   "rain_probability": 0.8044,
-   "observation_date": "2026-09-27",
-   "target_date": "2026-09-28",
+   "rain_probability": 0.6112,
+   "observation_date": "2026-09-28",
+   "target_date": "2026-09-29",
    "inputs_present": 22,
    "inputs_total": 22,
    "imputed_by_frozen_pipeline": null,
    "provenance": {
     "9am": {
-     "observed_local": "2026-09-27T08:40:00+08:00",
-     "offset_min": 20.0
+     "observed_local": "2026-09-28T08:50:00+08:00",
+     "offset_min": 10.0
     },
     "3pm": {
-     "observed_local": "2026-09-27T14:20:00+08:00",
-     "offset_min": 40.0
+     "observed_local": "2026-09-28T14:30:00+08:00",
+     "offset_min": 30.0
     },
     "Rainfall": {
-     "window_end": "2026-09-27T09:00:00+08:00"
+     "window_end": "2026-09-28T09:00:00+08:00"
     },
     "MinTemp": {
      "window": {
-      "start": "2026-09-26T18:00:00+08:00",
-      "end": "2026-09-27T09:00:00+08:00",
+      "start": "2026-09-27T18:00:00+08:00",
+      "end": "2026-09-28T09:00:00+08:00",
       "instance": "running"
      }
     },
     "MaxTemp": {
      "window": {
-      "start": "2026-09-27T06:00:00+08:00",
-      "end": "2026-09-27T21:00:00+08:00",
+      "start": "2026-09-28T06:00:00+08:00",
+      "end": "2026-09-28T21:00:00+08:00",
       "instance": "running"
      }
     }
@@ -429,20 +429,17 @@
   "Launceston": {
    "reason": "required observations incomplete",
    "missing": [
-    "Rainfall",
     "WindDir3pm",
     "WindSpeed3pm",
     "Humidity3pm",
     "Pressure9am",
     "Pressure3pm",
     "Temp3pm",
-    "RainToday",
     "PressureChange",
     "HumidityChange"
    ],
    "notes": [
     "no reading within 45 min of 3pm",
-    "no rainfall_24hr window ending 09:00 on this date",
     "MaxTemp/MinTemp use BoM's 06:00-21:00 and 18:00-09:00 windows; weatherAUS uses 9am-to-9am"
    ]
   },
