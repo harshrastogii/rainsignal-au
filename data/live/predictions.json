@@ -1,7 +1,7 @@
 {
- "generated_utc": "2026-10-20T18:05:19+00:00",
- "observation_date": "2026-10-20",
- "target_date": "2026-10-21",
+ "generated_utc": "2026-10-21T13:07:54+00:00",
+ "observation_date": "2026-10-21",
+ "target_date": "2026-10-22",
  "what_this_is": "A machine-learning estimate of the chance of more than 1 mm of rain on the target date, computed from completed observations recorded on the observation date.",
  "not_a_bureau_forecast": true,
  "disclaimer": "This is a model estimate produced by a student project, not a forecast issued by the Bureau of Meteorology. For official forecasts see bom.gov.au.",
@@ -19,74 +19,179 @@
   "reports": "probability, not a yes/no label",
   "note": "Stage 3 measured the best decision threshold near 0.31 rather than 0.5, so no label is imposed here."
  },
- "stations_predicted": 2,
- "stations_withheld": 42,
+ "stations_predicted": 5,
+ "stations_withheld": 39,
  "predictions": {
   "AliceSprings": {
-   "rain_probability": 0.2408,
-   "observation_date": "2026-10-20",
-   "target_date": "2026-10-21",
+   "rain_probability": 0.2386,
+   "observation_date": "2026-10-21",
+   "target_date": "2026-10-22",
    "inputs_present": 22,
    "inputs_total": 22,
    "imputed_by_frozen_pipeline": null,
    "provenance": {
     "9am": {
-     "observed_local": "2026-10-20T09:30:00+09:30",
-     "offset_min": 30.0
-    },
-    "3pm": {
-     "observed_local": "2026-10-20T15:10:00+09:30",
+     "observed_local": "2026-10-21T09:10:00+09:30",
      "offset_min": 10.0
     },
+    "3pm": {
+     "observed_local": "2026-10-21T15:20:00+09:30",
+     "offset_min": 20.0
+    },
     "Rainfall": {
-     "window_end": "2026-10-20T09:00:00+09:30"
+     "window_end": "2026-10-21T09:00:00+09:30"
     },
     "MinTemp": {
      "window": {
-      "start": "2026-10-19T18:00:00+09:30",
-      "end": "2026-10-20T09:00:00+09:30",
+      "start": "2026-10-20T18:00:00+09:30",
+      "end": "2026-10-21T09:00:00+09:30",
       "instance": "running"
      }
     },
     "MaxTemp": {
      "window": {
-      "start": "2026-10-20T06:00:00+09:30",
-      "end": "2026-10-20T21:00:00+09:30",
+      "start": "2026-10-21T06:00:00+09:30",
+      "end": "2026-10-21T21:00:00+09:30",
+      "instance": "running"
+     }
+    }
+   }
+  },
+  "Brisbane": {
+   "rain_probability": 0.8842,
+   "observation_date": "2026-10-21",
+   "target_date": "2026-10-22",
+   "inputs_present": 22,
+   "inputs_total": 22,
+   "imputed_by_frozen_pipeline": null,
+   "provenance": {
+    "9am": {
+     "observed_local": "2026-10-21T09:40:00+10:00",
+     "offset_min": 40.0
+    },
+    "3pm": {
+     "observed_local": "2026-10-21T15:40:00+10:00",
+     "offset_min": 40.0
+    },
+    "Rainfall": {
+     "window_end": "2026-10-21T09:00:00+10:00"
+    },
+    "MinTemp": {
+     "window": {
+      "start": "2026-10-20T18:00:00+10:00",
+      "end": "2026-10-21T09:00:00+10:00",
+      "instance": "running"
+     }
+    },
+    "MaxTemp": {
+     "window": {
+      "start": "2026-10-21T06:00:00+10:00",
+      "end": "2026-10-21T21:00:00+10:00",
+      "instance": "running"
+     }
+    }
+   }
+  },
+  "Cairns": {
+   "rain_probability": 0.1965,
+   "observation_date": "2026-10-21",
+   "target_date": "2026-10-22",
+   "inputs_present": 22,
+   "inputs_total": 22,
+   "imputed_by_frozen_pipeline": null,
+   "provenance": {
+    "9am": {
+     "observed_local": "2026-10-21T09:40:00+10:00",
+     "offset_min": 40.0
+    },
+    "3pm": {
+     "observed_local": "2026-10-21T15:40:00+10:00",
+     "offset_min": 40.0
+    },
+    "Rainfall": {
+     "window_end": "2026-10-21T09:00:00+10:00"
+    },
+    "MinTemp": {
+     "window": {
+      "start": "2026-10-20T18:00:00+10:00",
+      "end": "2026-10-21T09:00:00+10:00",
+      "instance": "running"
+     }
+    },
+    "MaxTemp": {
+     "window": {
+      "start": "2026-10-21T06:00:00+10:00",
+      "end": "2026-10-21T21:00:00+10:00",
       "instance": "running"
      }
     }
    }
   },
   "Darwin": {
-   "rain_probability": 0.0656,
-   "observation_date": "2026-10-20",
-   "target_date": "2026-10-21",
+   "rain_probability": 0.1846,
+   "observation_date": "2026-10-21",
+   "target_date": "2026-10-22",
    "inputs_present": 22,
    "inputs_total": 22,
    "imputed_by_frozen_pipeline": null,
    "provenance": {
     "9am": {
-     "observed_local": "2026-10-20T09:30:00+09:30",
-     "offset_min": 30.0
-    },
-    "3pm": {
-     "observed_local": "2026-10-20T15:10:00+09:30",
+     "observed_local": "2026-10-21T09:10:00+09:30",
      "offset_min": 10.0
     },
+    "3pm": {
+     "observed_local": "2026-10-21T15:20:00+09:30",
+     "offset_min": 20.0
+    },
     "Rainfall": {
-     "window_end": "2026-10-20T09:00:00+09:30"
+     "window_end": "2026-10-21T09:00:00+09:30"
     },
     "MinTemp": {
      "window": {
-      "start": "2026-10-19T18:00:00+09:30",
-      "end": "2026-10-20T09:00:00+09:30",
+      "start": "2026-10-20T18:00:00+09:30",
+      "end": "2026-10-21T09:00:00+09:30",
       "instance": "running"
      }
     },
     "MaxTemp": {
      "window": {
-      "start": "2026-10-20T06:00:00+09:30",
-      "end": "2026-10-20T21:00:00+09:30",
+      "start": "2026-10-21T06:00:00+09:30",
+      "end": "2026-10-21T21:00:00+09:30",
+      "instance": "running"
+     }
+    }
+   }
+  },
+  "GoldCoast": {
+   "rain_probability": 0.785,
+   "observation_date": "2026-10-21",
+   "target_date": "2026-10-22",
+   "inputs_present": 22,
+   "inputs_total": 22,
+   "imputed_by_frozen_pipeline": null,
+   "provenance": {
+    "9am": {
+     "observed_local": "2026-10-21T09:40:00+10:00",
+     "offset_min": 40.0
+    },
+    "3pm": {
+     "observed_local": "2026-10-21T15:40:00+10:00",
+     "offset_min": 40.0
+    },
+    "Rainfall": {
+     "window_end": "2026-10-21T09:00:00+10:00"
+    },
+    "MinTemp": {
+     "window": {
+      "start": "2026-10-20T18:00:00+10:00",
+      "end": "2026-10-21T09:00:00+10:00",
+      "instance": "running"
+     }
+    },
+    "MaxTemp": {
+     "window": {
+      "start": "2026-10-21T06:00:00+10:00",
+      "end": "2026-10-21T21:00:00+10:00",
       "instance": "running"
      }
     }
@@ -226,38 +331,6 @@
     "MaxTemp/MinTemp use BoM's 06:00-21:00 and 18:00-09:00 windows; weatherAUS uses 9am-to-9am"
    ]
   },
-  "Brisbane": {
-   "reason": "required observations incomplete",
-   "missing": [
-    "WindDir9am",
-    "WindSpeed9am",
-    "Humidity9am",
-    "Pressure9am",
-    "Temp9am",
-    "PressureChange",
-    "HumidityChange"
-   ],
-   "notes": [
-    "no reading within 45 min of 9am",
-    "MaxTemp/MinTemp use BoM's 06:00-21:00 and 18:00-09:00 windows; weatherAUS uses 9am-to-9am"
-   ]
-  },
-  "Cairns": {
-   "reason": "required observations incomplete",
-   "missing": [
-    "WindDir9am",
-    "WindSpeed9am",
-    "Humidity9am",
-    "Pressure9am",
-    "Temp9am",
-    "PressureChange",
-    "HumidityChange"
-   ],
-   "notes": [
-    "no reading within 45 min of 9am",
-    "MaxTemp/MinTemp use BoM's 06:00-21:00 and 18:00-09:00 windows; weatherAUS uses 9am-to-9am"
-   ]
-  },
   "Canberra": {
    "reason": "required observations incomplete",
    "missing": [
@@ -343,22 +416,6 @@
    "notes": [
     "no reading within 45 min of 9am",
     "no reading within 45 min of 3pm",
-    "MaxTemp/MinTemp use BoM's 06:00-21:00 and 18:00-09:00 windows; weatherAUS uses 9am-to-9am"
-   ]
-  },
-  "GoldCoast": {
-   "reason": "required observations incomplete",
-   "missing": [
-    "WindDir9am",
-    "WindSpeed9am",
-    "Humidity9am",
-    "Pressure9am",
-    "Temp9am",
-    "PressureChange",
-    "HumidityChange"
-   ],
-   "notes": [
-    "no reading within 45 min of 9am",
     "MaxTemp/MinTemp use BoM's 06:00-21:00 and 18:00-09:00 windows; weatherAUS uses 9am-to-9am"
    ]
   },
@@ -827,16 +884,11 @@
   "Townsville": {
    "reason": "required observations incomplete",
    "missing": [
-    "WindDir9am",
-    "WindSpeed9am",
-    "Humidity9am",
-    "Pressure9am",
-    "Temp9am",
-    "PressureChange",
-    "HumidityChange"
+    "Rainfall",
+    "RainToday"
    ],
    "notes": [
-    "no reading within 45 min of 9am",
+    "no rainfall_24hr window ending 09:00 on this date",
     "MaxTemp/MinTemp use BoM's 06:00-21:00 and 18:00-09:00 windows; weatherAUS uses 9am-to-9am"
    ]
   },
