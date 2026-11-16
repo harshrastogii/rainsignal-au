@@ -1,7 +1,7 @@
 {
- "generated_utc": "2026-11-15T19:27:16+00:00",
- "observation_date": "2026-11-15",
- "target_date": "2026-11-16",
+ "generated_utc": "2026-11-16T22:59:57+00:00",
+ "observation_date": "2026-11-16",
+ "target_date": "2026-11-17",
  "what_this_is": "A machine-learning estimate of the chance of more than 1 mm of rain on the target date, computed from completed observations recorded on the observation date.",
  "not_a_bureau_forecast": true,
  "disclaimer": "This is a model estimate produced by a student project, not a forecast issued by the Bureau of Meteorology. For official forecasts see bom.gov.au.",
@@ -23,175 +23,175 @@
  "stations_withheld": 39,
  "predictions": {
   "PearceRAAF": {
-   "rain_probability": 0.0275,
-   "observation_date": "2026-11-15",
-   "target_date": "2026-11-16",
+   "rain_probability": 0.3984,
+   "observation_date": "2026-11-16",
+   "target_date": "2026-11-17",
    "inputs_present": 22,
    "inputs_total": 22,
    "imputed_by_frozen_pipeline": null,
    "provenance": {
     "9am": {
-     "observed_local": "2026-11-15T08:50:00+08:00",
+     "observed_local": "2026-11-16T08:50:00+08:00",
      "offset_min": 10.0
     },
     "3pm": {
-     "observed_local": "2026-11-15T15:40:00+08:00",
+     "observed_local": "2026-11-16T15:40:00+08:00",
      "offset_min": 40.0
     },
     "Rainfall": {
-     "window_end": "2026-11-15T09:00:00+08:00"
+     "window_end": "2026-11-16T09:00:00+08:00"
     },
     "MinTemp": {
      "window": {
-      "start": "2026-11-14T18:00:00+08:00",
-      "end": "2026-11-15T09:00:00+08:00",
+      "start": "2026-11-15T18:00:00+08:00",
+      "end": "2026-11-16T09:00:00+08:00",
       "instance": "running"
      }
     },
     "MaxTemp": {
      "window": {
-      "start": "2026-11-15T06:00:00+08:00",
-      "end": "2026-11-15T21:00:00+08:00",
+      "start": "2026-11-16T06:00:00+08:00",
+      "end": "2026-11-16T21:00:00+08:00",
       "instance": "running"
      }
     }
    }
   },
   "Perth": {
-   "rain_probability": 0.0249,
-   "observation_date": "2026-11-15",
-   "target_date": "2026-11-16",
+   "rain_probability": 0.237,
+   "observation_date": "2026-11-16",
+   "target_date": "2026-11-17",
    "inputs_present": 22,
    "inputs_total": 22,
    "imputed_by_frozen_pipeline": null,
    "provenance": {
     "9am": {
-     "observed_local": "2026-11-15T08:50:00+08:00",
+     "observed_local": "2026-11-16T08:50:00+08:00",
      "offset_min": 10.0
     },
     "3pm": {
-     "observed_local": "2026-11-15T15:40:00+08:00",
+     "observed_local": "2026-11-16T15:40:00+08:00",
      "offset_min": 40.0
     },
     "Rainfall": {
-     "window_end": "2026-11-15T09:00:00+08:00"
+     "window_end": "2026-11-16T09:00:00+08:00"
     },
     "MinTemp": {
      "window": {
-      "start": "2026-11-14T18:00:00+08:00",
-      "end": "2026-11-15T09:00:00+08:00",
+      "start": "2026-11-15T18:00:00+08:00",
+      "end": "2026-11-16T09:00:00+08:00",
       "instance": "running"
      }
     },
     "MaxTemp": {
      "window": {
-      "start": "2026-11-15T06:00:00+08:00",
-      "end": "2026-11-15T21:00:00+08:00",
+      "start": "2026-11-16T06:00:00+08:00",
+      "end": "2026-11-16T21:00:00+08:00",
       "instance": "running"
      }
     }
    }
   },
   "PerthAirport": {
-   "rain_probability": 0.0311,
-   "observation_date": "2026-11-15",
-   "target_date": "2026-11-16",
+   "rain_probability": 0.5114,
+   "observation_date": "2026-11-16",
+   "target_date": "2026-11-17",
    "inputs_present": 22,
    "inputs_total": 22,
    "imputed_by_frozen_pipeline": null,
    "provenance": {
     "9am": {
-     "observed_local": "2026-11-15T08:50:00+08:00",
+     "observed_local": "2026-11-16T08:50:00+08:00",
      "offset_min": 10.0
     },
     "3pm": {
-     "observed_local": "2026-11-15T15:40:00+08:00",
+     "observed_local": "2026-11-16T15:40:00+08:00",
      "offset_min": 40.0
     },
     "Rainfall": {
-     "window_end": "2026-11-15T09:00:00+08:00"
+     "window_end": "2026-11-16T09:00:00+08:00"
     },
     "MinTemp": {
      "window": {
-      "start": "2026-11-14T18:00:00+08:00",
-      "end": "2026-11-15T09:00:00+08:00",
+      "start": "2026-11-15T18:00:00+08:00",
+      "end": "2026-11-16T09:00:00+08:00",
       "instance": "running"
      }
     },
     "MaxTemp": {
      "window": {
-      "start": "2026-11-15T06:00:00+08:00",
-      "end": "2026-11-15T21:00:00+08:00",
+      "start": "2026-11-16T06:00:00+08:00",
+      "end": "2026-11-16T21:00:00+08:00",
       "instance": "running"
      }
     }
    }
   },
   "Walpole": {
-   "rain_probability": 0.064,
-   "observation_date": "2026-11-15",
-   "target_date": "2026-11-16",
+   "rain_probability": 0.1756,
+   "observation_date": "2026-11-16",
+   "target_date": "2026-11-17",
    "inputs_present": 22,
    "inputs_total": 22,
    "imputed_by_frozen_pipeline": null,
    "provenance": {
     "9am": {
-     "observed_local": "2026-11-15T08:50:00+08:00",
+     "observed_local": "2026-11-16T08:50:00+08:00",
      "offset_min": 10.0
     },
     "3pm": {
-     "observed_local": "2026-11-15T15:40:00+08:00",
+     "observed_local": "2026-11-16T15:40:00+08:00",
      "offset_min": 40.0
     },
     "Rainfall": {
-     "window_end": "2026-11-15T09:00:00+08:00"
+     "window_end": "2026-11-16T09:00:00+08:00"
     },
     "MinTemp": {
      "window": {
-      "start": "2026-11-14T18:00:00+08:00",
-      "end": "2026-11-15T09:00:00+08:00",
+      "start": "2026-11-15T18:00:00+08:00",
+      "end": "2026-11-16T09:00:00+08:00",
       "instance": "running"
      }
     },
     "MaxTemp": {
      "window": {
-      "start": "2026-11-15T06:00:00+08:00",
-      "end": "2026-11-15T21:00:00+08:00",
+      "start": "2026-11-16T06:00:00+08:00",
+      "end": "2026-11-16T21:00:00+08:00",
       "instance": "running"
      }
     }
    }
   },
   "Witchcliffe": {
-   "rain_probability": 0.0566,
-   "observation_date": "2026-11-15",
-   "target_date": "2026-11-16",
+   "rain_probability": 0.1728,
+   "observation_date": "2026-11-16",
+   "target_date": "2026-11-17",
    "inputs_present": 22,
    "inputs_total": 22,
    "imputed_by_frozen_pipeline": null,
    "provenance": {
     "9am": {
-     "observed_local": "2026-11-15T08:50:00+08:00",
+     "observed_local": "2026-11-16T08:50:00+08:00",
      "offset_min": 10.0
     },
     "3pm": {
-     "observed_local": "2026-11-15T15:40:00+08:00",
+     "observed_local": "2026-11-16T15:40:00+08:00",
      "offset_min": 40.0
     },
     "Rainfall": {
-     "window_end": "2026-11-15T09:00:00+08:00"
+     "window_end": "2026-11-16T09:00:00+08:00"
     },
     "MinTemp": {
      "window": {
-      "start": "2026-11-14T18:00:00+08:00",
-      "end": "2026-11-15T09:00:00+08:00",
+      "start": "2026-11-15T18:00:00+08:00",
+      "end": "2026-11-16T09:00:00+08:00",
       "instance": "running"
      }
     },
     "MaxTemp": {
      "window": {
-      "start": "2026-11-15T06:00:00+08:00",
-      "end": "2026-11-15T21:00:00+08:00",
+      "start": "2026-11-16T06:00:00+08:00",
+      "end": "2026-11-16T21:00:00+08:00",
       "instance": "running"
      }
     }
