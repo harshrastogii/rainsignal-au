@@ -1,5 +1,5 @@
 {
- "generated_utc": "2026-11-17T09:40:46+00:00",
+ "generated_utc": "2026-11-17T21:52:36+00:00",
  "observation_date": "2026-11-17",
  "target_date": "2026-11-18",
  "what_this_is": "A machine-learning estimate of the chance of more than 1 mm of rain on the target date, computed from completed observations recorded on the observation date.",
@@ -62,19 +62,17 @@
   "Adelaide": {
    "reason": "required observations incomplete",
    "missing": [
-    "MaxTemp",
     "WindDir9am",
     "WindSpeed9am",
     "Humidity9am",
     "Pressure9am",
     "Temp9am",
-    "TempRange",
     "PressureChange",
     "HumidityChange"
    ],
    "notes": [
     "no reading within 45 min of 9am",
-    "no closed daytime maximum window on this date"
+    "MaxTemp/MinTemp use BoM's 06:00-21:00 and 18:00-09:00 windows; weatherAUS uses 9am-to-9am"
    ]
   },
   "Albany": {
@@ -102,25 +100,22 @@
   "Albury": {
    "reason": "required observations incomplete",
    "missing": [
-    "MaxTemp",
     "WindDir9am",
     "WindSpeed9am",
     "Humidity9am",
     "Pressure9am",
     "Temp9am",
-    "TempRange",
     "PressureChange",
     "HumidityChange"
    ],
    "notes": [
     "no reading within 45 min of 9am",
-    "no closed daytime maximum window on this date"
+    "MaxTemp/MinTemp use BoM's 06:00-21:00 and 18:00-09:00 windows; weatherAUS uses 9am-to-9am"
    ]
   },
   "AliceSprings": {
    "reason": "required observations incomplete",
    "missing": [
-    "MaxTemp",
     "WindDir9am",
     "WindDir3pm",
     "WindSpeed9am",
@@ -131,183 +126,163 @@
     "Pressure3pm",
     "Temp9am",
     "Temp3pm",
-    "TempRange",
     "PressureChange",
     "HumidityChange"
    ],
    "notes": [
     "no reading within 45 min of 9am",
     "no reading within 45 min of 3pm",
-    "no closed daytime maximum window on this date"
+    "MaxTemp/MinTemp use BoM's 06:00-21:00 and 18:00-09:00 windows; weatherAUS uses 9am-to-9am"
    ]
   },
   "BadgerysCreek": {
    "reason": "required observations incomplete",
    "missing": [
-    "MaxTemp",
     "WindDir9am",
     "WindSpeed9am",
     "Humidity9am",
     "Pressure9am",
     "Temp9am",
-    "TempRange",
     "PressureChange",
     "HumidityChange"
    ],
    "notes": [
     "no reading within 45 min of 9am",
-    "no closed daytime maximum window on this date"
+    "MaxTemp/MinTemp use BoM's 06:00-21:00 and 18:00-09:00 windows; weatherAUS uses 9am-to-9am"
    ]
   },
   "Ballarat": {
    "reason": "required observations incomplete",
    "missing": [
-    "MaxTemp",
     "WindDir9am",
     "WindSpeed9am",
     "Humidity9am",
     "Pressure9am",
     "Temp9am",
-    "TempRange",
     "PressureChange",
     "HumidityChange"
    ],
    "notes": [
     "no reading within 45 min of 9am",
-    "no closed daytime maximum window on this date"
+    "MaxTemp/MinTemp use BoM's 06:00-21:00 and 18:00-09:00 windows; weatherAUS uses 9am-to-9am"
    ]
   },
   "Bendigo": {
    "reason": "required observations incomplete",
    "missing": [
-    "MaxTemp",
     "WindDir9am",
     "WindSpeed9am",
     "Humidity9am",
     "Pressure9am",
     "Temp9am",
-    "TempRange",
     "PressureChange",
     "HumidityChange"
    ],
    "notes": [
     "no reading within 45 min of 9am",
-    "no closed daytime maximum window on this date"
+    "MaxTemp/MinTemp use BoM's 06:00-21:00 and 18:00-09:00 windows; weatherAUS uses 9am-to-9am"
    ]
   },
   "Brisbane": {
    "reason": "required observations incomplete",
    "missing": [
-    "MaxTemp",
     "WindDir9am",
     "WindSpeed9am",
     "Humidity9am",
     "Pressure9am",
     "Temp9am",
-    "TempRange",
     "PressureChange",
     "HumidityChange"
    ],
    "notes": [
     "no reading within 45 min of 9am",
-    "no closed daytime maximum window on this date"
+    "MaxTemp/MinTemp use BoM's 06:00-21:00 and 18:00-09:00 windows; weatherAUS uses 9am-to-9am"
    ]
   },
   "Cairns": {
    "reason": "required observations incomplete",
    "missing": [
-    "MaxTemp",
     "WindDir9am",
     "WindSpeed9am",
     "Humidity9am",
     "Pressure9am",
     "Temp9am",
-    "TempRange",
     "PressureChange",
     "HumidityChange"
    ],
    "notes": [
     "no reading within 45 min of 9am",
-    "no closed daytime maximum window on this date"
+    "MaxTemp/MinTemp use BoM's 06:00-21:00 and 18:00-09:00 windows; weatherAUS uses 9am-to-9am"
    ]
   },
   "Canberra": {
    "reason": "required observations incomplete",
    "missing": [
-    "MaxTemp",
     "WindDir9am",
     "WindSpeed9am",
     "Humidity9am",
     "Pressure9am",
     "Temp9am",
-    "TempRange",
     "PressureChange",
     "HumidityChange"
    ],
    "notes": [
     "no reading within 45 min of 9am",
-    "no closed daytime maximum window on this date"
+    "MaxTemp/MinTemp use BoM's 06:00-21:00 and 18:00-09:00 windows; weatherAUS uses 9am-to-9am"
    ]
   },
   "Cobar": {
    "reason": "required observations incomplete",
    "missing": [
-    "MaxTemp",
     "WindDir9am",
     "WindSpeed9am",
     "Humidity9am",
     "Pressure9am",
     "Temp9am",
-    "TempRange",
     "PressureChange",
     "HumidityChange"
    ],
    "notes": [
     "no reading within 45 min of 9am",
-    "no closed daytime maximum window on this date"
+    "MaxTemp/MinTemp use BoM's 06:00-21:00 and 18:00-09:00 windows; weatherAUS uses 9am-to-9am"
    ]
   },
   "CoffsHarbour": {
    "reason": "required observations incomplete",
    "missing": [
-    "MaxTemp",
     "WindDir9am",
     "WindSpeed9am",
     "Humidity9am",
     "Humidity3pm",
     "Pressure9am",
     "Temp9am",
-    "TempRange",
     "PressureChange",
     "HumidityChange"
    ],
    "notes": [
     "no reading within 45 min of 9am",
-    "no closed daytime maximum window on this date"
+    "MaxTemp/MinTemp use BoM's 06:00-21:00 and 18:00-09:00 windows; weatherAUS uses 9am-to-9am"
    ]
   },
   "Dartmoor": {
    "reason": "required observations incomplete",
    "missing": [
-    "MaxTemp",
     "WindDir9am",
     "WindSpeed9am",
     "Humidity9am",
     "Pressure9am",
     "Temp9am",
-    "TempRange",
     "PressureChange",
     "HumidityChange"
    ],
    "notes": [
     "no reading within 45 min of 9am",
-    "no closed daytime maximum window on this date"
+    "MaxTemp/MinTemp use BoM's 06:00-21:00 and 18:00-09:00 windows; weatherAUS uses 9am-to-9am"
    ]
   },
   "Darwin": {
    "reason": "required observations incomplete",
    "missing": [
-    "MaxTemp",
     "WindDir9am",
     "WindDir3pm",
     "WindSpeed9am",
@@ -318,239 +293,213 @@
     "Pressure3pm",
     "Temp9am",
     "Temp3pm",
-    "TempRange",
     "PressureChange",
     "HumidityChange"
    ],
    "notes": [
     "no reading within 45 min of 9am",
     "no reading within 45 min of 3pm",
-    "no closed daytime maximum window on this date"
+    "MaxTemp/MinTemp use BoM's 06:00-21:00 and 18:00-09:00 windows; weatherAUS uses 9am-to-9am"
    ]
   },
   "GoldCoast": {
    "reason": "required observations incomplete",
    "missing": [
-    "MaxTemp",
     "WindDir9am",
     "WindSpeed9am",
     "Humidity9am",
     "Pressure9am",
     "Temp9am",
-    "TempRange",
     "PressureChange",
     "HumidityChange"
    ],
    "notes": [
     "no reading within 45 min of 9am",
-    "no closed daytime maximum window on this date"
+    "MaxTemp/MinTemp use BoM's 06:00-21:00 and 18:00-09:00 windows; weatherAUS uses 9am-to-9am"
    ]
   },
   "Hobart": {
    "reason": "required observations incomplete",
    "missing": [
-    "MaxTemp",
     "WindDir9am",
     "WindSpeed9am",
     "Humidity9am",
     "Pressure9am",
     "Temp9am",
-    "TempRange",
     "PressureChange",
     "HumidityChange"
    ],
    "notes": [
     "no reading within 45 min of 9am",
-    "no closed daytime maximum window on this date"
+    "MaxTemp/MinTemp use BoM's 06:00-21:00 and 18:00-09:00 windows; weatherAUS uses 9am-to-9am"
    ]
   },
   "Launceston": {
    "reason": "required observations incomplete",
    "missing": [
-    "MaxTemp",
     "WindDir9am",
     "WindSpeed9am",
     "Humidity9am",
     "Pressure9am",
     "Pressure3pm",
     "Temp9am",
-    "TempRange",
     "PressureChange",
     "HumidityChange"
    ],
    "notes": [
     "no reading within 45 min of 9am",
-    "no closed daytime maximum window on this date"
+    "MaxTemp/MinTemp use BoM's 06:00-21:00 and 18:00-09:00 windows; weatherAUS uses 9am-to-9am"
    ]
   },
   "Melbourne": {
    "reason": "required observations incomplete",
    "missing": [
-    "MaxTemp",
     "WindDir9am",
     "WindSpeed9am",
     "Humidity9am",
     "Pressure9am",
     "Temp9am",
-    "TempRange",
     "PressureChange",
     "HumidityChange"
    ],
    "notes": [
     "no reading within 45 min of 9am",
-    "no closed daytime maximum window on this date"
+    "MaxTemp/MinTemp use BoM's 06:00-21:00 and 18:00-09:00 windows; weatherAUS uses 9am-to-9am"
    ]
   },
   "MelbourneAirport": {
    "reason": "required observations incomplete",
    "missing": [
-    "MaxTemp",
     "WindDir9am",
     "WindSpeed9am",
     "Humidity9am",
     "Pressure9am",
     "Temp9am",
-    "TempRange",
     "PressureChange",
     "HumidityChange"
    ],
    "notes": [
     "no reading within 45 min of 9am",
-    "no closed daytime maximum window on this date"
+    "MaxTemp/MinTemp use BoM's 06:00-21:00 and 18:00-09:00 windows; weatherAUS uses 9am-to-9am"
    ]
   },
   "Mildura": {
    "reason": "required observations incomplete",
    "missing": [
-    "MaxTemp",
     "WindDir9am",
     "WindSpeed9am",
     "Humidity9am",
     "Pressure9am",
     "Temp9am",
-    "TempRange",
     "PressureChange",
     "HumidityChange"
    ],
    "notes": [
     "no reading within 45 min of 9am",
-    "no closed daytime maximum window on this date"
+    "MaxTemp/MinTemp use BoM's 06:00-21:00 and 18:00-09:00 windows; weatherAUS uses 9am-to-9am"
    ]
   },
   "Moree": {
    "reason": "required observations incomplete",
    "missing": [
-    "MaxTemp",
     "WindDir9am",
     "WindSpeed9am",
     "Humidity9am",
     "Pressure9am",
     "Temp9am",
-    "TempRange",
     "PressureChange",
     "HumidityChange"
    ],
    "notes": [
     "no reading within 45 min of 9am",
-    "no closed daytime maximum window on this date"
+    "MaxTemp/MinTemp use BoM's 06:00-21:00 and 18:00-09:00 windows; weatherAUS uses 9am-to-9am"
    ]
   },
   "MountGambier": {
    "reason": "required observations incomplete",
    "missing": [
-    "MaxTemp",
     "WindDir9am",
     "WindSpeed9am",
     "Humidity9am",
     "Pressure9am",
     "Temp9am",
-    "TempRange",
     "PressureChange",
     "HumidityChange"
    ],
    "notes": [
     "no reading within 45 min of 9am",
-    "no closed daytime maximum window on this date"
+    "MaxTemp/MinTemp use BoM's 06:00-21:00 and 18:00-09:00 windows; weatherAUS uses 9am-to-9am"
    ]
   },
   "MountGinini": {
    "reason": "required observations incomplete",
    "missing": [
-    "MaxTemp",
     "WindDir9am",
     "WindSpeed9am",
     "Humidity9am",
     "Pressure9am",
     "Pressure3pm",
     "Temp9am",
-    "TempRange",
     "PressureChange",
     "HumidityChange"
    ],
    "notes": [
     "no reading within 45 min of 9am",
-    "no closed daytime maximum window on this date"
+    "MaxTemp/MinTemp use BoM's 06:00-21:00 and 18:00-09:00 windows; weatherAUS uses 9am-to-9am"
    ]
   },
   "Newcastle": {
    "reason": "required observations incomplete",
    "missing": [
-    "MaxTemp",
     "WindDir9am",
     "WindSpeed9am",
     "Humidity9am",
     "Pressure9am",
     "Pressure3pm",
     "Temp9am",
-    "TempRange",
     "PressureChange",
     "HumidityChange"
    ],
    "notes": [
     "no reading within 45 min of 9am",
-    "no closed daytime maximum window on this date"
+    "MaxTemp/MinTemp use BoM's 06:00-21:00 and 18:00-09:00 windows; weatherAUS uses 9am-to-9am"
    ]
   },
   "NorahHead": {
    "reason": "required observations incomplete",
    "missing": [
-    "MaxTemp",
     "WindDir9am",
     "WindSpeed9am",
     "Humidity9am",
     "Pressure9am",
     "Temp9am",
-    "TempRange",
     "PressureChange",
     "HumidityChange"
    ],
    "notes": [
     "no reading within 45 min of 9am",
-    "no closed daytime maximum window on this date"
+    "MaxTemp/MinTemp use BoM's 06:00-21:00 and 18:00-09:00 windows; weatherAUS uses 9am-to-9am"
    ]
   },
   "Nuriootpa": {
    "reason": "required observations incomplete",
    "missing": [
-    "MaxTemp",
     "WindDir9am",
     "WindSpeed9am",
     "Humidity9am",
     "Pressure9am",
     "Temp9am",
-    "TempRange",
     "PressureChange",
     "HumidityChange"
    ],
    "notes": [
     "no reading within 45 min of 9am",
-    "no closed daytime maximum window on this date"
+    "MaxTemp/MinTemp use BoM's 06:00-21:00 and 18:00-09:00 windows; weatherAUS uses 9am-to-9am"
    ]
   },
   "PearceRAAF": {
    "reason": "required observations incomplete",
    "missing": [
-    "MaxTemp",
     "WindDir9am",
     "WindDir3pm",
     "WindSpeed9am",
@@ -561,39 +510,35 @@
     "Pressure3pm",
     "Temp9am",
     "Temp3pm",
-    "TempRange",
     "PressureChange",
     "HumidityChange"
    ],
    "notes": [
     "no reading within 45 min of 9am",
     "no reading within 45 min of 3pm",
-    "no closed daytime maximum window on this date"
+    "MaxTemp/MinTemp use BoM's 06:00-21:00 and 18:00-09:00 windows; weatherAUS uses 9am-to-9am"
    ]
   },
   "Penrith": {
    "reason": "required observations incomplete",
    "missing": [
-    "MaxTemp",
     "WindDir9am",
     "WindSpeed9am",
     "Humidity9am",
     "Pressure9am",
     "Pressure3pm",
     "Temp9am",
-    "TempRange",
     "PressureChange",
     "HumidityChange"
    ],
    "notes": [
     "no reading within 45 min of 9am",
-    "no closed daytime maximum window on this date"
+    "MaxTemp/MinTemp use BoM's 06:00-21:00 and 18:00-09:00 windows; weatherAUS uses 9am-to-9am"
    ]
   },
   "Perth": {
    "reason": "required observations incomplete",
    "missing": [
-    "MaxTemp",
     "WindDir9am",
     "WindDir3pm",
     "WindSpeed9am",
@@ -604,20 +549,18 @@
     "Pressure3pm",
     "Temp9am",
     "Temp3pm",
-    "TempRange",
     "PressureChange",
     "HumidityChange"
    ],
    "notes": [
     "no reading within 45 min of 9am",
     "no reading within 45 min of 3pm",
-    "no closed daytime maximum window on this date"
+    "MaxTemp/MinTemp use BoM's 06:00-21:00 and 18:00-09:00 windows; weatherAUS uses 9am-to-9am"
    ]
   },
   "PerthAirport": {
    "reason": "required observations incomplete",
    "missing": [
-    "MaxTemp",
     "WindDir9am",
     "WindDir3pm",
     "WindSpeed9am",
@@ -628,74 +571,66 @@
     "Pressure3pm",
     "Temp9am",
     "Temp3pm",
-    "TempRange",
     "PressureChange",
     "HumidityChange"
    ],
    "notes": [
     "no reading within 45 min of 9am",
     "no reading within 45 min of 3pm",
-    "no closed daytime maximum window on this date"
+    "MaxTemp/MinTemp use BoM's 06:00-21:00 and 18:00-09:00 windows; weatherAUS uses 9am-to-9am"
    ]
   },
   "Portland": {
    "reason": "required observations incomplete",
    "missing": [
-    "MaxTemp",
     "WindDir9am",
     "WindSpeed9am",
     "Humidity9am",
     "Pressure9am",
     "Temp9am",
-    "TempRange",
     "PressureChange",
     "HumidityChange"
    ],
    "notes": [
     "no reading within 45 min of 9am",
-    "no closed daytime maximum window on this date"
+    "MaxTemp/MinTemp use BoM's 06:00-21:00 and 18:00-09:00 windows; weatherAUS uses 9am-to-9am"
    ]
   },
   "Richmond": {
    "reason": "required observations incomplete",
    "missing": [
-    "MaxTemp",
     "WindDir9am",
     "WindSpeed9am",
     "Humidity9am",
     "Pressure9am",
     "Temp9am",
-    "TempRange",
     "PressureChange",
     "HumidityChange"
    ],
    "notes": [
     "no reading within 45 min of 9am",
-    "no closed daytime maximum window on this date"
+    "MaxTemp/MinTemp use BoM's 06:00-21:00 and 18:00-09:00 windows; weatherAUS uses 9am-to-9am"
    ]
   },
   "Sale": {
    "reason": "required observations incomplete",
    "missing": [
-    "MaxTemp",
     "WindDir9am",
     "WindSpeed9am",
     "Humidity9am",
     "Pressure9am",
     "Temp9am",
-    "TempRange",
     "PressureChange",
     "HumidityChange"
    ],
    "notes": [
     "no reading within 45 min of 9am",
-    "no closed daytime maximum window on this date"
+    "MaxTemp/MinTemp use BoM's 06:00-21:00 and 18:00-09:00 windows; weatherAUS uses 9am-to-9am"
    ]
   },
   "SalmonGums": {
    "reason": "required observations incomplete",
    "missing": [
-    "MaxTemp",
     "WindDir9am",
     "WindDir3pm",
     "WindSpeed9am",
@@ -706,111 +641,99 @@
     "Pressure3pm",
     "Temp9am",
     "Temp3pm",
-    "TempRange",
     "PressureChange",
     "HumidityChange"
    ],
    "notes": [
     "no reading within 45 min of 9am",
     "no reading within 45 min of 3pm",
-    "no closed daytime maximum window on this date"
+    "MaxTemp/MinTemp use BoM's 06:00-21:00 and 18:00-09:00 windows; weatherAUS uses 9am-to-9am"
    ]
   },
   "Sydney": {
    "reason": "required observations incomplete",
    "missing": [
-    "MaxTemp",
     "WindGustSpeed",
     "WindDir9am",
     "WindSpeed9am",
     "Humidity9am",
     "Pressure9am",
     "Temp9am",
-    "TempRange",
     "PressureChange",
     "HumidityChange"
    ],
    "notes": [
     "no reading within 45 min of 9am",
-    "no closed daytime maximum window on this date"
+    "MaxTemp/MinTemp use BoM's 06:00-21:00 and 18:00-09:00 windows; weatherAUS uses 9am-to-9am"
    ]
   },
   "SydneyAirport": {
    "reason": "required observations incomplete",
    "missing": [
-    "MaxTemp",
     "WindDir9am",
     "WindSpeed9am",
     "Humidity9am",
     "Pressure9am",
     "Temp9am",
-    "TempRange",
     "PressureChange",
     "HumidityChange"
    ],
    "notes": [
     "no reading within 45 min of 9am",
-    "no closed daytime maximum window on this date"
+    "MaxTemp/MinTemp use BoM's 06:00-21:00 and 18:00-09:00 windows; weatherAUS uses 9am-to-9am"
    ]
   },
   "Townsville": {
    "reason": "required observations incomplete",
    "missing": [
-    "MaxTemp",
     "WindDir9am",
     "WindSpeed9am",
     "Humidity9am",
     "Pressure9am",
     "Temp9am",
-    "TempRange",
     "PressureChange",
     "HumidityChange"
    ],
    "notes": [
     "no reading within 45 min of 9am",
-    "no closed daytime maximum window on this date"
+    "MaxTemp/MinTemp use BoM's 06:00-21:00 and 18:00-09:00 windows; weatherAUS uses 9am-to-9am"
    ]
   },
   "Tuggeranong": {
    "reason": "required observations incomplete",
    "missing": [
-    "MaxTemp",
     "WindDir9am",
     "WindSpeed9am",
     "Humidity9am",
     "Pressure9am",
     "Temp9am",
-    "TempRange",
     "PressureChange",
     "HumidityChange"
    ],
    "notes": [
     "no reading within 45 min of 9am",
-    "no closed daytime maximum window on this date"
+    "MaxTemp/MinTemp use BoM's 06:00-21:00 and 18:00-09:00 windows; weatherAUS uses 9am-to-9am"
    ]
   },
   "WaggaWagga": {
    "reason": "required observations incomplete",
    "missing": [
-    "MaxTemp",
     "WindDir9am",
     "WindSpeed9am",
     "Humidity9am",
     "Pressure9am",
     "Temp9am",
-    "TempRange",
     "PressureChange",
     "HumidityChange"
    ],
    "notes": [
     "no reading within 45 min of 9am",
-    "no closed daytime maximum window on this date"
+    "MaxTemp/MinTemp use BoM's 06:00-21:00 and 18:00-09:00 windows; weatherAUS uses 9am-to-9am"
    ]
   },
   "Walpole": {
    "reason": "required observations incomplete",
    "missing": [
-    "MaxTemp",
     "WindDir9am",
     "WindDir3pm",
     "WindSpeed9am",
@@ -821,38 +744,34 @@
     "Pressure3pm",
     "Temp9am",
     "Temp3pm",
-    "TempRange",
     "PressureChange",
     "HumidityChange"
    ],
    "notes": [
     "no reading within 45 min of 9am",
     "no reading within 45 min of 3pm",
-    "no closed daytime maximum window on this date"
+    "MaxTemp/MinTemp use BoM's 06:00-21:00 and 18:00-09:00 windows; weatherAUS uses 9am-to-9am"
    ]
   },
   "Williamtown": {
    "reason": "required observations incomplete",
    "missing": [
-    "MaxTemp",
     "WindDir9am",
     "WindSpeed9am",
     "Humidity9am",
     "Pressure9am",
     "Temp9am",
-    "TempRange",
     "PressureChange",
     "HumidityChange"
    ],
    "notes": [
     "no reading within 45 min of 9am",
-    "no closed daytime maximum window on this date"
+    "MaxTemp/MinTemp use BoM's 06:00-21:00 and 18:00-09:00 windows; weatherAUS uses 9am-to-9am"
    ]
   },
   "Witchcliffe": {
    "reason": "required observations incomplete",
    "missing": [
-    "MaxTemp",
     "WindDir9am",
     "WindDir3pm",
     "WindSpeed9am",
@@ -863,32 +782,29 @@
     "Pressure3pm",
     "Temp9am",
     "Temp3pm",
-    "TempRange",
     "PressureChange",
     "HumidityChange"
    ],
    "notes": [
     "no reading within 45 min of 9am",
     "no reading within 45 min of 3pm",
-    "no closed daytime maximum window on this date"
+    "MaxTemp/MinTemp use BoM's 06:00-21:00 and 18:00-09:00 windows; weatherAUS uses 9am-to-9am"
    ]
   },
   "Woomera": {
    "reason": "required observations incomplete",
    "missing": [
-    "MaxTemp",
     "WindDir9am",
     "WindSpeed9am",
     "Humidity9am",
     "Pressure9am",
     "Temp9am",
-    "TempRange",
     "PressureChange",
     "HumidityChange"
    ],
    "notes": [
     "no reading within 45 min of 9am",
-    "no closed daytime maximum window on this date"
+    "MaxTemp/MinTemp use BoM's 06:00-21:00 and 18:00-09:00 windows; weatherAUS uses 9am-to-9am"
    ]
   }
  }
