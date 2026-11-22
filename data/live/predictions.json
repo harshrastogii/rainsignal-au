@@ -1,7 +1,7 @@
 {
- "generated_utc": "2026-11-21T08:41:37+00:00",
- "observation_date": "2026-11-19",
- "target_date": "2026-11-20",
+ "generated_utc": "2026-11-22T08:41:11+00:00",
+ "observation_date": "2026-11-20",
+ "target_date": "2026-11-21",
  "what_this_is": "A machine-learning estimate of the chance of more than 1 mm of rain on the target date, computed from completed observations recorded on the observation date.",
  "not_a_bureau_forecast": true,
  "disclaimer": "This is a model estimate produced by a student project, not a forecast issued by the Bureau of Meteorology. For official forecasts see bom.gov.au.",
